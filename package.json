@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Letzgar/DarkSpaceProject.git"
+    "url": "git+https://github.com/DAWZayas/Dark-Space-Project"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Letzgar/DarkSpaceProject/issues"
+    "url": "https://github.com/DAWZayas/Dark-Space-Project/issues"
   },
-  "homepage": "https://github.com/Letzgar/DarkSpaceProject#readme",
+  "homepage": "https://github.com/DAWZayas/Dark-Space-Project#readme",
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
     "babel": "^5.8.29",
