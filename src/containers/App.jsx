@@ -11,13 +11,26 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Dark Space Project App</h1>
-          <div className="row">
-            <div className="col-lg-1">
-              <Link to="/">Hide</Link>
+       <nav className="navbar navbar-default">
+          <div className="container">
+            <div className="navbar-header">
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="navbar-brand">Dark Space Project</span>
             </div>
+            <ul className="nav navbar-nav">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/campaign">Campaing</Link></li>
+              <li><Link to="/tutorial">Tutorial</Link></li>
+              <li><Link to="/quickbattle">Quick Battle</Link></li>
+              <li><Link to="/points">Points</Link></li>
+            </ul>
           </div>
-        {this.props.children}
+        </nav>
+      {this.props.children}
       </div>
     );
   }

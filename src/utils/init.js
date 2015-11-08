@@ -1,8 +1,8 @@
 import configureStore from '../store';
-//import { initialState } from './examples';
+import { initialState } from './examples';
 
 
 export default function init() {
-  const store = configureStore();
+  const store = configureStore(initialState);
   return store;
 }
