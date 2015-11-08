@@ -1,27 +1,27 @@
 export const campaign = [
   {
     id: 1,
-    title: 'Mision one: xxxxx',
+    tittle: 'Mision one: xxxxx',
     status: 'fail'
   },
   {
     id: 2,
-    title: 'Mision two: xxxxx',
+    tittle: 'Mision two: xxxxx',
     status: 'fail'
   },
   {
     id: 3,
-    title: 'Mision three: xxxxx',
+    tittle: 'Mision three: xxxxx',
     status: 'fail'
   },
   {
     id: 4,
-    title: 'Mision four: xxxxx',
+    tittle: 'Mision four: xxxxx',
     status: 'fail'
   },
   {
     id: 5,
-    title: 'Mision five: xxxxx',
+    tittle: 'Mision five: xxxxx',
     status: 'fail'
   }
 ];
