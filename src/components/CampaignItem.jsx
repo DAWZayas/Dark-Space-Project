@@ -7,15 +7,21 @@ export default class CampaignItem extends Component {
 
   }
 
+  handleRemoveButtonClick(e) {
+    e.stopPropagation();
+    const { onRemoveCampaign} = this.props;
+    onRemoveCampaign(this.id);
+  }
+
   render() {
 
     const { key, id, tittle, status } = this.props;
 
     return (
-      <div className="row">
-        <div className="col-lg-6">
-         <li className='list-group-item action-element'>
-            <span>{id}: Tittle:  {tittle} Status:   {status}</span>
+      <div >
+        <div className="col-lg-12">
+         <li className="list-group-item action-element  col-lg-12">
+            <span className="col-lg-5">{id}: Tittle:  {tittle}</span><span className="col-lg-7">Status:   {status}</span><span onClick={(e) => this.handleRemoveButtonClick(e)} className={'pull-right glyphicon glyphicon-trash action-icon'}/>
          </li>
         </div>
       </div>

@@ -10,14 +10,15 @@ export default class Campaign extends Component {
 
   render() {
 
-    const { campaigns } = this.props;
+    const { campaigns, onRemoveCampaign } = this.props;
 
     return (
       <div className="row">
-        <div className="col-lg-6">
-         <ul>
+        <div className="col-lg-12">
+          <h2 className="col-lg-12">Campaign</h2>
+          <ul>
             {
-              campaigns.map ((campaign) => <CampaignItem key={campaign.id} id={campaign.id} tittle={campaign.tittle} status={campaign.status} />)
+              campaigns.map ((campaign) => <CampaignItem key={campaign.id} id={campaign.id} tittle={campaign.tittle} status={campaign.status} onRemoveCampaign={onRemoveCampaign}/>)
             }
           </ul>
        </div>
@@ -28,4 +29,5 @@ export default class Campaign extends Component {
 
 Campaign.propTypes = {
   campaigns:PropTypes.array.isRequired,
+  onRemoveCampaign:PropTypes.func.isRequired
 };
