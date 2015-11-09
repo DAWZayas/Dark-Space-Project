@@ -9,19 +9,19 @@ export default class CampaignItem extends Component {
 
   handleRemoveButtonClick(e) {
     e.stopPropagation();
-    const { onRemoveCampaign} = this.props;
-    onRemoveCampaign(this.id);
+    const { onRemoveCampaign, campaign} = this.props;
+    onRemoveCampaign(campaign.id);
   }
 
   render() {
 
-    const { key, id, tittle, status } = this.props;
+    const { campaign } = this.props;
 
     return (
       <div >
         <div className="col-lg-12">
          <li className="list-group-item action-element  col-lg-12">
-            <span className="col-lg-5">{id}: Tittle:  {tittle}</span><span className="col-lg-7">Status:   {status}</span><span onClick={(e) => this.handleRemoveButtonClick(e)} className={'pull-right glyphicon glyphicon-trash action-icon'}/>
+            <span className="col-lg-5">{campaign.id}: Title:  {campaign.title}</span><span className="col-lg-7">Status:   {campaign.status}</span><span onClick={(e) => this.handleRemoveButtonClick(e)} className={'pull-right glyphicon glyphicon-trash action-icon'}/>
          </li>
         </div>
       </div>
@@ -30,8 +30,6 @@ export default class CampaignItem extends Component {
 }
 
 CampaignItem.propTypes = {
-  key: PropTypes.number,
-  tittle: PropTypes.string,
-  id: PropTypes.number,
-  status: PropTypes.string,
+  campaign: PropTypes.object.isRequired,
+  onRemoveCampaign: PropTypes.func.isRequired
 };

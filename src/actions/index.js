@@ -10,6 +10,5 @@ export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
  */
 
 export function removeCampaign(idCampaign) {
-    return { type: REMOVE_CAMPAIGN, idCampaign, redirect: '/'
-  };
+    return { type: REMOVE_CAMPAIGN, idCampaign };
 }

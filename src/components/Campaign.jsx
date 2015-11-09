@@ -18,7 +18,7 @@ export default class Campaign extends Component {
           <h2 className="col-lg-12">Campaign</h2>
           <ul>
             {
-              campaigns.map ((campaign) => <CampaignItem key={campaign.id} id={campaign.id} tittle={campaign.tittle} status={campaign.status} onRemoveCampaign={onRemoveCampaign}/>)
+              campaigns.map( (campaigns, index) => <CampaignItem key={index} campaign={campaigns} onRemoveCampaign={onRemoveCampaign} />)
             }
           </ul>
        </div>
@@ -28,6 +28,10 @@ export default class Campaign extends Component {
 }
 
 Campaign.propTypes = {
-  campaigns:PropTypes.array.isRequired,
+  campaigns:PropTypes.array,
   onRemoveCampaign:PropTypes.func.isRequired
+};
+
+Campaign.defaultProps = {
+  campaigns: []
 };
