@@ -18,8 +18,6 @@ export default class App extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="navbar-brand">Dark Space Project</span>
             </div>
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>
