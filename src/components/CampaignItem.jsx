@@ -9,11 +9,15 @@ export default class CampaignItem extends Component {
 
   render() {
 
-    const { key, id, tittle } = this.props;
+    const { key, id, tittle, status } = this.props;
 
     return (
-      <div>
-        <span>{id}{tittle}</span>
+      <div className="row">
+        <div className="col-lg-6">
+         <li className='list-group-item action-element'>
+            <span>{id}: Tittle:  {tittle} Status:   {status}</span>
+         </li>
+        </div>
       </div>
     );
   }
@@ -23,4 +27,5 @@ CampaignItem.propTypes = {
   key: PropTypes.number,
   tittle: PropTypes.string,
   id: PropTypes.number,
+  status: PropTypes.string,
 };

@@ -13,16 +13,19 @@ export default class Campaign extends Component {
     const { campaigns } = this.props;
 
     return (
-      <div>
-        <h1>Campaign</h1>
-        {
-        campaigns.map ((campaign) => <CampaignItem key={campaign.id} id={campaign.id} tittle={campaign.tittle} />)
-        }
+      <div className="row">
+        <div className="col-lg-6">
+         <ul>
+            {
+              campaigns.map ((campaign) => <CampaignItem key={campaign.id} id={campaign.id} tittle={campaign.tittle} status={campaign.status} />)
+            }
+          </ul>
+       </div>
       </div>
     );
   }
 }
 
 Campaign.propTypes = {
-  campaigns: PropTypes.array.isRequired,
+  campaigns:PropTypes.array.isRequired,
 };
