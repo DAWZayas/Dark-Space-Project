@@ -3,9 +3,9 @@
 }
 
 .list-group-item:hover {
-  z-index: 2;
+  z-index: 5;
   color: #fff;
-  background-color: #337ab7;
+  background-color: #28567c;
   border-color: #337ab7;
 }
 
