@@ -5,7 +5,8 @@ function addCampaign(state, title) {
   return state.concat({
     id: id,
     title: title,
-    status: 'fail'
+    status: 'fail',
+    percentage: 30
   });
 }
 

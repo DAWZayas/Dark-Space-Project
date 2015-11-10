@@ -11,7 +11,7 @@ export default class Tutorial extends Component {
 
     return (
       <div>
-        <h1>Tutorial</h1>
+        <h2 className="col-xs-">Tutorial</h2>
       </div>
     );
   }

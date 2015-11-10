@@ -23,3 +23,19 @@
   padding-left: 55px;
   padding-right: 15px;
 }
+
+.linkButton{
+  color: #fff;
+}
+
+.linkButton:hover{
+  color: #fff;
+}
+
+.setPadding{
+  padding-top: 10px ;
+}
+
+.spanProgress{
+  color:#28567c;
+}
