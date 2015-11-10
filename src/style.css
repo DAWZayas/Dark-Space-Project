@@ -13,9 +13,6 @@
   display: inherit;
 }
 
-.list-group-item{
-  padding-left: 563px;
-}
 
 .input-group{
   padding-top: 25px ;
@@ -37,5 +34,11 @@
 }
 
 .spanProgress{
-  color:#28567c;
+  color:black;
+  padding-left: 5px;
+}
+
+.titlePadding{
+  padding-bottom: 25px;
+  padding-left: 35px;
 }

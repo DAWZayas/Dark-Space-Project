@@ -10,7 +10,7 @@ export default class Points extends Component {
   render() {
 
     return (
-      <div>
+      <div className="titlePadding">
         <h2 className="col-xs-12">Points</h2>
       </div>
     );

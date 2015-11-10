@@ -10,8 +10,8 @@ export default class Tutorial extends Component {
   render() {
 
     return (
-      <div>
-        <h2 className="col-xs-">Tutorial</h2>
+      <div className="titlePadding">
+        <h2 className="titlePadding col-xs-12">Tutorial</h2>
       </div>
     );
   }
