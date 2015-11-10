@@ -10,6 +10,17 @@ export default class Campaign extends Component {
     };
   }
 
+  handleAddButtonClick() {
+    const { onAddCampaign } = this.props;
+    const node = this.refs.title;
+    const title =  node.value.trim();
+    onAddCampaign(title);
+    node.value = '';
+    this.setState({
+      addDisabled: true
+    });
+  }
+
     handleOnChangeTitle() {
 
     const node = this.refs.title;
