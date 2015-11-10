@@ -1,7 +1,11 @@
 import { REMOVE_CAMPAIGN } from '../actions';
 
 function removeCampaign(state, idCampaign) {
-  return state.filter(mission => mission.id !== idCampaign);
+  const newState = state.filter(mission => mission.id !== idCampaign);
+  for (let i = 0; i < newState.length; i++) {
+    newState[i].id = (i + 1 );
+  }
+  return newState;
 }
 
 export default function campaignReducer(state = [], action) {
