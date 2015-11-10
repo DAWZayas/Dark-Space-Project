@@ -12,3 +12,14 @@
 .list-group-item:hover .action-icon {
   display: inherit;
 }
+
+.list-group-item{
+  padding-left: 563px;
+}
+
+.input-group{
+  padding-top: 25px ;
+  padding-bottom: 25px;
+  padding-left: 55px;
+  padding-right: 15px;
+}
