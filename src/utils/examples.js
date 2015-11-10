@@ -7,7 +7,7 @@ export const campaign = [
   {
     id: 2,
     title: 'Mision two: xxxxx',
-    status: 'fail'
+    status: 'success'
   },
   {
     id: 3,
