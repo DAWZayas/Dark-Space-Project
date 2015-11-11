@@ -18,20 +18,19 @@ export default class Points extends Component {
           <div className="titlePadding">
             <h2 className="col-xs-12">Points</h2>
           </div>
-        </div>
         <ul>
             {
                points.map( (points, index) => <PointsItem key={index} point={points} />)
             }
           </ul>
+        </div>
       </div>
     );
   }
 }
 
-
-Points.propTypes = {
-  points:PropTypes.array.isRequired
+Points.PropTypes = {
+  points: PropTypes.array.isRequired
 };
 
 Points.defaultProps = {
