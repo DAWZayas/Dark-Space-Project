@@ -1,4 +1,3 @@
-export default function pollReducer(state = []) {
+export default function playerFleetReducer(state = []) {
 		return state;
   }
-

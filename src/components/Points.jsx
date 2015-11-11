@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import PointsItem from './PointsItem';
 
 export default class Points extends Component {
 
@@ -9,6 +10,8 @@ export default class Points extends Component {
 
   render() {
 
+    const { points } = this.props;
+
     return (
       <div className="row">
         <div className="col-xs-12">
@@ -16,8 +19,22 @@ export default class Points extends Component {
             <h2 className="col-xs-12">Points</h2>
           </div>
         </div>
+        <ul>
+            {
+               points.map( (points, index) => <PointsItem key={index} point={points} />)
+            }
+          </ul>
       </div>
     );
   }
 }
+
+
+Points.propTypes = {
+  points:PropTypes.array.isRequired
+};
+
+Points.defaultProps = {
+  points: []
+};
 

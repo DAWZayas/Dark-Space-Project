@@ -5,7 +5,7 @@ import Points from '../components/Points';
 
 function mapStateToProps(state) {
   return {
-    polls: state.polls
+    points: state.points
   };
 }
 
