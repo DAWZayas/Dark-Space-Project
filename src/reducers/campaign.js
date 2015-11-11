@@ -6,7 +6,27 @@ function addCampaign(state, title) {
     id: id,
     title: title,
     status: 'fail',
-    percentage: 30
+    percentage: 0,
+    playerFleet:[
+      {
+        id: 3,
+        name:'Tie Interceptor',
+        damage : 3,
+        agility : 3,
+        hull : 3,
+        shields : 0,
+        points : 18
+      },
+      {
+        id: 4,
+        name:'Tie Fighter',
+        damage : 2,
+        agility : 3,
+        hull : 3,
+        shields : 0,
+        points : 12
+      }
+    ]
   });
 }
 
