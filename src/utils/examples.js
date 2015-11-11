@@ -52,6 +52,20 @@ export const playerFleet = [
   }
 ];
 
+export const points = [
+  {
+    id: 0,
+    name: 'David',
+    userpoints: '15'
+  },
+  {
+    id: 1,
+    name: 'Alex',
+    userpoints: '10'
+  }
+];
+
 export const initialState = {
   campaign, playerFleet
 };
+

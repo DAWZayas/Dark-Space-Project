@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import PointsItem from './PointsItem';
 
 export default class Points extends Component {
 
@@ -9,11 +10,23 @@ export default class Points extends Component {
 
   render() {
 
+    const { points } = this.props;
+
     return (
       <div className="titlePadding">
         <h2 className="col-xs-12">Points</h2>
+        <ul>
+            {
+               points.map( (points, index) => <PointsItem key={index} point={points.userpoints} />)
+            }
+          </ul>
       </div>
     );
   }
 }
+
+
+Points.defaultProps = {
+  points: []
+};
 
