@@ -66,6 +66,6 @@ export const points = [
 ];
 
 export const initialState = {
-  campaign, playerFleet
+  campaign, playerFleet, points
 };
 

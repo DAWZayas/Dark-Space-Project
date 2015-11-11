@@ -17,7 +17,7 @@ export default class Points extends Component {
         <h2 className="col-xs-12">Points</h2>
         <ul>
             {
-               points.map( (points, index) => <PointsItem key={index} point={points.userpoints} />)
+               points.map( (points, index) => <PointsItem key={index} point={points} />)
             }
           </ul>
       </div>
@@ -25,6 +25,10 @@ export default class Points extends Component {
   }
 }
 
+
+Points.PropTypes = {
+  points: PropTypes.array.isRequired
+};
 
 Points.defaultProps = {
   points: []
