@@ -19,6 +19,7 @@ export default class Points extends Component {
             {
                points.map( (points, index) => <PointsItem key={index} point={points.userpoints} />)
             }
+            <li>Prueba</li>
           </ul>
       </div>
     );
