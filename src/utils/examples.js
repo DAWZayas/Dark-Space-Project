@@ -143,7 +143,7 @@ export const playerFleet = [
   },
   {
     id: 2,
-    name:'Y - Wing',
+    name:'B - Wing',
     damage : 3,
     agility : 1,
     hull : 3,
@@ -186,7 +186,64 @@ export const points = [
   }
 ];
 
+export const naves = [
+  {
+    id: 1,
+    name:'X - Wing',
+    damage : 2,
+    agility : 2,
+    hull : 3,
+    shields : 2,
+    points : 21
+  },
+  {
+    id: 2,
+    name:'Y - Wing',
+    damage : 3,
+    agility : 1,
+    hull : 3,
+    shields : 5,
+    points : 22
+  },  {
+    id: 3,
+    name:'B - Wing',
+    damage : 2,
+    agility : 2,
+    hull : 3,
+    shields : 2,
+    points : 21
+  },
+  {
+    id: 4,
+    name:'Tie Interceptor',
+    damage : 3,
+    agility : 3,
+    hull : 3,
+    shields : 0,
+    points : 18
+  },
+  {
+    id: 5,
+    name:'Tie Fighter',
+    damage : 2,
+    agility : 3,
+    hull : 3,
+    shields : 0,
+    points : 12
+  },
+  {
+    id: 6,
+    name:'tie advanced',
+    damage : 3,
+    agility : 1,
+    hull : 3,
+    shields : 5,
+    points : 22
+  }
+
+];
+
 export const initialState = {
-  campaign, playerFleet, enemyPlayerFleet, points
+  campaign, playerFleet, enemyPlayerFleet, naves, points
 };
 
