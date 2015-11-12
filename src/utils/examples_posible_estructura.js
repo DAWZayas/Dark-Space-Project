@@ -1,4 +1,4 @@
-export const campaign = [
+/*var campaign = [
   {
     id: 1,
     title: 'Battle of Chandrila',
@@ -30,11 +30,12 @@ export const campaign = [
     percentage: 0
   }
 ];
-/*
+
+
 shield "escudo", no deja queun golpe inferior al shield power le haga daño a la nave 
   precision, probabilidad de hacer el doble de daño por disparo
 */
-export const playerFleet = [
+var playerFleet = [
   {
     id      : 1,
     type    :'cruise',
@@ -47,8 +48,20 @@ export const playerFleet = [
 
 
   },
-  {
+    {
     id      : 2,
+    type    :'cruise',
+    shield  : 'yes',
+    shield_power : 150,
+    alive   : 3000,
+    damege  : 150,
+    shots   : 8,
+    precision : 20
+
+
+  },
+  {
+    id      : 3,
     type    :'destroyer',
     shield  : 'yes',
     shield_power : 100,
@@ -58,7 +71,17 @@ export const playerFleet = [
     precision : 40
   },
   {
-    id: 3,
+    id: 4,
+    type    :'fighter',
+    shield  : 'no',
+    shield_power : 0,
+    alive   : 100,
+    shots   : 2,
+    damage  : 90,
+    precision : 15
+  },
+    {
+    id: 5,
     type    :'fighter',
     shield  : 'no',
     shield_power : 0,
@@ -68,8 +91,76 @@ export const playerFleet = [
     precision : 15
   }
 ];
+var dummyFleet = [
+  {
+    id      : 1,
+    type    :'cruise',
+    shield  : 'yes',
+    shield_power : 150,
+    alive   : 3000,
+    damege  : 150,
+    shots   : 8,
+    precision : 20
 
-export const playerDefenses = [
+
+  },
+    {
+    id      : 2,
+    type    :'cruise',
+    shield  : 'yes',
+    shield_power : 150,
+    alive   : 3000,
+    damege  : 150,
+    shots   : 8,
+    precision : 20
+
+
+  }, 
+  {
+    id      : 3,
+    type    :'cruise',
+    shield  : 'yes',
+    shield_power : 150,
+    alive   : 3000,
+    damege  : 150,
+    shots   : 8,
+    precision : 20
+
+
+  },
+  {
+    id      : 4,
+    type    :'destroyer',
+    shield  : 'yes',
+    shield_power : 100,
+    alive   : 1000,
+    shots   : 4,
+    damage  : 200,
+    precision : 40
+  },
+  {
+    id:5,
+    type    :'fighter',
+    shield  : 'no',
+    shield_power : 0,
+    alive   : 100,
+    shots   : 2,
+    damage  : 90,
+    precision : 15
+  },
+    {
+    id: 6,
+    type    :'fighter',
+    shield  : 'no',
+    shield_power : 0,
+    alive   : 100,
+    shots   : 2,
+    damage  : 90,
+    precision : 15
+  }
+];
+/*
+var playerDefenses = [
     {
     id      : 1,
     type    :'dome',
@@ -105,19 +196,67 @@ export const playerDefenses = [
   }
 ];
 
-
-
-export const initialState = {
-  campaign, playerFleet, playerDefenses
-};
-
-/*
 \\\\\\batalla espacial//////
-1º funcion random, si es par empieza el jugador, si es b empieza la maquina
-2º ataque (por cada unidad, y cada disparo de la misma)
-   2.1  calcular un numero de 1 al 100 si sale un numero del 1 al numero de la variable precision es critico
+*/
+//1º funcion random, si es par empieza el jugador, si es b empieza la maquina
 
-            var precision = 40;
+
+function initial(){
+              var rand = getRandomInt(1,100);
+              var decision = 0;
+              if ( rand > 50){
+                  decision = 1;
+              }else if(rand < 50 ){
+                  decision = 2;
+              }else if(rand == 50){
+
+                decision = initial();
+              }
+            return decision;
+          }
+
+
+// devuelve 1 o 2 dependiendo quien inicia la atalla
+console.log(var attacker = initial() )
+
+//turno
+function Battle(attacker){
+ if (attacker == 1){
+      var Turno = playerFleet;
+    }else if(attacker == 2){
+      var Turno = dummyFleet;
+    }
+
+
+    
+}
+    
+
+
+//2º ataque (por cada unidad, y cada disparo de la misma)
+while (var i = 0; i <= turno.length ; i++){
+    Turno[i][]
+
+}
+
+
+  // 2.1  calcular un numero de 1 al 100 si sale un numero del 1 al numero de la variable precision es critico
+
+          // var precision = 40;
+          function initial(){
+              var rand = getRandomInt(1,100);
+              var decision = 0;
+              if ( rand > 50){
+                  decision = 1;
+              }else if(rand < 50 ){
+                  decision = 2;
+              }else if(rand =50){
+
+                desision = initial();
+              }
+            return desision;
+          }
+
             function getRandomInt(min, max) {
                 return Math.floor((Math.random() * 100) + 1);
             }
@@ -131,15 +270,23 @@ export const initialState = {
                return false;
                }
             }
+
             console.log(critical_attack(getRandomInt(1,100),precision));
-    2.1 ataca a una unidad del array enemigo de naves
+
+
+   // 2.1 ataca a una unidad del array enemigo de naves
 
             console.log(getRandomInt(1,array.length));
-              le hara a la unidad objetivo el daño de la atacante si critical_attack sale false o el doble si sale true
-              (el daño se restara a shield power y despues a la vida de la unidad atacada).
-3º si la vida todal de la la vida de la flota se reduce a un 30% del original 
+ //             le hara a la unidad objetivo el daño de la atacante si critical_attack sale false o el doble si sale true
+ //             (el daño se restara a shield power y despues a la vida de la unidad atacada).
+//3º si la vida todal de la la vida de la flota se reduce a un 30% del original 
 
 
+
+
+
+
+/*
 \\\\\\batalla tierra//////
 
 
