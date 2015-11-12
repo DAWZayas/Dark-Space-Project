@@ -5,17 +5,33 @@ export default class SelectPlayerFleet extends Component {
   constructor(props) {
     super(props);
 this.state = {
-      points: 0
+     points:0
     };
   }
 
-  handleOnSelectChange() {
-    const xWingsPoints = this.refs.Xwing.options.selectedIndex;
-    const yWingsPoints = this.refs.Ywing.options.selectedIndex;
-    const bWingsPoints = this.refs.Bwing.options.selectedIndex;
-    this.state.points = xWingsPoints + yWingsPoints + bWingsPoints;
-    console.log(this.state.points);
-  }
+  handleOnSelectChangePoints() {
+
+    const { campaignState, playerFleetState, enemyPlayerFleetState, navesState, pointsState } = this.props;
+
+    const xWingsNumber = this.refs.Xwing.options.selectedIndex;
+    const yWingsNumber = this.refs.Ywing.options.selectedIndex;
+    const bWingsNumber = this.refs.Bwing.options.selectedIndex;
+    const xWing = navesState[0];
+    const yWing = navesState[1];
+    const bWing = navesState[2];
+
+    let totalPoints = (xWing.points * xWingsNumber) + (yWing.points * yWingsNumber) + (bWing.points * bWingsNumber);
+
+    this.setState({
+      points : totalPoints
+    });
+
+    console.log(xWing);
+    console.log(totalPoints);
+    console.log(this.state);
+
+    }
+
 
   render() {
 
@@ -27,9 +43,14 @@ this.state = {
           <div className="titlePadding">
             <h2 className="col-xs-12">SelectPlayerFleet</h2>
           </div>
+          <div className="input-group">
+            <span className="input-group-addon" id="basic-addon1">Points</span>
+            <input type="text" className="form-control" value={this.state.points} ref="pointsValue" />
+          </div>
+
           <div className="input-group input-group-xs">
             <span className="input-group-addon">X - Wings</span>
-              <select className="form-control" ref="Xwing" onChange={e => this.handleOnSelectChange(e)}>
+              <select className="form-control" ref="Xwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
@@ -38,7 +59,7 @@ this.state = {
           </div>
           <div className="input-group input-group-xs">
             <span className="input-group-addon">Y - Wings</span>
-              <select className="form-control" ref="Ywing" onChange={e => this.handleOnSelectChange(e)}>
+              <select className="form-control" ref="Ywing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
@@ -47,7 +68,7 @@ this.state = {
           </div>
           <div className="input-group input-group-xs">
             <span className="input-group-addon">B - Wings</span>
-              <select className="form-control" ref="Bwing" onChange={e => this.handleOnSelectChange(e)}>
+              <select className="form-control" ref="Bwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
