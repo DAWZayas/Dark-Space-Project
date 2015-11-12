@@ -5,6 +5,11 @@ import SelectPlayerFleet from '../components/SelectPlayerFleet';
 
 function mapStateToProps(state) {
   return {
+		campaignState : state.campaign,
+		playerFleetState : state.playerFleet,
+		enemyPlayerFleetState : state.enemyPlayerFleet,
+		navesState : state.naves,
+		pointsState : state.points
   };
 }
 
