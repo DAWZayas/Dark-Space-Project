@@ -3,8 +3,14 @@
 shield "escudo", no deja queun golpe inferior al shield power le haga daño a la nave 
   precision, probabilidad de hacer el doble de daño por disparo
 */
+var NavPunt[
+//nombres y puntuaciones...........  
+]
 var playerFleet = [
-  
+      {
+    type : "playerFleet",
+    alife: 0
+  }
     {
     type    :'cruise',
     shield_power : 150,
@@ -55,6 +61,10 @@ var playerFleet = [
   }
 ];
 var dummyFleet = [
+  {
+    type : "dummyFleet";
+    alife: 0
+  }
   {
     id      : 1,
     type    :'cruise',
@@ -162,7 +172,7 @@ function initial(){
             return decision;
           }
 function round(attacker,defense){
-    while (var i = 0; i <= attacker.length ; i++){
+    while (var i = 1; i <= attacker.length ; i++){
           if (attacker[i].alive !== 0){
                 var damage     = attacker[i].damage;
                 var precision  = attacker[i].precision;
@@ -202,7 +212,7 @@ function actu_nav(nav_target,defense,alive){
   return defense;
 }
 function target(defense){
-  nav_target=getRandomInt(0,playerFleet.length)-1);
+  nav_target=getRandomInt(1,playerFleet.length));
 
   return nav_target;
 }
@@ -233,4 +243,22 @@ function initial(){
    }else{
      return false;
      }
+  }
+
+  function Show_result(arr,arrpunt){
+    var alive=0;
+    var type="";
+    var ptotal=0;
+    for (var i = 0; i >= arr.length ; i++) {
+
+            alive=arr[i].alive;
+       if (alive == 0 ){
+        var type=arr[i].type;
+       }
+       if(type !=""){
+        ptotal=ptotal+arrpunt[type].pt;
+        //creararray con lospuntospor naves
+       }
+
+    };
   }
