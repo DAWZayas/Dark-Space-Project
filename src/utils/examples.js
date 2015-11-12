@@ -246,4 +246,3 @@ export const naves = [
 export const initialState = {
   campaign, playerFleet, enemyPlayerFleet, naves, points
 };
-

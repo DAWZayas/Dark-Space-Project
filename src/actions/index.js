@@ -6,6 +6,7 @@ import { pushState } from 'redux-router';
 
 export const ADD_CAMPAIGN = 'ADD_CAMPAIGN';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
+export const PREPARE_FIGHT = 'PREPARE_FIGHT';
 
 /*
  * Campaign action creators
@@ -17,4 +18,12 @@ export function addCampaign(title) {
 
 export function removeCampaign(idCampaign) {
     return { type: REMOVE_CAMPAIGN, idCampaign };
+}
+
+/*
+ * Player fleet action creators
+ */
+
+export function prepareToFight(playerSpaceFleetArray){
+		return { type: PREPARE_FIGHT, playerSpaceFleetArray};
 }

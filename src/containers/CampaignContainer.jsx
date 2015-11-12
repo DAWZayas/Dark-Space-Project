@@ -12,8 +12,8 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
-		onAddCampaign:title => dispatch(addCampaign(title)),
-    onRemoveCampaign:(idCampaign)=> dispatch(removeCampaign(idCampaign))
+		onAddCampaign : title => dispatch(addCampaign(title)),
+    onRemoveCampaign : idCampaign => dispatch(removeCampaign(idCampaign))
   };
 }
 
