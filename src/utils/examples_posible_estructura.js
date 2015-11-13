@@ -249,40 +249,40 @@ function Battle(playerFleet,dummyFleet,NavPunt,turns){
      let att = initial();
  
  if (att === 1){
-     var attacker = playerFleet;
-     var  defense = dummyFleet;
-      
-    }else{
-    var  attacker = dummyFleet;
-    var  defense = playerFleet;
-    }
-
- let turn=1;
-
-    while (turn <= turns ){
-     let aux_at=attacker;
-     let aux_def=defense;
-
-      defense=aux_at;
-      attacker=aux_def;
-
-      defense=round(attacker,defense);
-
-      turn++;
-    }
-let result1 = Show_result(attacker,defense,NavPunt);
-let result2 = Show_result(defense,attacker,NavPunt);
-    
-
-      if (result1[0].name == "dummyFleet"){
-       return result2[0].point-result1[0].point;
+        var attacker = playerFleet;
+        var  defense = dummyFleet;
+        
       }else{
-       return result1[0].point-result2[0].point;
+        var  attacker = dummyFleet;
+        var  defense = playerFleet;
       }
-   
+
+   let turn=1;
+
+      while (turn <= turns ){
+        let aux_at=attacker;
+        let aux_def=defense;
+
+        defense=aux_at;
+        attacker=aux_def;
+
+        defense=round(attacker,defense);
+
+        turn++;
+      }
+  let result1 = Show_result(attacker,defense,NavPunt);
+  let result2 = Show_result(defense,attacker,NavPunt);
+      
+
+        if (result1[0].name == "dummyFleet"){
+          return result2[0].point-result1[0].point;
+        }else{
+          return result1[0].point-result2[0].point;
+        }
+     
 }
 function Battle_all(playerFleet,dummyFleet,NavPunt,turns){
-     let att = initial();
+  let att = initial();
  
  if (att === 1){
      var attacker = playerFleet;
@@ -306,8 +306,8 @@ function Battle_all(playerFleet,dummyFleet,NavPunt,turns){
 
       turn++;
     }
-let result1 = Show_result(attacker,defense,NavPunt);
-let result2 = Show_result(defense,attacker,NavPunt);
+  let result1 = Show_result(attacker,defense,NavPunt);
+  let result2 = Show_result(defense,attacker,NavPunt);
     
 
       arresult = [
@@ -321,13 +321,13 @@ let result2 = Show_result(defense,attacker,NavPunt);
      {
         name: result2[0].name,
         point: result2[0].point,
-      d_figter: result2[0].d_fighter,
-      d_cruise: result2[0].d_cruise,
-      d_destroyer: result2[0].d_destroyer
+        d_figter: result2[0].d_fighter,
+        d_cruise: result2[0].d_cruise,
+        d_destroyer: result2[0].d_destroyer
       }
 
     ];
- return arresult;
+  return arresult;
 
 
 }
@@ -383,11 +383,11 @@ function attac(damage,defense,nav_target){
   return defense;
 }
 function actu_nav(nav_target,defense,alive_aux){
-  defense[nav_target].alive=alive_aux;
+    defense[nav_target].alive=alive_aux;
   return defense;
 }
 function target(defense){
-  nav_target=getRandomInt(1,playerFleet.length -1);
+    nav_target=getRandomInt(1,playerFleet.length -1);
 
   return nav_target;
 }
@@ -403,7 +403,7 @@ function initial(){
 
       decision = initial();
     }
-  return decision;
+    return decision;
 }
 
 function getRandomInt(min, max) {
@@ -420,26 +420,24 @@ function getRandomInt(min, max) {
   }
 
   function Show_result(arrat,arrdf,NavPunt){
-   let alive=0;
-   let type="";
-   let ptotal=0;
+    let alive=0;
+    let type="";
+    let ptotal=0;
     let t_d_fighter=0;
-   let t_d_destroyer=0;
-   let t_d_cruise=0;
+    let t_d_destroyer=0;
+    let t_d_cruise=0;
     for (let a = 1; a < arrdf.length ; a++) {
 
           //var  alive_aux=arrdf[i].alive;
        if (arrdf[a].alive === 0 ){
 
          let q= arrdf[a].type;
-            
-            if (q=="fighter"){
+        
+           if (q=="fighter"){
                t_d_fighter++;
-            };
-            if (q=="destroyer"){
+            }else if (q=="destroyer"){
                t_d_destroyer++;
-            };
-            if (q=="cruise"){
+            }else if (q=="cruise"){
                t_d_cruise++;
             };
 
@@ -475,7 +473,7 @@ return  Punt;
 //console.log(Show_result(dummyFleet,playerFleet,NavPunt));
 //batalla, simple, devuelve un numero positivo como puntuacion si gana el jugador.
 // y un numero negativo si gana la maquina
-console.log(Battle(playerFleet,dummyFleet,NavPunt,8));
+//console.log(Battle(playerFleet,dummyFleet,NavPunt,8));
 
 //batalla, devuelve todos los datos de eliminiaciones y puntuaciones 
 console.log(Battle_all(playerFleet,dummyFleet,NavPunt,8));
