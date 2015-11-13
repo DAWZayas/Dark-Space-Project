@@ -24,7 +24,7 @@ export default class CampaignItem extends Component {
           <li className="list-group-item action-element  col-xs-12">
             <Link to={"/select"} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-5">Mission {campaign.id}:  {campaign.title}</span></Link>
             <span className="col-xs-3">Status:  {(campaign.status === "success") ? <span className='glyphicon glyphicon-ok text-success'></span> : <span className='glyphicon glyphicon-remove text-danger'></span>}</span>
-            <div className="col-xs-1"><Link to={"/select"} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div>
+            <div className="col-xs-1"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div>
             <div className="col-xs-1"><span  onClick={(e) => this.handleRemoveButtonClick(e)} className={'glyphicon glyphicon-trash action-icon'}/></div>
             <div className="setPadding col-xs-12">
               <div className="progress">
