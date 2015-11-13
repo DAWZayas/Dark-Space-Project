@@ -245,22 +245,54 @@ var dummyFleet = [
 
 //\\\\\\batalla espacial//////
 //turno
-
 function Battle(playerFleet,dummyFleet,NavPunt,turns){
      let att = initial();
  
- /*if (att == 1){
-     let attacker = playerFleet;
-     let  defense = dummyFleet;
+ if (att === 1){
+     var attacker = playerFleet;
+     var  defense = dummyFleet;
       
     }else{
-    let  attacker = dummyFleet;
-    let  defense = playerFleet;
+    var  attacker = dummyFleet;
+    var  defense = playerFleet;
     }
-*/
-   let  attacker = dummyFleet;
-    let  defense = playerFleet;
-  
+
+ let turn=1;
+
+    while (turn <= turns ){
+     let aux_at=attacker;
+     let aux_def=defense;
+
+      defense=aux_at;
+      attacker=aux_def;
+
+      defense=round(attacker,defense);
+
+      turn++;
+    }
+let result1 = Show_result(attacker,defense,NavPunt);
+let result2 = Show_result(defense,attacker,NavPunt);
+    
+
+      if (result1[0].name == "dummyFleet"){
+       return result2[0].point-result1[0].point;
+      }else{
+       return result1[0].point-result2[0].point;
+      }
+   
+}
+function Battle_all(playerFleet,dummyFleet,NavPunt,turns){
+     let att = initial();
+ 
+ if (att === 1){
+     var attacker = playerFleet;
+     var  defense = dummyFleet;
+      
+    }else{
+    var  attacker = dummyFleet;
+    var  defense = playerFleet;
+    }
+
  let turn=1;
 
     while (turn <= turns ){
@@ -303,9 +335,9 @@ function initial(){
               let rand = getRandomInt(1,100);
               let decision = 0;
               if ( rand > 50){
-                  decision = "playerFleet";
+                  decision = 1;
               }else if(rand < 50 ){
-                  decision = "dummyFleet";
+                  decision = 2;
               }else if(rand == 50){
 
                 decision = initial();
@@ -333,8 +365,7 @@ function round(attacker,defense){
 }
 
 function attac(damage,defense,nav_target){
-           console.log(nav_target);
-           console.log(defense[nav_target].shield_power);
+
           let shield  =defense[nav_target].shield_power;
           let alive   =defense[nav_target].alive;
             if (damage > shield){
@@ -392,7 +423,7 @@ function getRandomInt(min, max) {
    let alive=0;
    let type="";
    let ptotal=0;
-let t_d_fighter=0;
+    let t_d_fighter=0;
    let t_d_destroyer=0;
    let t_d_cruise=0;
     for (let a = 1; a < arrdf.length ; a++) {
@@ -442,4 +473,9 @@ return  Punt;
 //console.log(target(dummyFleet));
 //console.log(critical_attack(getRandomInt(1,100),30));
 //console.log(Show_result(dummyFleet,playerFleet,NavPunt));
+//batalla, simple, devuelve un numero positivo como puntuacion si gana el jugador.
+// y un numero negativo si gana la maquina
 console.log(Battle(playerFleet,dummyFleet,NavPunt,8));
+
+//batalla, devuelve todos los datos de eliminiaciones y puntuaciones 
+console.log(Battle_all(playerFleet,dummyFleet,NavPunt,8));
