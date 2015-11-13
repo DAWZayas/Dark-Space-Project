@@ -6,6 +6,7 @@ import CampaignContainer from './containers/CampaignContainer';
 import PointsContainer from './containers/PointsContainer';
 import TutorialContainer from './containers/TutorialContainer';
 import SelectPlayerFleetContainer from './containers/SelectPlayerFleetContainer';
+import SelectEnemyFleetContainer from './containers/SelectEnemyFleetContainer';
 
 export default (
   <Route path="" component={App} >
@@ -14,6 +15,7 @@ export default (
 		<Route path="points" component={PointsContainer} />
 		<Route path="tutorial" component={TutorialContainer} />
 		<Route path="select" component={SelectPlayerFleetContainer} />
+    <Route path="selectEnemy/:idCampaign" component={SelectEnemyFleetContainer} />
     <Redirect path="*" to="/" />
   </Route>
 );

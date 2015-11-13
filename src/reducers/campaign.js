@@ -1,4 +1,9 @@
-import { ADD_CAMPAIGN, REMOVE_CAMPAIGN } from '../actions';
+import { ADD_CAMPAIGN, REMOVE_CAMPAIGN, CHANGE_FLEET } from '../actions';
+
+function changeFleet(state, enemySpaceFleetArray, idCampaign) {
+  state[(idCampaign - 1)].playerFleet = enemySpaceFleetArray;
+  return state;
+}
 
 function addCampaign(state, title) {
   let id = (state.length + 1);
@@ -44,6 +49,8 @@ export default function campaignReducer(state = [], action) {
 				return addCampaign(state, action.title);
 			case REMOVE_CAMPAIGN:
 				return removeCampaign(state, action.idCampaign);
+      case CHANGE_FLEET:
+        return changeFleet(state, action.enemySpaceFleetArray, action.idCampaign);
 			default:
 				return state;
 			}
