@@ -35,7 +35,7 @@ export default class SelectEnemyFleet extends Component {
       enemySpaceFleetArray[i] = tieFighter;
       i++;
     }
-    for (let j = 0; j < tieAdvanced; j++) {
+    for (let j = 0; j < tieAdvancedNumber; j++) {
       enemySpaceFleetArray[i] = tieAdvanced;
       i++;
     }
@@ -46,6 +46,8 @@ export default class SelectEnemyFleet extends Component {
       pointsAlert : totalPoints > 100 ? true : false,
       addDisabled: enemySpaceFleetArray.length === 0 || totalPoints > 100 ? true : false
     });
+
+    console.log(enemySpaceFleetArray);
   }
 
   handleAddButtonClick(e) {
@@ -56,9 +58,9 @@ export default class SelectEnemyFleet extends Component {
     const tieInterceptorNumber = this.refs.tieInterceptor.options.selectedIndex;
     const tieFighterNumber = this.refs.tieFighter.options.selectedIndex;
     const tieAdvancedNumber = this.refs.tieAdvanced.options.selectedIndex;
-    const tieInterceptor = navesState[4];
-    const tieFighter = navesState[5];
-    const tieAdvanced = navesState[6];
+    const tieInterceptor = navesState[3];
+    const tieFighter = navesState[4];
+    const tieAdvanced = navesState[5];
 
     let enemySpaceFleetArray = [];
     let i = 0;
@@ -70,7 +72,7 @@ export default class SelectEnemyFleet extends Component {
       enemySpaceFleetArray[i] = tieFighter;
       i++;
     }
-    for (let j = 0; j < tieAdvanced; j++) {
+    for (let j = 0; j < tieAdvancedNumber; j++) {
       enemySpaceFleetArray[i] = tieAdvanced;
       i++;
     }

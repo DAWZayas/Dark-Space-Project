@@ -50,7 +50,8 @@ this.state = {
 
   handleAddButtonClick(e) {
     e.stopPropagation();
-    const { navesState, onPrepareToFight} = this.props;
+    const { navesState, campaignState, onPrepareToFight, onChangeEnemyFleet} = this.props;
+    const idCampaign = this.props.params.idCampaign;
 
     const xWingNumber = this.refs.Xwing.options.selectedIndex;
     const yWingNumber = this.refs.Ywing.options.selectedIndex;
@@ -76,6 +77,7 @@ this.state = {
     }
 
     onPrepareToFight(playerSpaceFleetArray);
+    onChangeEnemyFleet(campaignState[idCampaign - 1].playerFleet);
 
   }
 
@@ -143,6 +145,7 @@ SelectPlayerFleet.propTypes = {
   enemyPlayerFleetState:PropTypes.array.isRequired,
   navesState:PropTypes.array.isRequired,
   pointsState:PropTypes.array.isRequired,
-  onPrepareToFight: PropTypes.func.isRequired
+  onPrepareToFight: PropTypes.func.isRequired,
+  onChangeEnemyFleet:PropTypes.func.isRequired
 };
 

@@ -11,8 +11,8 @@ export default class PointsPerMission extends Component {
 
     const { point } = this.props;
     return (
-            <li className="list-group-item action-element  col-xs-12">
-                  <span className="col-xs-3">  Mission:  {point}</span>
+            <li className="col-xs-12">
+                  <span>  Mission:  {point}</span>
             </li>
     );
   }

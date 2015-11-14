@@ -8,6 +8,7 @@ export const ADD_CAMPAIGN = 'ADD_CAMPAIGN';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
 export const PREPARE_FIGHT = 'PREPARE_FIGHT';
 export const CHANGE_FLEET = 'CHANGE_FLEET';
+export const CHANGE_ENEMY_FLEET = 'CHANGE_ENEMY_FLEET';
 
 /*
  * Campaign action creators
@@ -38,3 +39,6 @@ export function prepareToFight(playerSpaceFleetArray){
  * Enemy fleet action creators
  */
 
+export function onChangeEnemyFleet(playerFleet){
+	return { type: CHANGE_ENEMY_FLEET, playerFleet};
+}

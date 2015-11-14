@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import SelectPlayerFleet from '../components/SelectPlayerFleet';
-import { prepareToFight } from '../actions';
+import { prepareToFight, onChangeEnemyFleet } from '../actions';
 
 
 function mapStateToProps(state) {
@@ -16,7 +16,8 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
-    onPrepareToFight : (playerSpaceFleetArray) => dispatch(prepareToFight(playerSpaceFleetArray))
+    onPrepareToFight : (playerSpaceFleetArray) => dispatch(prepareToFight(playerSpaceFleetArray)),
+    onChangeEnemyFleet : (playerFleet) => dispatch(onChangeEnemyFleet(playerFleet))
   };
 }
 

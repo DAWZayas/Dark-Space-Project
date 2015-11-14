@@ -14,7 +14,7 @@ export default (
 		<Route path="campaign" component={CampaignContainer} />
 		<Route path="points" component={PointsContainer} />
 		<Route path="tutorial" component={TutorialContainer} />
-		<Route path="select" component={SelectPlayerFleetContainer} />
+		<Route path="select/:idCampaign" component={SelectPlayerFleetContainer} />
     <Route path="selectEnemy/:idCampaign" component={SelectEnemyFleetContainer} />
     <Redirect path="*" to="/" />
   </Route>

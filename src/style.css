@@ -1,12 +1,13 @@
+
 .list-group-item .action-icon {
   display: none;
 }
 
 .list-group-item:hover {
   z-index: 5;
-  color: #fff;
-  background-color: #28567c;
-  border-color: #337ab7;
+  color: #333;
+  background-color: #eee;
+  border-color: #e7e7e7;
 }
 
 .list-group-item:hover .action-icon {
@@ -30,8 +31,8 @@
 }
 
 .titlePadding{
-  padding-bottom: 40px;
-  padding-left: 35px;
+  padding-bottom: 10px;
+  padding-left: 40px;
 }
 
 .panelPadding{
@@ -51,3 +52,8 @@
 .showlist:hover .pointsPerMission{
   display: inherit;
 }
+
+.userStyle .navbar{
+  margin-bottom: 0px;
+}
+

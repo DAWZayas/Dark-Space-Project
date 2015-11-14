@@ -247,7 +247,7 @@ export const naves = [
   },
   {
     id: 6,
-    name:'tie advanced',
+    name:'Tie advanced',
     damage : 3,
     agility : 1,
     hull : 3,
@@ -258,5 +258,5 @@ export const naves = [
 ];
 
 export const initialState = {
-  campaign, playerFleet, enemyPlayerFleet, naves, points
+  campaign, playerFleet, enemyPlayerFleet, points, naves
 };
