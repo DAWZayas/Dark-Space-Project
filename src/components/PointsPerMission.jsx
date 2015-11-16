@@ -9,7 +9,7 @@ export default class PointsPerMission extends Component {
 handleRemoveMissionPoints(e, id, pos) {
     e.stopPropagation();
     const { onRemoveMissionPoints} = this.props;
-    onRemoveMissionPoints(id, (pos-1));
+    onRemoveMissionPoints(id, (pos - 1));
   }
 
   render() {
