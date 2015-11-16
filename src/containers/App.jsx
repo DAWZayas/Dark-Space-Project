@@ -20,10 +20,10 @@ export default class App extends Component {
               <span className="icon-bar"></span>
             </div>
             <ul className="nav navbar-nav">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/campaign">Campaing</Link></li>
-              <li><Link to="/points">Points</Link></li>
-              <li><Link to="/tutorial">Tutorial</Link></li>
+              <li className="col-xs-3"><Link to="/">Home</Link></li>
+              <li className="col-xs-3"><Link to="/campaign">Campaing</Link></li>
+              <li className="col-xs-2"><Link to="/points">Points</Link></li>
+              <li className="col-xs-2"><Link to="/tutorial">Tutorial</Link></li>
             </ul>
           </div>
         </nav>
