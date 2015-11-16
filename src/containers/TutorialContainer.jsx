@@ -5,7 +5,7 @@ import Tutorial from '../components/Tutorial';
 
 function mapStateToProps(state) {
   return {
-    polls: state.polls
+    naves: state.naves
   };
 }
 
@@ -18,3 +18,4 @@ export default connect(
   mapStateToProps,
   mapActionsToProps
 )(Tutorial);
+
