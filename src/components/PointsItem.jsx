@@ -7,16 +7,25 @@ export default class PointsItem extends Component {
     super(props);
 }
 
+sumarray (array){
+  let result = 0 ;
+  for (let i = 0; i < array.length; i++ ){
+    result += array[i];
+  }
+  return result;
+}
 
   render() {
 
     const { point } = this.props;
+
+    let total = this.sumarray(point.missionpoints);
     return (
       <div className="showlist">
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
             <span className="col-xs-3">{point.name} </span>
-            <span className="col-xs-3">Points: {point.userpoints} </span>
+            <span className="col-xs-3">Points: {total} </span>
             <div className="pointsPerMission">
               <ul>
                 {
