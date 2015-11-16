@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import Points from '../components/Points';
+import { onRemoveMissionPoints } from '../actions';
 
 
 function mapStateToProps(state) {
@@ -11,6 +12,7 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
+    onRemoveMissionPoints : (id,pos) => dispatch(onRemoveMissionPoints(id,pos))
   };
 }
 

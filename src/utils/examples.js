@@ -190,7 +190,7 @@ export const points = [
     id: 2,
     name: 'Raul',
     userpoints: '5',
-    missionpoints:[100, 150, 200, 300 ]
+    missionpoints:[1, 15, 2, 3]
   },
   {
     id: 3,

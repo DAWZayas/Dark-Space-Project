@@ -9,6 +9,7 @@ export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
 export const PREPARE_FIGHT = 'PREPARE_FIGHT';
 export const CHANGE_FLEET = 'CHANGE_FLEET';
 export const CHANGE_ENEMY_FLEET = 'CHANGE_ENEMY_FLEET';
+export const ON_REMOVE_MISSION_POINTS = 'ON_REMOVE_MISSION_POINTS';
 
 /*
  * Campaign action creators
@@ -41,4 +42,12 @@ export function prepareToFight(playerSpaceFleetArray){
 
 export function onChangeEnemyFleet(playerFleet){
 	return { type: CHANGE_ENEMY_FLEET, playerFleet};
+}
+
+/*
+*Points action creator
+*/
+
+export function onRemoveMissionPoints(id, pos) {
+    return { type: ON_REMOVE_MISSION_POINTS, id, pos};
 }
