@@ -17,23 +17,23 @@ sumarray (array){
 
   render() {
 
-    const { point, onRemoveMissionPoints } = this.props;
+    const { points, id, onRemoveMissionPoints } = this.props;
 
-    let total = this.sumarray(point.missionpoints);
+    let total = this.sumarray(points[id].missionpoints);
     return (
       <div className="showlist">
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
-            <span className="col-xs-6">{point.name} </span>
+            <span className="col-xs-6">{points[id].name} </span>
             <span className="col-xs-6">Points: {total} </span>
             <div className="pointsPerMission">
               <ul className="col-xs-12">
                 {
-                      point.missionpoints.map( (points, index, id) => <PointsPerMission key={index} point={points} pos={index + 1} id={point.id} onRemoveMissionPoints={onRemoveMissionPoints} />)
+                      points[id].missionpoints.map( (point, index) => <PointsPerMission key={index} points={points} pos={index + 1} id={id} onRemoveMissionPoints={onRemoveMissionPoints} />)
                 }
               </ul>
           </div>
-         </li>
+          </li>
         </div>
       </div>
     );
@@ -41,7 +41,8 @@ sumarray (array){
 }
 
 PointsItem.propTypes = {
-  point: PropTypes.object.isRequired,
+  points: PropTypes.array.isRequired,
+  id: PropTypes.number.isRequired,
   onRemoveMissionPoints: PropTypes.func.isRequired
 };
 

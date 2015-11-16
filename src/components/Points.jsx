@@ -20,7 +20,7 @@ export default class Points extends Component {
           </div>
         <ul>
             {
-               points.map( (points, index) => <PointsItem key={index} point={points} onRemoveMissionPoints={onRemoveMissionPoints}/>)
+               points.map( (point, index) => <PointsItem key={index} points={points} id={index} onRemoveMissionPoints={onRemoveMissionPoints}/>)
             }
           </ul>
         </div>
@@ -32,9 +32,5 @@ export default class Points extends Component {
 Points.PropTypes = {
   points: PropTypes.array.isRequired,
   onRemoveMissionPoints: PropTypes.func.isRequired
-};
-
-Points.defaultProps = {
-  points: []
 };
 

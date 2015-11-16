@@ -60,3 +60,7 @@
 .stylenone{
   list-style: none;
 }
+
+.navbar-collapse {
+  overflow: hidden;
+}

@@ -15,16 +15,18 @@ export default class Tutorial extends Component {
 
   handleBackButtonClick() {
     this.setState({
-      it : this.state.it - 1,
-      firstDisabled : this.state.it === 0 ? true : false
-    });
+      firstDisabled : this.state.it <= 1 ? true : false,
+      lastDisabled : false,
+      it : this.state.it < 1 ? this.state.it : this.state.it - 1
+   });
   }
 
   handleNextButtonClick() {
     const {naves} = this.props;
     this.setState({
-      it : this.state.it + 1,
-      lastDisabled : this.state.it === (naves.length - 1) ? true : false
+      lastDisabled : this.state.it >= (naves.length - 2) ? true : false,
+      firstDisabled:false,
+      it : this.state.it >= (naves.length - 1) ? this.state.it : this.state.it + 1
     });
   }
 
