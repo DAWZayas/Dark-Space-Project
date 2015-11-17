@@ -8,19 +8,21 @@ export default class Points extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     victoryPoints : 0,
-     log : "",
-     BattleDisabled : true
+      victoryPoints : 0,
+      BattleDisabled : true,
+      playerSpaceFleet : [],
+      enemySpaceFleet : []
     };
   }
 
   handleSimulateButtonClick(e){
     const { playerSpaceFleet, enemySpaceFleet } = this.props;
-    let array = battle(playerSpaceFleet, enemySpaceFleet);
-    console.log(array[0]);
-    console.log(array[1]);
+    let newObject = battle(playerSpaceFleet, enemySpaceFleet);
     this.setState({
-      BattleDisabled : false
+      victoryPoints : 100,
+      BattleDisabled : false,
+      playerSpaceFleet : newObject.arrayPlayer,
+      enemySpaceFleet : newObject.arrayEnemy
     });
   }
 
@@ -35,7 +37,7 @@ export default class Points extends Component {
           {(this.state.BattleDisabled) ? (
             <div className="col-xs-12">
               <div className="col-xs-4">
-                <p className="btn btn-primary btn-md" role="button" onClick={e => this.handleSimulateButtonClick(e)}><Link to="/battleReport" style={{color: 'inherit', textDecoration: 'inherit'}}>Simulate</Link></p>
+                <p className="btn btn-primary btn-md" role="button" onClick={e => this.handleSimulateButtonClick(e)}>Simulate</p>
               </div>
             </div>)
           :
@@ -49,7 +51,9 @@ export default class Points extends Component {
                 </div>
                 <div className="col-xs-12">
                   <p className="well col-xs-12">
-                    <span className="col-xs-12">{this.state.log}</span>
+                    {this.state.playerSpaceFleet[0]}
+                    {console.log(this.state.playerSpaceFleet)}
+                    {console.log(this.state.enemySpaceFleet)}
                   </p>
                 </div>
               </div>
