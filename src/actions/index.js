@@ -48,6 +48,6 @@ export function onChangeEnemyFleet(playerFleet){
 *Points action creator
 */
 
-export function onRemoveMissionPoints(id, pos) {
-    return { type: ON_REMOVE_MISSION_POINTS, id, pos};
+export function onRemoveMissionPoints(iduser, missionnumber) {
+    return { type: ON_REMOVE_MISSION_POINTS, iduser, missionnumber};
 }

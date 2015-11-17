@@ -10,7 +10,7 @@ function onRemoveMissionPoints (state, iduser, missionnumber) {
 export default function pointsReducer(state = [], action) {
 	switch (action.type) {
       case ON_REMOVE_MISSION_POINTS:
-        return onRemoveMissionPoints(state, action.id, action.pos);
+        return onRemoveMissionPoints(state, action.iduser, action.missionnumber);
       default:
         return state;
       }
