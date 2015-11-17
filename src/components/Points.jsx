@@ -11,7 +11,6 @@ export default class Points extends Component {
   render() {
 
     const { points, onRemoveMissionPoints } = this.props;
-
     return (
       <div className="row">
         <div className="col-xs-12">

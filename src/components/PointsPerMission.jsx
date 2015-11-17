@@ -6,27 +6,25 @@ export default class PointsPerMission extends Component {
     super(props);
   }
 
-handleRemoveMissionPoints(e, id, pos) {
+handleRemoveMissionPoints (e, iduser, missionnumber) {
     e.stopPropagation();
     const { onRemoveMissionPoints} = this.props;
-    onRemoveMissionPoints(id, (pos - 1));
+    onRemoveMissionPoints(iduser, (missionnumber));
   }
 
   render() {
 
-    const { pos, point, id} = this.props;
-
+    const {pointinmission, iduser, missionnumber} = this.props;
     return (
             <li className="col-xs-12 stylenone">
-                  <span className="col-xs-3">  Mission { pos }:  {point}</span><span className="col-xs-3 glyphicon glyphicon-remove-circle" onClick= {(e) => this.handleRemoveMissionPoints(e, id,  pos)}></span>
+                  <span className="col-xs-3">  Mission {missionnumber + 1}:  {pointinmission}</span><span className="col-xs-3 glyphicon glyphicon-remove-circle" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
             </li>
     );
   }
 }
 
 PointsPerMission.propTypes = {
-  point: PropTypes.number.isRequired,
+  pointinmission: PropTypes.number.isRequired,
   onRemoveMissionPoints: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
-  pos: PropTypes.number.isRequired
+  iduser: PropTypes.number.isRequired,
 };

@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
-    onRemoveMissionPoints : (id, pos) => dispatch(onRemoveMissionPoints(id, pos))
+    onRemoveMissionPoints : (iduser, missionnumber) => dispatch(onRemoveMissionPoints(iduser, missionnumber))
   };
 }
 

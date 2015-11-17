@@ -47,6 +47,7 @@
   "dependencies": {
     "babel-runtime": "^5.8.29",
     "bootstrap": "^3.3.5",
+    "clone": "^1.0.2",
     "history": "^1.13.0",
     "immutable": "^3.7.5",
     "node-uuid": "^1.4.3",

@@ -1,8 +1,10 @@
+import clone from 'clone';
 import { ON_REMOVE_MISSION_POINTS } from '../actions';
 
-function onRemoveMissionPoints (state, id, pos) {
- state[id].missionpoints[pos] = 0;
- return state;
+function onRemoveMissionPoints (state, iduser, missionnumber) {
+  const newState = clone(state);
+   newState[iduser].missionpoints[missionnumber] = 0;
+   return newState;
 }
 
 export default function pointsReducer(state = [], action) {

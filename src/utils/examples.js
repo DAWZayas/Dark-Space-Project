@@ -177,19 +177,19 @@ export const points = [
   {
     id: 0,
     name: 'David',
-    userpoints: '15',
-    missionpoints:[100, 150, 200, 300 ]
+    userpoints: '750',
+    missionpoints:[25, 18, 20, 14 ]
   },
   {
     id: 1,
     name: 'Alex',
-    userpoints: '10',
+    userpoints: '75',
     missionpoints:[10, 15, 20, 30 ]
   },
   {
     id: 2,
     name: 'Raul',
-    userpoints: '5',
+    userpoints: '21',
     missionpoints:[1, 15, 2, 3]
   },
   {

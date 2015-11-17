@@ -17,7 +17,7 @@ sumarray (array){
 
   render() {
 
-    const { point, onRemoveMissionPoints } = this.props;
+    const { point, onRemoveMissionPoints} = this.props;
 
     let total = this.sumarray(point.missionpoints);
     return (
@@ -29,7 +29,7 @@ sumarray (array){
             <div className="pointsPerMission">
               <ul className="col-xs-12">
                 {
-                      point.missionpoints.map( (points, index, id) => <PointsPerMission key={index} point={points} pos={index + 1} id={point.id} onRemoveMissionPoints={onRemoveMissionPoints} />)
+                      point.missionpoints.map( (points, index) => <PointsPerMission key={index} pointinmission={points} iduser={point.id} missionnumber={index} onRemoveMissionPoints={onRemoveMissionPoints} />)
                 }
               </ul>
           </div>
