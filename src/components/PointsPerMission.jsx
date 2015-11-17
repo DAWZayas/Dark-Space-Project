@@ -19,7 +19,7 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
 
     return (
             <li className="col-xs-12 stylenone">
-                  <span className="col-xs-3">  Mission {missionnumber + 1}:  {pointinmission} </span><span className="col-xs-3 glyphicon glyphicon-remove-circle" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
+                  <span className="col-xs-2">  Mission {missionnumber + 1}:  {pointinmission} </span><span className="glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
             </li>
     );
   }
