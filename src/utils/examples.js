@@ -152,6 +152,9 @@ export const playerFleet = [
   }
 ];
 
+export const playerFleetAfterFight = [
+];
+
 export const enemyPlayerFleet = [
   {
     id: 3,
@@ -171,6 +174,9 @@ export const enemyPlayerFleet = [
     shields : 0,
     points : 12
   }
+];
+
+export const enemyPlayerFleetAfterFight = [
 ];
 
 export const points = [
@@ -258,5 +264,5 @@ export const naves = [
 ];
 
 export const initialState = {
-  campaign, playerFleet, enemyPlayerFleet, points, naves
+  campaign, playerFleet, playerFleetAfterFight, enemyPlayerFleet, enemyPlayerFleetAfterFight, points, naves
 };

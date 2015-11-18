@@ -47,7 +47,7 @@ function calculateDefense(Agility){
   return quantityDefense;
 }
 
-export default function battle(arrayPlayer, arrayEnemy){
+export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight){
   debugger;
   let i = 0;
   let objective;
@@ -99,12 +99,8 @@ export default function battle(arrayPlayer, arrayEnemy){
     i++;
   }
 
-  const object =
-    {
-     arrayPlayer: arrayPlayer,
-     arrayEnemy: arrayEnemy
-    }
-  ;
-  return object;
+onChangePlayerSpaceFleetAfterFight(arrayPlayer);
+onChangeEnemySpaceFleetAfterFight(arrayEnemy);
+
 }
 

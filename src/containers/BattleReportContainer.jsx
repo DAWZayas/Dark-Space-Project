@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import BattleReport from '../components/BattleReport';
-import {  } from '../actions';
+import { onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } from '../actions';
 
 
 function mapStateToProps(state) {
@@ -13,6 +13,8 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
+    onChangePlayerSpaceFleetAfterFight : ( resultArray ) => dispatch(onChangePlayerSpaceFleetAfterFight(resultArray)),
+    onChangeEnemySpaceFleetAfterFight : ( resultArray ) => dispatch(onChangeEnemySpaceFleetAfterFight(resultArray))
   };
 }
 

@@ -9,20 +9,16 @@ export default class Points extends Component {
     super(props);
     this.state = {
       victoryPoints : 0,
-      BattleDisabled : true,
-      playerSpaceFleet : [],
-      enemySpaceFleet : []
+      BattleDisabled : true
     };
   }
 
   handleSimulateButtonClick(e){
-    const { playerSpaceFleet, enemySpaceFleet } = this.props;
-    let newObject = battle(playerSpaceFleet, enemySpaceFleet);
+    const { playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
+    battle(playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
     this.setState({
       victoryPoints : 100,
-      BattleDisabled : false,
-      playerSpaceFleet : newObject.arrayPlayer,
-      enemySpaceFleet : newObject.arrayEnemy
+      BattleDisabled : false
     });
   }
 
@@ -51,9 +47,6 @@ export default class Points extends Component {
                 </div>
                 <div className="col-xs-12">
                   <p className="well col-xs-12">
-                    {this.state.playerSpaceFleet[0]}
-                    {console.log(this.state.playerSpaceFleet)}
-                    {console.log(this.state.enemySpaceFleet)}
                   </p>
                 </div>
               </div>

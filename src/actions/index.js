@@ -10,6 +10,8 @@ export const PREPARE_FIGHT = 'PREPARE_FIGHT';
 export const CHANGE_FLEET = 'CHANGE_FLEET';
 export const CHANGE_ENEMY_FLEET = 'CHANGE_ENEMY_FLEET';
 export const ON_REMOVE_MISSION_POINTS = 'ON_REMOVE_MISSION_POINTS';
+export const ON_CHANGE_PLAYER_SPACE_FLEET_AFTER_FIGHT = 'ON_CHANGE_PLAYER_SPACE_FLEET_AFTER_FIGHT';
+export const ON_CHANGE_ENEMY_SPACE_FLEET_AFTER_FIGHT = 'ON_CHANGE_ENEMY_SPACE_FLEET_AFTER_FIGHT';
 
 /*
  * Campaign action creators
@@ -50,4 +52,20 @@ export function onChangeEnemyFleet(playerFleet){
 
 export function onRemoveMissionPoints(iduser, missionnumber) {
     return { type: ON_REMOVE_MISSION_POINTS, iduser, missionnumber};
+}
+
+/*
+*Player Space Fleet After FIght action creator
+*/
+
+export function onChangePlayerSpaceFleetAfterFight(resultArray) {
+    return { type: ON_CHANGE_PLAYER_SPACE_FLEET_AFTER_FIGHT, resultArray};
+}
+
+/*
+*Enemy Space Fleet After FIght action creator
+*/
+
+export function onChangeEnemySpaceFleetAfterFight(resultArray) {
+    return { type: ON_CHANGE_ENEMY_SPACE_FLEET_AFTER_FIGHT, resultArray};
 }
