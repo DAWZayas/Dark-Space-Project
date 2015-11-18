@@ -24,7 +24,7 @@ sumarray (array){
       <div className="showlist">
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
-             <img src="image/nerdluck1.jpg" alt={event.title} class="img-responsive"/>
+            <div className="user1image"></div>
             <span className="col-xs-6">{point.name} </span>
             <span className="col-xs-6">Points: {total} </span>
             <div className="pointsPerMission">
