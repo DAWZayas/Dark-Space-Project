@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Battle from '../components/Battle';
+import Battle from '../components/battle';
 
 
 function mapStateToProps(state) {
