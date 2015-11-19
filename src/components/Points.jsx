@@ -19,7 +19,7 @@ export default class Points extends Component {
           </div>
         <ul>
             {
-               points.map( (points, index) => <PointsItem key={index} point={points} onRemoveMissionPoints={onRemoveMissionPoints}/>)
+               points.map( (points, index, percentage) => <PointsItem key={index} point={points} onRemoveMissionPoints={onRemoveMissionPoints}/>)
             }
           </ul>
         </div>

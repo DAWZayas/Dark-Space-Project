@@ -234,25 +234,21 @@ export const points = [
   {
     id: 0,
     name: 'David',
-    userpoints: '750',
-    missionpoints:[25, 18, 20, 14 ]
+    missionpoints:[485, 326, 261, 149 ]
   },
   {
     id: 1,
     name: 'Alex',
-    userpoints: '75',
-    missionpoints:[10, 15, 20, 30 ]
+    missionpoints:[492, 354, 152, 0 ]
   },
   {
     id: 2,
     name: 'Raul',
-    userpoints: '21',
-    missionpoints:[1, 15, 2, 3]
+    missionpoints:[453, 264, 156, 0]
   },
   {
     id: 3,
     name: 'Javier',
-    userpoints: '0',
     missionpoints:[0, 0, 0, 0 ]
   }
 ];
