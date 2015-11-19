@@ -265,7 +265,7 @@ export const naves = [
     shieldpower : 100,
     alive   : 1000,
     shots   : 3,
-    damage  : 500,
+    damage  : 600,
     precision : 40,
     point  : 7
   },

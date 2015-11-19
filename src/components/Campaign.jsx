@@ -11,10 +11,11 @@ export default class Campaign extends Component {
   }
 
   handleAddButtonClick() {
-    const { onAddCampaign } = this.props;
+    const { onAddCampaign, onAddPoint} = this.props;
     const node = this.refs.title;
     const title =  node.value.trim();
     onAddCampaign(title);
+    onAddPoint();
     node.value = '';
     this.setState({
       addDisabled: true
@@ -70,7 +71,9 @@ export default class Campaign extends Component {
 Campaign.propTypes = {
   campaigns:PropTypes.array,
   points: PropTypes.object.isRequired,
-  onRemoveCampaign:PropTypes.func.isRequired
+  onRemoveCampaign:PropTypes.func.isRequired,
+  onAddCampaign: PropTypes.func.isRequired,
+  onAddPoint: PropTypes.func.isRequired
 };
 
 Campaign.defaultProps = {

@@ -23,7 +23,6 @@ export default class App extends Component {
               <li className="col-xs-3"><Link to="/">Home</Link></li>
               <li className="col-xs-3"><Link to="/campaign">Campaing</Link></li>
               <li className="col-xs-2"><Link to="/points">Points</Link></li>
-              <li><Link to="/battle">Battle</Link></li>
               <li className="col-xs-2"><Link to="/tutorial">Tutorial</Link></li>
             </ul>
           </div>
