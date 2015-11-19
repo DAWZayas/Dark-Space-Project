@@ -19,9 +19,9 @@ export default class Battle extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="titlePadding col-xs-12">Batalla</h2>
+            <h2 className="titlePadding col-xs-12">Battle</h2>
             <span className="input-group-btn">
-                <button  className="btn btn-info" type="button" onClick={e => this.handleAddButtonClick(e)}><span className="glyphicon glyphicon-ok-sign" />batalla</button>
+                <button  className="btn btn-info" type="button" onClick={e => this.handleAddButtonClick(e)}><span className="glyphicon glyphicon-ok-sign" />Battle</button>
               </span>
           </div>
         </div>

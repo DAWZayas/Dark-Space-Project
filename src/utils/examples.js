@@ -2,7 +2,6 @@
   {
     id: 1,
     title: 'Battle of Chandrila',
-    status: 'success',
     percentage: 100,
     playerFleet:[
       {
@@ -28,7 +27,6 @@
   {
     id: 2,
     title: 'Battle of Yavin 4',
-    status: 'success',
     percentage: 55,
     playerFleet:[
       {
@@ -54,7 +52,6 @@
   {
     id: 3,
     title: 'Attack on Coruscant',
-    status: 'fail',
     percentage: 30,
     playerFleet:[
       {
@@ -80,7 +77,6 @@
   {
     id: 4,
     title: 'First battle of Korriban',
-    status: 'fail',
     percentage: 0,
     playerFleet:[
       {
@@ -106,7 +102,6 @@
   {
     id: 5,
     title: 'Second battle of Korriban',
-    status: 'fail',
     percentage: 0,
     playerFleet:[
       {
@@ -234,22 +229,22 @@ export const points = [
   {
     id: 0,
     name: 'David',
-    missionpoints:[485, 326, 261, 149 ]
+    missionpoints:[485, 326, 261, 149, 0 ]
   },
   {
     id: 1,
     name: 'Alex',
-    missionpoints:[492, 354, 152, 0 ]
+    missionpoints:[492, 354, 152, 0, 0 ]
   },
   {
     id: 2,
     name: 'Raul',
-    missionpoints:[453, 264, 156, 0]
+    missionpoints:[453, 264, 156, 0, 0 ]
   },
   {
     id: 3,
     name: 'Javier',
-    missionpoints:[0, 0, 0, 0 ]
+    missionpoints:[0, 0, 0, 0, 0 ]
   }
 ];
 

@@ -6,7 +6,8 @@ import { addCampaign, removeCampaign } from '../actions';
 
 function mapStateToProps(state) {
   return {
-    campaigns: state.campaign
+    campaigns: state.campaign,
+    points: state.points[0]
   };
 }
 

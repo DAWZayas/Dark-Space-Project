@@ -39,7 +39,8 @@ export default class Campaign extends Component {
 
   render() {
 
-    const { campaigns, onRemoveCampaign } = this.props;
+    const { campaigns, points, onRemoveCampaign } = this.props;
+    const {missionpoints} = points.missionpoints;
 
     return (
       <div className="row">
@@ -49,7 +50,7 @@ export default class Campaign extends Component {
           </div>
           <ul>
             {
-               campaigns.map( (campaigns, index) => <CampaignItem key={index} campaign={campaigns} onRemoveCampaign={onRemoveCampaign} />)
+               campaigns.map( (campaign, index) => <CampaignItem key={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} />)
             }
           </ul>
         </div>
@@ -68,6 +69,7 @@ export default class Campaign extends Component {
 
 Campaign.propTypes = {
   campaigns:PropTypes.array,
+  points: PropTypes.object.isRequired,
   onRemoveCampaign:PropTypes.func.isRequired
 };
 

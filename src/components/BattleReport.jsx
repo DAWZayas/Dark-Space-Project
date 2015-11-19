@@ -28,7 +28,7 @@ export default class Points extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">Informe de batalla</h2>
+            <h2 className="col-xs-12">Battle Report</h2>
           </div>
           {(this.state.BattleDisabled) ? (
             <div className="col-xs-12">
