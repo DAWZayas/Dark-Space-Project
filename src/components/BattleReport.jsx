@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import battle from '../utils/functions';
-
+import { battleareturnstatus } from '../utils/battle_final_proebas.js';
 
 export default class Points extends Component {
 
@@ -14,8 +14,8 @@ export default class Points extends Component {
   }
 
   handleSimulateButtonClick(e){
-    const { playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
-    battle(playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
+    const {navpointss, playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
+    battleareturnstatus(playerSpaceFleet, enemySpaceFleet, navpointss, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
     this.setState({
       victoryPoints : 100,
       BattleDisabled : false

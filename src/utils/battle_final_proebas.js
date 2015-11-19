@@ -189,14 +189,12 @@ export function battleall(attackers, defenses, NavPunt, turns){
 
  let  arresult = [
       {
-       // name: result1[0].name,
         point: result1.point,
         deadfigters: result1.deadfigters,
         deadcruises: result1.deadcruises,
         deaddestroyers: result1.deaddestroyers
       },
      {
-       // name: result2[0].name,
         point: result2.point,
         deadfigters: result2.deadfigters,
         deadcruises: result2.deadcruises,
@@ -207,5 +205,22 @@ export function battleall(attackers, defenses, NavPunt, turns){
 
   return arresult;
 
+
+}
+export function battleareturnstatus(attackers, defenses, NavPunt,  onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight){
+
+ let att = 0;
+ let turns = 4;
+    while (att < turns ){
+
+     if ( att % 2 === 0){
+      attackers = round(defenses, attackers);
+     }else {
+      defenses = round(attackers, defenses);
+     }
+      att++;
+    }
+onChangePlayerSpaceFleetAfterFight(attackers);
+onChangeEnemySpaceFleetAfterFight(defenses);
 
 }

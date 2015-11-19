@@ -2,6 +2,7 @@
   {
     id: 1,
     title: 'Battle of Chandrila',
+    status: 'success',
     percentage: 100,
     playerFleet:[
       {
@@ -27,6 +28,7 @@
   {
     id: 2,
     title: 'Battle of Yavin 4',
+    status: 'success',
     percentage: 55,
     playerFleet:[
       {
@@ -52,6 +54,7 @@
   {
     id: 3,
     title: 'Attack on Coruscant',
+    status: 'fail',
     percentage: 30,
     playerFleet:[
       {
@@ -77,6 +80,7 @@
   {
     id: 4,
     title: 'First battle of Korriban',
+    status: 'fail',
     percentage: 0,
     playerFleet:[
       {
@@ -102,6 +106,7 @@
   {
     id: 5,
     title: 'Second battle of Korriban',
+    status: 'fail',
     percentage: 0,
     playerFleet:[
       {
@@ -155,7 +160,6 @@ export const playerFleet = [
     shots   : 1,
     precision : 20
 
-
   },
   {
     id      : 3,
@@ -200,7 +204,6 @@ export const enemyPlayerFleet = [
     shots   : 1,
     precision : 20
 
-
   },
   {
     id      : 3,
@@ -229,22 +232,26 @@ export const points = [
   {
     id: 0,
     name: 'David',
-    missionpoints:[485, 326, 261, 149, 0 ]
+    userpoints: '750',
+    missionpoints:[25, 18, 20, 14 ]
   },
   {
     id: 1,
     name: 'Alex',
-    missionpoints:[492, 354, 152, 0, 0 ]
+    userpoints: '75',
+    missionpoints:[10, 15, 20, 30 ]
   },
   {
     id: 2,
     name: 'Raul',
-    missionpoints:[453, 264, 156, 0, 0 ]
+    userpoints: '21',
+    missionpoints:[1, 15, 2, 3]
   },
   {
     id: 3,
     name: 'Javier',
-    missionpoints:[0, 0, 0, 0, 0 ]
+    userpoints: '0',
+    missionpoints:[0, 0, 0, 0 ]
   }
 ];
 
@@ -257,7 +264,7 @@ export const naves = [
     damage  : 500,
     shots   : 2,
     precision : 20,
-    point   : 12
+    points   : 12
   },
   {
     id      : 2,
@@ -265,9 +272,9 @@ export const naves = [
     shieldpower : 100,
     alive   : 1000,
     shots   : 3,
-    damage  : 600,
+    damage  : 500,
     precision : 40,
-    point  : 7
+    points  : 7
   },
    {id      : 4,
     type    :'fighter',
@@ -276,7 +283,7 @@ export const naves = [
     shots   : 1,
     damage  : 90,
     precision : 15,
-    point   : 4
+    points   : 4
   }
 
 ];
