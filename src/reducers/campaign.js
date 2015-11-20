@@ -10,7 +10,6 @@ function addCampaign(state, title) {
   return state.concat({
     id: id,
     title: title,
-    status: 'fail',
     percentage: 0,
     playerFleet:[
       {

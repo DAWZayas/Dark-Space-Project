@@ -2,7 +2,6 @@
   {
     id: 1,
     title: 'Battle of Chandrila',
-   
     percentage: 100,
     playerFleet:[
       {
@@ -192,8 +191,6 @@ export const enemyPlayerFleet = [
     damage  : 500,
     shots   :1,
     precision : 20
-
-
   },
                   {
     type    :'cruise',
@@ -202,7 +199,6 @@ export const enemyPlayerFleet = [
     damage  : 500,
     shots   : 1,
     precision : 20
-
   },
   {
     id      : 3,
