@@ -40,7 +40,7 @@ export default class Campaign extends Component {
 
   render() {
 
-    const { campaigns, points, onRemoveCampaign } = this.props;
+    const { campaigns, points, onRemoveCampaign, onRemoveMissionForPoints} = this.props;
     const {missionpoints} = points.missionpoints;
 
     return (
@@ -51,7 +51,7 @@ export default class Campaign extends Component {
           </div>
           <ul>
             {
-               campaigns.map( (campaign, index) => <CampaignItem key={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} />)
+               campaigns.map( (campaign, index) => <CampaignItem key={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints}/>)
             }
           </ul>
         </div>
@@ -73,7 +73,8 @@ Campaign.propTypes = {
   points: PropTypes.object.isRequired,
   onRemoveCampaign:PropTypes.func.isRequired,
   onAddCampaign: PropTypes.func.isRequired,
-  onAddPoint: PropTypes.func.isRequired
+  onAddPoint: PropTypes.func.isRequired,
+  onRemoveMissionForPoints: PropTypes.func.isRequired
 };
 
 Campaign.defaultProps = {
