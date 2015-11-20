@@ -13,7 +13,7 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
-		onAddCampaign : title => dispatch(addCampaign(title)),
+    onAddCampaign : title => dispatch(addCampaign(title)),
     onRemoveCampaign : idCampaign => dispatch(removeCampaign(idCampaign)),
     onAddPoint: () => dispatch(onAddPoint())
   };
@@ -23,4 +23,3 @@ export default connect(
   mapStateToProps,
   mapActionsToProps
 )(Campaign);
-

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import battle from '../utils/functions';
-import { battleareturnstatus } from '../utils/battle_final_proebas.js';
+
 
 export default class Points extends Component {
 
@@ -14,8 +14,8 @@ export default class Points extends Component {
   }
 
   handleSimulateButtonClick(e){
-    const {navpointss, playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
-    battleareturnstatus(playerSpaceFleet, enemySpaceFleet, navpointss, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
+    const { playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
+    battle(playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
     this.setState({
       victoryPoints : 100,
       BattleDisabled : false
@@ -28,7 +28,7 @@ export default class Points extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">Battle Report</h2>
+            <h2 className="col-xs-12">Informe de batalla</h2>
           </div>
           {(this.state.BattleDisabled) ? (
             <div className="col-xs-12">

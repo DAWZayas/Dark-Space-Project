@@ -7,8 +7,7 @@ import { onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight }
 function mapStateToProps(state) {
   return {
     playerSpaceFleet : state.playerFleet,
-    enemySpaceFleet : state.enemyPlayerFleet,
-    navpointss: state.naves
+    enemySpaceFleet : state.enemyPlayerFleet
   };
 }
 

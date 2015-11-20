@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import clone from 'clone';
 import { Link } from 'react-router';
 
 export default class SelectPlayerFleet extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+this.state = {
      points: 0,
      playerSpaceFleet : [],
      pointsAlert : false,
@@ -17,29 +18,28 @@ export default class SelectPlayerFleet extends Component {
 
     const { navesState } = this.props;
 
-    const cruiseNumber = this.refs.cruise.options.selectedIndex;
-    const destroyerNumber = this.refs.destroyer.options.selectedIndex;
-    const fighterNumber = this.refs.fighter.options.selectedIndex;
-    const cruise = navesState[0];
-    const destroyer = navesState[1];
-    const fighter = navesState[2];
+    const xWingNumber = this.refs.Xwing.options.selectedIndex;
+    const yWingNumber = this.refs.Ywing.options.selectedIndex;
+    const bWingNumber = this.refs.Bwing.options.selectedIndex;
+    const xWing = clone(navesState[0]);
+    const yWing = clone(navesState[1]);
+    const bWing = clone(navesState[2]);
 
-    let totalPoints = (cruise.points * cruiseNumber) + (destroyer.points * destroyerNumber) + (fighter.points * fighterNumber);
+    let totalPoints = (xWing.points * xWingNumber) + (yWing.points * yWingNumber) + (bWing.points * bWingNumber);
     let playerSpaceFleetArray = [];
     let i = 0;
-    for (let j = 0; j < cruiseNumber; j++) {
-      playerSpaceFleetArray[i] = cruise;
+    for (let j = 0; j < xWingNumber; j++) {
+      playerSpaceFleetArray[i] = xWing;
       i++;
     }
-    for (let j = 0; j < destroyerNumber; j++) {
-      playerSpaceFleetArray[i] = destroyer;
+    for (let j = 0; j < yWingNumber; j++) {
+      playerSpaceFleetArray[i] = yWing;
       i++;
     }
-    for (let j = 0; j < fighterNumber; j++) {
-      playerSpaceFleetArray[i] = fighter;
+    for (let j = 0; j < bWingNumber; j++) {
+      playerSpaceFleetArray[i] = bWing;
       i++;
     }
-
 
     this.setState({
       points : totalPoints,
@@ -54,26 +54,26 @@ export default class SelectPlayerFleet extends Component {
     const { navesState, campaignState, onPrepareToFight, onChangeEnemyFleet} = this.props;
     const idCampaign = this.props.params.idCampaign;
 
-    const cruiseNumber = this.refs.cruise.options.selectedIndex;
-    const destroyerNumber = this.refs.destroyer.options.selectedIndex;
-    const fighterNumber = this.refs.fighter.options.selectedIndex;
-    const cruise = navesState[0];
-    const destroyer = navesState[1];
-    const fighter = navesState[2];
+    const xWingNumber = this.refs.Xwing.options.selectedIndex;
+    const yWingNumber = this.refs.Ywing.options.selectedIndex;
+    const bWingNumber = this.refs.Bwing.options.selectedIndex;
+    const xWing = clone(navesState[0]);
+    const yWing = clone(navesState[1]);
+    const bWing = clone(navesState[2]);
 
-    let totalPoints = (cruise.points * cruiseNumber) + (destroyer.points * destroyerNumber) + (fighter.points * fighterNumber);
+    let totalPoints = (xWing.points * xWingNumber) + (yWing.points * yWingNumber) + (bWing.points * bWingNumber);
     let playerSpaceFleetArray = [];
     let i = 0;
-    for (let j = 0; j < cruiseNumber; j++) {
-      playerSpaceFleetArray[i] = cruise;
+    for (let j = 0; j < xWingNumber; j++) {
+      playerSpaceFleetArray[i] = xWing;
       i++;
     }
-    for (let j = 0; j < destroyerNumber; j++) {
-      playerSpaceFleetArray[i] = destroyer;
+    for (let j = 0; j < yWingNumber; j++) {
+      playerSpaceFleetArray[i] = yWing;
       i++;
     }
-    for (let j = 0; j < fighterNumber; j++) {
-      playerSpaceFleetArray[i] = fighter;
+    for (let j = 0; j < bWingNumber; j++) {
+      playerSpaceFleetArray[i] = bWing;
       i++;
     }
 
@@ -88,7 +88,7 @@ export default class SelectPlayerFleet extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">SelectPlayerFleet </h2>
+            <h2 className="col-xs-12">SelectPlayerFleet</h2>
           </div>
           <div className="input-group">
             <span className="input-group-addon" id="basic-addon1">Total points</span>
@@ -96,35 +96,30 @@ export default class SelectPlayerFleet extends Component {
           </div>
 
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">cruise (30 Puntos)</span>
-              <select className="form-control" ref="cruise" onChange={e => this.handleOnSelectChangePoints(e)}>
+            <span className="input-group-addon">X - Wings (21 Puntos)</span>
+              <select className="form-control" ref="Xwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
-                <option>4</option>
               </select>
           </div>
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">destroyer (21 Puntos)</span>
-              <select className="form-control" ref="destroyer" onChange={e => this.handleOnSelectChangePoints(e)}>
+            <span className="input-group-addon">Y - Wings (20 Puntos)</span>
+              <select className="form-control" ref="Ywing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
-                <option>4</option>
-                <option>5</option>
               </select>
           </div>
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">fighter (8 Puntos)</span>
-              <select className="form-control" ref="fighter" onChange={e => this.handleOnSelectChangePoints(e)}>
+            <span className="input-group-addon">B - Wings (21 Puntos)</span>
+              <select className="form-control" ref="Bwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
-                <option>4</option>
-                <option>5</option>
               </select>
           </div>
           <div className="alertPadding">
@@ -154,3 +149,4 @@ SelectPlayerFleet.propTypes = {
   onPrepareToFight: PropTypes.func.isRequired,
   onChangeEnemyFleet:PropTypes.func.isRequired
 };
+

@@ -48,7 +48,6 @@ function calculateDefense(Agility){
 }
 
 export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight){
-  debugger;
   let i = 0;
   let objective;
   let objectiveAlive;

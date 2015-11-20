@@ -43,14 +43,14 @@ function removeCampaign(state, idCampaign) {
 }
 
 export default function campaignReducer(state = [], action) {
-		switch (action.type) {
-			case ADD_CAMPAIGN:
-				return addCampaign(state, action.title);
-			case REMOVE_CAMPAIGN:
-				return removeCampaign(state, action.idCampaign);
+    switch (action.type) {
+      case ADD_CAMPAIGN:
+        return addCampaign(state, action.title);
+      case REMOVE_CAMPAIGN:
+        return removeCampaign(state, action.idCampaign);
       case CHANGE_FLEET:
         return changeFleet(state, action.enemySpaceFleetArray, action.idCampaign);
-			default:
-				return state;
-			}
+      default:
+        return state;
+      }
   }

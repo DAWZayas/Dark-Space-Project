@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import clone from 'clone';
 import { Link } from 'react-router';
 
 export default class SelectEnemyFleet extends Component {
@@ -20,9 +21,9 @@ export default class SelectEnemyFleet extends Component {
     const tieInterceptorNumber = this.refs.tieInterceptor.options.selectedIndex;
     const tieFighterNumber = this.refs.tieFighter.options.selectedIndex;
     const tieAdvancedNumber = this.refs.tieAdvanced.options.selectedIndex;
-    const tieInterceptor = navesState[3];
-    const tieFighter = navesState[4];
-    const tieAdvanced = navesState[5];
+    const tieInterceptor = clone(navesState[3]);
+    const tieFighter = clone(navesState[4]);
+    const tieAdvanced = clone(navesState[5]);
 
     let totalPoints = (tieInterceptor.points * tieInterceptorNumber) + (tieFighter.points * tieFighterNumber) + (tieAdvanced.points * tieAdvancedNumber);
     let enemySpaceFleetArray = [];
@@ -58,9 +59,9 @@ export default class SelectEnemyFleet extends Component {
     const tieInterceptorNumber = this.refs.tieInterceptor.options.selectedIndex;
     const tieFighterNumber = this.refs.tieFighter.options.selectedIndex;
     const tieAdvancedNumber = this.refs.tieAdvanced.options.selectedIndex;
-    const tieInterceptor = navesState[3];
-    const tieFighter = navesState[4];
-    const tieAdvanced = navesState[5];
+    const tieInterceptor = clone(navesState[3]);
+    const tieFighter = clone(navesState[4]);
+    const tieAdvanced = clone(navesState[5]);
 
     let enemySpaceFleetArray = [];
     let i = 0;

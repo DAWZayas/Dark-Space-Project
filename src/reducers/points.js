@@ -16,7 +16,7 @@ function onAddPoint(state){
 }
 
 export default function pointsReducer(state = [], action) {
-	switch (action.type) {
+  switch (action.type) {
       case ON_REMOVE_MISSION_POINTS:
         return onRemoveMissionPoints(state, action.iduser, action.missionnumber);
       case ON_ADD_POINT:

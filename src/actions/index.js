@@ -36,7 +36,7 @@ export function onChangeFleet(enemySpaceFleetArray, idCampaign){
  */
 
 export function prepareToFight(playerSpaceFleetArray){
-	return { type: PREPARE_FIGHT, playerSpaceFleetArray};
+  return { type: PREPARE_FIGHT, playerSpaceFleetArray};
 }
 
 /*
@@ -44,7 +44,7 @@ export function prepareToFight(playerSpaceFleetArray){
  */
 
 export function onChangeEnemyFleet(playerFleet){
-	return { type: CHANGE_ENEMY_FLEET, playerFleet};
+  return { type: CHANGE_ENEMY_FLEET, playerFleet};
 }
 
 /*
@@ -56,7 +56,7 @@ export function onRemoveMissionPoints(iduser, missionnumber) {
 }
 
 export function onAddPoint() {
-	return { type: ON_ADD_POINT};
+  return { type: ON_ADD_POINT};
 }
 
 /*

@@ -36,4 +36,3 @@ Points.PropTypes = {
 Points.defaultProps = {
   points: []
 };
-
