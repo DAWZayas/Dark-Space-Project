@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Campaign from '../components/Campaign';
-import { addCampaign, removeCampaign, onAddPoint} from '../actions';
+import { addCampaign, removeCampaign, onAddPoint, onRemoveMissionForPoints} from '../actions';
 
 
 function mapStateToProps(state) {
@@ -15,6 +15,7 @@ function mapActionsToProps(dispatch) {
   return {
     onAddCampaign : title => dispatch(addCampaign(title)),
     onRemoveCampaign : idCampaign => dispatch(removeCampaign(idCampaign)),
+    onRemoveMissionForPoints : idCampaign => dispatch(onRemoveMissionForPoints(idCampaign)),
     onAddPoint: () => dispatch(onAddPoint())
   };
 }

@@ -10,8 +10,9 @@ export default class CampaignItem extends Component {
 
   handleRemoveButtonClick(e) {
     e.stopPropagation();
-    const { onRemoveCampaign, campaign} = this.props;
+    const { onRemoveCampaign, campaign, onRemoveMissionForPoints} = this.props;
     onRemoveCampaign(campaign.id);
+    onRemoveMissionForPoints(campaign.id);
   }
 
   calculatePercentage(points){
@@ -44,5 +45,6 @@ export default class CampaignItem extends Component {
 CampaignItem.propTypes = {
   campaign: PropTypes.object.isRequired,
   points: PropTypes.number.isRequired,
-  onRemoveCampaign: PropTypes.func.isRequired
+  onRemoveCampaign: PropTypes.func.isRequired,
+  onRemoveMissionForPoints: PropTypes.func.isRequired
 };
