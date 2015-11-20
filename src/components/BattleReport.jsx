@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import clone from 'clone';
 import battle from '../utils/functions';
 
 
@@ -15,7 +16,9 @@ export default class Points extends Component {
 
   handleSimulateButtonClick(e){
     const { playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
-    battle(playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
+    const playerSpace = clone(playerSpaceFleet);
+    const enemySpace = clone(enemySpaceFleet);
+    battle(playerSpace, enemySpace, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight);
     this.setState({
       victoryPoints : 100,
       BattleDisabled : false
@@ -28,7 +31,7 @@ export default class Points extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">Informe de batalla</h2>
+            <h2 className="col-xs-12">Battle Report</h2>
           </div>
           {(this.state.BattleDisabled) ? (
             <div className="col-xs-12">
