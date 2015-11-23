@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import clone from 'clone';
 import battle from '../utils/functions';
+import ResultShipItem from './ResultShipItem';
 
 
 export default class Points extends Component {
@@ -18,12 +19,19 @@ export default class Points extends Component {
   }
 
   render() {
-
+    const { playerSpaceFleet } = this.props;
     return (
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
             <h2 className="col-xs-12">Battle Report</h2>
+          </div>
+          <div className="col-xs-12">
+            <p className="col-xs-12">
+              {
+                playerSpaceFleet.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
+              }
+            </p>
           </div>
             <div className="col-xs-12">
               <div className="col-xs-4">
