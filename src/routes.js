@@ -8,6 +8,7 @@ import TutorialContainer from './containers/TutorialContainer';
 import SelectPlayerFleetContainer from './containers/SelectPlayerFleetContainer';
 import SelectEnemyFleetContainer from './containers/SelectEnemyFleetContainer';
 import BattleReportContainer from './containers/BattleReportContainer';
+import BattleResultContainer from './containers/BattleResultContainer';
 
 export default (
   <Route path="" component={App} >
@@ -18,6 +19,7 @@ export default (
 		<Route path="select/:idCampaign" component={SelectPlayerFleetContainer} />
     <Route path="selectEnemy/:idCampaign" component={SelectEnemyFleetContainer} />
     <Route path="battleReport" component={BattleReportContainer} />
+    <Route path="battleResult" component={BattleResultContainer} />
     <Redirect path="*" to="/" />
   </Route>
 );
