@@ -25,11 +25,12 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
             <li className="setPadding col-xs-12 stylenone">
                   <span className="col-xs-8">  Mission {missionnumber + 1}:  {pointinmission} points</span>
                   <span className="col-xs-4 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
-                   <div className="col-xs-12 progress">
-                      {(this.calculatePercentage(pointinmission) >= 50) ? <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style={{width:this.calculatePercentage(pointinmission) + "%"}}><span className="spanProgress">{this.calculatePercentage(pointinmission) + "%"}</span></div>
-                       : <div className="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style={{width:this.calculatePercentage(pointinmission) + "%"}}><span className="spanProgress">{this.calculatePercentage(pointinmission) + "%"}</span></div>}
+                  <div className="setPadding col-xs-12">
+                   <div className="progress">
+                      {(this.calculatePercentage(pointinmission) >= 50) ? <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style={{width: this.calculatePercentage(pointinmission) + "%"}}><span className="spanProgress">{this.calculatePercentage(pointinmission) + "%"}</span></div>
+                     : <div className="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style={{width:this.calculatePercentage(pointinmission) + "%"}}><span className="spanProgress">{this.calculatePercentage(pointinmission) + "%"}</span></div>}
                     </div>
-
+                  </div>
             </li>
     );
   }
