@@ -12,6 +12,7 @@ export default class Points extends Component {
   }
 
   handleSimulateButtonClick(e){
+    debugger;
     const { playerSpaceFleet, enemySpaceFleet, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight } = this.props;
     const playerSpace = clone(playerSpaceFleet);
     const enemySpace = clone(enemySpaceFleet);

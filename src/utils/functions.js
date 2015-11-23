@@ -48,6 +48,7 @@ function calculateDefense(Agility){
 }
 
 export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight){
+  debugger;
   let i = 0;
   let objective;
   let objectiveAlive;
@@ -71,6 +72,10 @@ export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleet
           totalDefense = calculateDefense(arrayEnemy[objective].agility);
           trueDamage = totalDamage - totalDefense;
           if (trueDamage > 0){
+            while (arrayEnemy[objective].shield > 0){
+              arrayEnemy[objective].shield = arrayEnemy[objective].shield - 1;
+              trueDamage = trueDamage - 1;
+            }
           arrayEnemy[objective].hull = arrayEnemy[objective].hull - trueDamage;
           }
         }
@@ -90,6 +95,10 @@ export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleet
           totalDefense = calculateDefense(arrayPlayer[objective].agility);
           trueDamage = totalDamage - totalDefense;
           if (trueDamage > 0){
+            while (arrayPlayer[objective].shield > 0){
+              arrayPlayer[objective].shield = arrayPlayer[objective].shield - 1;
+              trueDamage = trueDamage - 1;
+            }
             arrayPlayer[objective].hull = arrayPlayer[objective].hull - trueDamage;
           }
         }
