@@ -63,3 +63,19 @@
 .result{
   text-align: center;
 }
+
+.dead{
+  border: 1px solid #DA4453;
+  background: #ED5565;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.alive{
+  border: 1px solid #2d752d;
+  background: #5ad15a;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px;
+}

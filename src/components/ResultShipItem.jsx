@@ -9,14 +9,15 @@ export default class ResultShipItem extends Component {
   render() {
     const { resultShipProp } = this.props;
     return (
-      <div>
-
-  <strong>Name:</strong> {resultShipProp.name}
-  <strong>Damage:</strong> {resultShipProp.damage}
-  <strong>Agility:</strong> {resultShipProp.agility}
-  <strong>Hull:</strong> {resultShipProp.hull}
-  <strong>Shields:</strong> {resultShipProp.shields}
-  <strong>Points:</strong> {resultShipProp.points}
+      <div className={(resultShipProp.hull <= 0 ) ? "col-xs-3 dead" : "col-xs-3 alive" }>
+      <ul>
+        <li><strong>Name:</strong> {resultShipProp.name}</li>
+        <li><strong>Damage:</strong> {resultShipProp.damage}</li>
+        <li><strong>Agility:</strong> {resultShipProp.agility}</li>
+        <li><strong>Hull:</strong> {resultShipProp.hull}</li>
+        <li><strong>Shields:</strong> {resultShipProp.shields}</li>
+        <li><strong>Points:</strong> {resultShipProp.points}</li>
+      </ul>
       </div>
     );
   }
