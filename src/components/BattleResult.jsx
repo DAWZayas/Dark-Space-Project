@@ -36,21 +36,20 @@ export default class BattleResult extends Component {
     return (
               <div className="col-xs-12">
                 <div className="result">
-                  <h3 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h3>
+                  <h1 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h1>
+                  <h3 className="col-xs-12">{this.calculatePoints()} points of {this.totalpoints()} points</h3>
                 </div>
                 <div className="col-xs-12">
-                  <div className="col-xs-12">
-                  <p>Player Fleet</p>
-                    {
-                      playerFleetAfterFight.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
-                    }
-                    </div>
-                    <div className="col-xs-12">
-                    <p>Enemy Fleet</p>
-                    {
-                      enemyPlayerFleetAfterFight.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
-                    }
-                    </div>
+                  <h3>Player Fleet:</h3>
+                  {
+                    playerFleetAfterFight.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
+                  }
+                </div>
+                <div className="col-xs-12">
+                  <h3>Enemy Fleet:</h3>
+                  {
+                     enemyPlayerFleetAfterFight.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
+                  }
                 </div>
               </div>
     );

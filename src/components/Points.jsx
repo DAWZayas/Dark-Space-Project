@@ -15,7 +15,7 @@ export default class Points extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">Points</h2>
+            <h2>Points</h2>
           </div>
         <ul>
             {

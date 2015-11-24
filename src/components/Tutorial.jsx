@@ -38,8 +38,19 @@ export default class Tutorial extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="titlePadding col-xs-12">Tutorial</h2>
+            <h2>Tutorial</h2>
           </div>
+          <ul>
+            <li><strong>About Dark space project:</strong></li>
+          </ul>
+          <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis laoreet lectus. Morbi sed sollicitudin odio. Sed quis elit sed nunc fringilla tempus non eget libero. Nullam tristique dignissim neque, nec efficitur neque feugiat in. Suspendisse blandit malesuada lacus, ultrices rhoncus est tristique euismod. Donec elementum ex id interdum porttitor. Maecenas fermentum dignissim turpis, ac blandit enim aliquam ac. Cras scelerisque ante vitae ullamcorper congue. Donec egestas mattis augue ut ornare. Sed iaculis, nisi quis euismod malesuada, sapien orci mollis leo, vel semper nisi ex fermentum nunc. Morbi enim dolor, imperdiet eget tincidunt id, consectetur vel elit. Cras purus nisi, interdum a pulvinar ut, varius a tortor. </p>
+          <ul>
+          <li><strong>Battle Simulation:</strong></li>
+          </ul>
+          <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis laoreet lectus. Morbi sed sollicitudin odio. Sed quis elit sed nunc fringilla tempus non eget libero. Nullam tristique dignissim neque, nec efficitur neque feugiat in. Suspendisse blandit malesuada lacus, ultrices rhoncus est tristique euismod. Donec elementum ex id interdum porttitor. Maecenas fermentum dignissim turpis, ac blandit enim aliquam ac. Cras scelerisque ante vitae ullamcorper congue. Donec egestas mattis augue ut ornare. Sed iaculis, nisi quis euismod malesuada, sapien orci mollis leo, vel semper nisi ex fermentum nunc. Morbi enim dolor, imperdiet eget tincidunt id, consectetur vel elit. Cras purus nisi, interdum a pulvinar ut, varius a tortor. </p>
+          <ul>
+            <li><strong>Ships available:</strong></li>
+          </ul>
           <div className="col-xs-12">
             {
                <TutorialNavesItem navesProp={naves[this.state.it]} />

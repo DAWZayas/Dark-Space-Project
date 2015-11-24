@@ -88,7 +88,7 @@ export default class SelectEnemyFleet extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">SelectEnemyFleet</h2>
+            <h2>Select the enemy fleet</h2>
           </div>
           <div className="input-group">
             <span className="input-group-addon" id="basic-addon1">Total points</span>

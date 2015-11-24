@@ -47,7 +47,7 @@ export default class Campaign extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="titlePadding col-xs-12">Campaign</h2>
+            <h2>Campaign</h2>
           </div>
           <ul>
             {

@@ -25,15 +25,15 @@ export default class Points extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">Battle Report</h2>
+            <h2>Battle Report</h2>
           </div>
           <div className="col-xs-12">
               {
                 playerSpaceFleet.map( (ship, index) => <SelectShipItem key={index} resultShipProp={ship}/>)
               }
           </div>
-          <div>
-            <h1 className="titlePadding">Versus</h1>
+          <div className="titlePadding">
+            <h1>Versus</h1>
           </div>
           <div className="col-xs-12">
               {

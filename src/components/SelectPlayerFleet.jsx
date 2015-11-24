@@ -88,7 +88,7 @@ this.state = {
       <div className="row">
         <div className="col-xs-12">
           <div className="titlePadding">
-            <h2 className="col-xs-12">SelectPlayerFleet</h2>
+            <h2>Select the player fleet</h2>
           </div>
           <div className="input-group">
             <span className="input-group-addon" id="basic-addon1">Total points</span>
