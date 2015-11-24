@@ -9,8 +9,8 @@ export default class ResultShipItem extends Component {
   render() {
     const { resultShipProp } = this.props;
     return (
-      <div className={(resultShipProp.hull <= 0 ) ? "col-xs-3 dead" : "col-xs-3 alive" }>
-      <ul>
+      <div className={(resultShipProp.hull <= 0 ) ? "col-xs-6 dead" : "col-xs-6 alive" }>
+      <ul className="noMargin">
         <li><strong>Name:</strong> {resultShipProp.name}</li>
         <li><strong>Damage:</strong> {resultShipProp.damage}</li>
         <li><strong>Agility:</strong> {resultShipProp.agility}</li>
