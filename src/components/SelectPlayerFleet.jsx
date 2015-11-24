@@ -90,13 +90,12 @@ this.state = {
           <div className="titlePadding">
             <h2>Select the player fleet</h2>
           </div>
-          <div className="input-group">
-            <span className="input-group-addon" id="basic-addon1">Total points</span>
-            <input type="text" className="form-control" value={this.state.points} ref="pointsValue" />
+          <div className="col-xs-12">
+            <h4 className="col-xs-1 roundh text-center">Points {this.state.points} of 100</h4>
           </div>
 
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">X - Wings (21 Puntos)</span>
+            <span className="input-group-addon">X - Wings (21 points)</span>
               <select className="form-control" ref="Xwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
@@ -105,7 +104,7 @@ this.state = {
               </select>
           </div>
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">Y - Wings (20 Puntos)</span>
+            <span className="input-group-addon">Y - Wings (20 poitns)</span>
               <select className="form-control" ref="Ywing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
@@ -114,7 +113,7 @@ this.state = {
               </select>
           </div>
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">B - Wings (21 Puntos)</span>
+            <span className="input-group-addon">B - Wings (21 points)</span>
               <select className="form-control" ref="Bwing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
