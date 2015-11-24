@@ -19,7 +19,7 @@ export default class App extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/"><span className="navbar-brand">Dark Space</span></Link>
+            <Link to="/"><span className="navbar-brand">Dark Space Project</span></Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">

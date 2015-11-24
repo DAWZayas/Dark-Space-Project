@@ -33,7 +33,7 @@ export default class Points extends Component {
               }
           </div>
           <div className="titlePadding">
-            <h1>Versus</h1>
+            <h2>Versus</h2>
           </div>
           <div className="col-xs-12">
               {
