@@ -27,6 +27,10 @@ export default class BattleResult extends Component {
     return result;
   }
 
+pointsfor500(){
+    return this.calculatePoints() * 500 / this.totalpoints();
+  }
+
   calculatePercentage(){
     return  this.calculatePoints() * 500 / this.totalpoints();
   }
@@ -37,7 +41,7 @@ export default class BattleResult extends Component {
               <div className="col-xs-12">
                 <div className="result">
                   <h1 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h1>
-                  <h3 className="col-xs-12">{this.calculatePoints()} points of {this.totalpoints()} points</h3>
+                  <h3 className="col-xs-12">{this.pointsfor500()} points of 500 points</h3>
                 </div>
                 <div className="col-xs-12">
                   <h3>Player Fleet:</h3>
