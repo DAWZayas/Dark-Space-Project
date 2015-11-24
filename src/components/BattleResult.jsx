@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ResultShipItem from './ResultShipItem';
+import { Link } from 'react-router';
 
 export default class BattleResult extends Component {
 
@@ -54,6 +55,9 @@ pointsfor500(){
                   {
                      enemyPlayerFleetAfterFight.map( (ship, index) => <ResultShipItem key={index} resultShipProp={ship}/>)
                   }
+                </div>
+                <div className="col-xs-4">
+                  <p className="btn btn-primary btn-md" role="button"><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Next</Link></p>
                 </div>
               </div>
     );
