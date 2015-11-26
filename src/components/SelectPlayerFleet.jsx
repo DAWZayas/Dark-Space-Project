@@ -90,9 +90,10 @@ this.state = {
           <div className="titlePadding">
             <h2>Select the player fleet</h2>
           </div>
-          <div className="col-xs-12">
-            <h4 className="col-xs-1 roundh text-center">Points {this.state.points} of 100</h4>
+          <div className="titlePadding">
+            <h4 className="col-xs-6 col-md-2 roundh text-center">Points {this.state.points} of 100</h4>
           </div>
+          <div className="col-xs-12"></div>
 
           <div className="input-group input-group-xs">
             <span className="input-group-addon">X - Wings (21 points)</span>

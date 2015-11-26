@@ -11,7 +11,7 @@ export default class SelectShipItem extends Component {
     return (
       <div className="col-xs-6">
         <div className="well well-lg">
-          <ul>
+          <ul className="noMargin">
             <li><strong>Name:</strong> {resultShipProp.name}</li>
             <li><strong>Damage:</strong> {resultShipProp.damage}</li>
             <li><strong>Agility:</strong> {resultShipProp.agility}</li>

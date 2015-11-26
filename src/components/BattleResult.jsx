@@ -57,7 +57,7 @@ pointsfor500(){
                   }
                 </div>
                 <div className="col-xs-4">
-                  <p className="btn btn-primary btn-md" role="button"><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Next</Link></p>
+                  <p className="btn btn-primary btn-md" role="button"><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
                 </div>
               </div>
     );
