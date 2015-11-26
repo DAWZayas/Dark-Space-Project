@@ -90,11 +90,10 @@ export default class SelectEnemyFleet extends Component {
           <div className="titlePadding">
             <h2>Select the enemy fleet</h2>
           </div>
-          <div className="input-group">
-            <span className="input-group-addon" id="basic-addon1">Total points</span>
-            <input type="text" className="form-control" value={this.state.points} ref="pointsValue" />
+          <div className="titlePadding">
+            <h4 className="col-xs-6 col-md-2 roundh text-center">Points {this.state.points} of 100</h4>
           </div>
-
+          <div className="col-xs-12"></div>
           <div className="input-group input-group-xs">
             <span className="input-group-addon">Tie Interceptor (18 Puntos)</span>
               <select className="form-control" ref="tieInterceptor" onChange={e => this.handleOnSelectChangePoints(e)}>
