@@ -100,3 +100,12 @@
   float: right;
   padding: 6px;
 }
+
+.roundpointspermission{
+  border: 3px solid #e7e7e7;
+  background: #eee;
+  border-radius: 25px;
+  float: right;
+  padding: 6px;
+  margin:3px;
+}

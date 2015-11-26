@@ -22,7 +22,7 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
     const {pointinmission, iduser, missionnumber} = this.props;
 
     return (
-            <li className="setPadding col-xs-12 stylenone">
+            <li className="setPadding col-xs-12 stylenone roundpointspermission">
                   <span className="col-xs-8">  Mission {missionnumber + 1}:  {pointinmission} points</span>
                   <span className="col-xs-4 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
                   <div className="setPadding col-xs-12">
