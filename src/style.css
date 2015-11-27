@@ -1,102 +1,94 @@
-
 .list-group-item .action-icon {
   display: none;
 }
-
 .list-group-item:hover {
   z-index: 5;
   color: #333;
   background-color: #eee;
   border-color: #e7e7e7;
 }
-
 .list-group-item:hover .action-icon {
   display: inherit;
 }
-
 .input-group{
   padding-top: 25px ;
   padding-bottom: 25px;
   padding-left: 55px;
   padding-right: 15px;
 }
-
 .setPadding{
   padding-top: 10px ;
 }
-
 .spanProgress{
   color:black;
   padding-left: 5px;
 }
-
 .titlePadding{
   padding-bottom: 10px;
   padding-left: 40px;
 }
-
 .panelPadding{
   padding-left: 35px;
   padding-top: 50px ;
 }
-
 .alertPadding{
   padding-bottom: 40px;
   padding-left: 55px;
 }
-
 .pointsPerMission{
   display: none;
 }
-
 .showlist:hover .pointsPerMission{
   display: inherit;
 }
-
 .userStyle .navbar{
   margin-bottom: 0px;
 }
-
 .stylenone{
   list-style: none;
 }
 .result{
   text-align: center;
 }
-
-.dead{
+.dead .well{
   border: 3px solid #DA4453;
-  background: #eee;
-  border-radius: 25px;
-  margin: 10px;
-  padding: 5px;
 }
-
-.alive{
+.alive .well {
   border: 3px solid #2d752d;
-  background: #eee;
-  border-radius: 25px;
-  margin: 10px;
-  padding: 5px;
 }
-
 .noMargin{
   margin:0;
   padding:0;
   list-style-type: none;
 }
-
 .text{
   padding-bottom: 20px;
   padding-left: 40px;
   padding-right: 40px;
   text-align:justify;
 }
-
 .roundh{
   border: 1px solid #e7e7e7;
   background: #eee;
   border-radius: 25px;
   float: right;
   padding: 6px;
+}
+.roundpointspermission{
+  border: 3px solid #e7e7e7;
+  background: #eee;
+  border-radius: 25px;
+  float: right;
+  padding: 6px;
+  margin:3px;
+}
+.marginBottom{
+  margin-bottom: 30px;
+}
+.right{
+  float:right;
+  display : justify;
+}
+.left{
+  float: left;
 }

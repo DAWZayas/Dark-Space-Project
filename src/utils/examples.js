@@ -12,7 +12,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -21,7 +22,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 12
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   },
@@ -38,7 +40,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -47,7 +50,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 12
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   },
@@ -64,7 +68,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -73,7 +78,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 12
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   },
@@ -90,7 +96,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -100,6 +107,7 @@
         hull : 3,
         shields : 0,
         points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   },
@@ -116,7 +124,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -125,7 +134,8 @@
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 12
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   }
@@ -139,7 +149,8 @@ export const playerFleet = [
     agility : 2,
     hull : 3,
     shields : 2,
-    points : 21
+    points : 21,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/X-Wing-02-icon.png"
   },
   {
     id: 2,
@@ -148,7 +159,8 @@ export const playerFleet = [
     agility : 1,
     hull : 3,
     shields : 5,
-    points : 22
+    points : 22,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/B-Wing-icon.png"
   }
 ];
 
@@ -163,7 +175,8 @@ export const enemyPlayerFleet = [
     agility : 3,
     hull : 3,
     shields : 0,
-    points : 18
+    points : 18,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
   },
   {
     id: 4,
@@ -172,7 +185,8 @@ export const enemyPlayerFleet = [
     agility : 3,
     hull : 3,
     shields : 0,
-    points : 12
+    points : 12,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
   }
 ];
 
@@ -214,7 +228,8 @@ export const naves = [
     agility : 2,
     hull : 3,
     shields : 2,
-    points : 21
+    points : 21,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/X-Wing-02-icon.png"
   },
   {
     id: 2,
@@ -223,7 +238,8 @@ export const naves = [
     agility : 1,
     hull : 3,
     shields : 5,
-    points : 22
+    points : 22,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Y-Wing-icon.png"
   },  {
     id: 3,
     name:'B - Wing',
@@ -231,7 +247,8 @@ export const naves = [
     agility : 2,
     hull : 3,
     shields : 2,
-    points : 21
+    points : 21,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/B-Wing-icon.png"
   },
   {
     id: 4,
@@ -240,7 +257,8 @@ export const naves = [
     agility : 3,
     hull : 3,
     shields : 0,
-    points : 18
+    points : 18,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
   },
   {
     id: 5,
@@ -249,7 +267,8 @@ export const naves = [
     agility : 3,
     hull : 3,
     shields : 0,
-    points : 12
+    points : 12,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
   },
   {
     id: 6,
@@ -258,7 +277,8 @@ export const naves = [
     agility : 1,
     hull : 3,
     shields : 5,
-    points : 22
+    points : 22,
+    img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Advanced-icon.png"
   }
 
 ];

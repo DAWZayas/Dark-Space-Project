@@ -9,16 +9,21 @@ export default class SelectShipItem extends Component {
   render() {
     const { resultShipProp } = this.props;
     return (
-      <div className="col-xs-6">
+      <div className="col-xs-12 col-sm-6">
         <div className="well well-lg">
-          <ul className="noMargin">
-            <li><strong>Name:</strong> {resultShipProp.name}</li>
-            <li><strong>Damage:</strong> {resultShipProp.damage}</li>
-            <li><strong>Agility:</strong> {resultShipProp.agility}</li>
-            <li><strong>Hull:</strong> {resultShipProp.hull}</li>
-            <li><strong>Shields:</strong> {resultShipProp.shields}</li>
-            <li><strong>Points:</strong> {resultShipProp.points}</li>
-          </ul>
+          <div className="row">
+            <div className="col-xs-6">
+              <div><strong>Name:</strong> {resultShipProp.name}</div>
+              <div><strong>Damage:</strong> {resultShipProp.damage}</div>
+              <div><strong>Agidivty:</strong> {resultShipProp.agidivty}</div>
+              <div><strong>Hull:</strong> {resultShipProp.hull}</div>
+              <div><strong>Shields:</strong> {resultShipProp.shields}</div>
+              <div><strong>Points:</strong> {resultShipProp.points}</div>
+            </div>
+            <div className="col-xs-5">
+              <img src={resultShipProp.img} />
+            </div>
+          </div>
         </div>
       </div>
     );

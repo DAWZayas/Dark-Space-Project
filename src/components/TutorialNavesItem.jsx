@@ -14,14 +14,21 @@ export default class TutorialNavesItem extends Component {
 
     return (
       <div className="col-xs-12">
-        <p className="noMargin well col-xs-12">
-          <span className="col-xs-12"><strong>Name:</strong> {navesProp.name}</span>
-          <span className="col-xs-12"><strong>Damage:</strong> {navesProp.damage}</span>
-          <span className="col-xs-12"><strong>Agility:</strong> {navesProp.agility}</span>
-          <span className="col-xs-12"><strong>Hull:</strong>{navesProp.hull}</span>
-          <span className="col-xs-12"><strong>Shields:</strong> {navesProp.shields}</span>
-          <span className="col-xs-12"><strong>Points:</strong> {navesProp.points}</span>
-        </p>
+        <div className="noMargin well well-lg">
+            <div className="row">
+              <div className="col-xs-6">
+                <div><strong>Name:</strong> {navesProp.name}</div>
+                <div><strong>Damage:</strong> {navesProp.damage}</div>
+                <div><strong>Agility:</strong> {navesProp.agility}</div>
+                <div><strong>Hull:</strong>{navesProp.hull}</div>
+                <div><strong>Shields:</strong> {navesProp.shields}</div>
+                <div><strong>Points:</strong> {navesProp.points}</div>
+              </div>
+              <div className="col-xs-5">
+                <img src={navesProp.img} className="pull-right"/>
+              </div>
+            </div>
+        </div>
       </div>
     );
   }
