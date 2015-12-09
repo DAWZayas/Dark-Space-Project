@@ -131,7 +131,7 @@ this.state = {
               <p className="btn btn-primary btn-md" role="button"><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
             </div>
             <div className="col-xs-4">
-              <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button" onClick={e => this.handleAddButtonClick(e)}><Link to="/battleReport" style={{color: 'inherit', textDecoration: 'inherit'}}>Fight</Link></p>
+              <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button" onClick={e => this.handleAddButtonClick(e)}><Link to={`/battleReport/${this.props.params.idCampaign}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Fight</Link></p>
             </div>
           </div>
         </div>

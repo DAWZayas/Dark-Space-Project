@@ -6,6 +6,7 @@ import { pushState } from 'redux-router';
 
 export const ADD_CAMPAIGN = 'ADD_CAMPAIGN';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
+export const ON_BATTLE_RESULT = 'ON_BATTLE_RESULT';
 export const PREPARE_FIGHT = 'PREPARE_FIGHT';
 export const CHANGE_FLEET = 'CHANGE_FLEET';
 export const CHANGE_ENEMY_FLEET = 'CHANGE_ENEMY_FLEET';
@@ -30,7 +31,6 @@ export function removeCampaign(idCampaign) {
 export function onChangeFleet(enemySpaceFleetArray, idCampaign){
   return { type: CHANGE_FLEET, enemySpaceFleetArray, idCampaign};
 }
-
 
 /*
  * Player fleet action creators
@@ -62,6 +62,10 @@ export function onAddPoint() {
 
 export function onRemoveMissionForPoints(idCampaign){
   return {type: ON_REMOVE_MISSION_FOR_POINTS, idCampaign};
+}
+
+export function onBattleResult(idCampaign){
+  return { type: ON_BATTLE_RESULT, idCampaign};
 }
 
 /*

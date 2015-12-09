@@ -18,8 +18,8 @@ export default (
 		<Route path="tutorial" component={TutorialContainer} />
 		<Route path="select/:idCampaign" component={SelectPlayerFleetContainer} />
     <Route path="selectEnemy/:idCampaign" component={SelectEnemyFleetContainer} />
-    <Route path="battleReport" component={BattleReportContainer} />
-    <Route path="battleResult" component={BattleResultContainer} />
+    <Route path="battleReport/:idCampaign" component={BattleReportContainer} />
+    <Route path="battleResult/:idCampaign" component={BattleResultContainer} />
     <Redirect path="*" to="/" />
   </Route>
 );

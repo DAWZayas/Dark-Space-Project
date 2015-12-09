@@ -8,6 +8,12 @@ export default class BattleResult extends Component {
     super(props);
   }
 
+  handleBackButtonClick(){
+    const idCampaign = this.props.params.idCampaign;
+    const {onBattleResult} = this.props;
+    onBattleResult(idCampaign);
+  }
+
   calculatePoints(){
     const {enemyPlayerFleetAfterFight} = this.props;
     let result = 0;
@@ -57,7 +63,7 @@ pointsfor500(){
                   }
                 </div>
                 <div className="col-xs-4">
-                  <p className="btn btn-primary btn-md" role="button"><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
+                  <p className="btn btn-primary btn-md" role="button" onClick={() => this.handleBackButtonClick()}><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
                 </div>
               </div>
     );
@@ -66,5 +72,6 @@ pointsfor500(){
 
 BattleResult.propTypes = {
   playerFleetAfterFight: PropTypes.array.isRequired,
-  enemyPlayerFleetAfterFight: PropTypes.array.isRequired
+  enemyPlayerFleetAfterFight: PropTypes.array.isRequired,
+  onBattleResult: PropTypes.func.isRequired
 };

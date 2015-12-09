@@ -16,7 +16,7 @@ export default class ResultShipItem extends Component {
             <div className="col-xs-6">
               <div><strong>Name:</strong> {resultShipProp.name}</div>
               <div><strong>Damage:</strong> {resultShipProp.damage}</div>
-              <div><strong>Agidivty:</strong> {resultShipProp.agidivty}</div>
+              <div><strong>Agility:</strong> {resultShipProp.agidivty}</div>
               <div><strong>Hull:</strong> {resultShipProp.hull}</div>
               <div><strong>Shields:</strong> {resultShipProp.shields}</div>
               <div><strong>Points:</strong> {resultShipProp.points}</div>

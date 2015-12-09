@@ -5,7 +5,6 @@ import { onChangeFleet } from '../actions';
 
 
 function mapStateToProps(state) {
-  const idCapaign = state.router.params.campaign;
   return {
     campaignState : state.campaign,
     playerFleetState : state.playerFleet,

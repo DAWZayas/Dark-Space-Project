@@ -42,6 +42,7 @@ function removeCampaign(state, idCampaign) {
   return newState;
 }
 
+
 export default function campaignReducer(state = [], action) {
     switch (action.type) {
       case ADD_CAMPAIGN:

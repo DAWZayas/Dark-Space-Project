@@ -1,5 +1,5 @@
 import clone from 'clone';
-import { ON_REMOVE_MISSION_POINTS, ON_ADD_POINT, ON_REMOVE_MISSION_FOR_POINTS} from '../actions';
+import { ON_REMOVE_MISSION_POINTS, ON_ADD_POINT, ON_REMOVE_MISSION_FOR_POINTS, ON_BATTLE_RESULT} from '../actions';
 
 function onRemoveMissionPoints (state, iduser, missionnumber) {
   const newState = clone(state);
@@ -23,6 +23,11 @@ function onRemoveMissionForPoints(state, idCampaign){
   return newState;
 }
 
+function onBattleResult(state, idCampaign){
+
+  return state;
+}
+
 export default function pointsReducer(state = [], action) {
   switch (action.type) {
       case ON_REMOVE_MISSION_POINTS:
@@ -31,6 +36,8 @@ export default function pointsReducer(state = [], action) {
         return onAddPoint(state);
       case ON_REMOVE_MISSION_FOR_POINTS:
         return onRemoveMissionForPoints(state, action.idCampaign);
+      case ON_BATTLE_RESULT:
+        return onBattleResult(state, action.idCampaign);
       default:
         return state;
       }
