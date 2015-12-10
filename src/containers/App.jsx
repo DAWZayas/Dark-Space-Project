@@ -5,7 +5,17 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      current: true,
+    };
   }
+
+handlerSetState(nav){
+  this.setState({
+    current: nav
+  });
+}
+
 
   render() {
     return (
@@ -19,13 +29,13 @@ export default class App extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/"><span className="navbar-brand">Dark Space Project</span></Link>
+            <Link className="active" to="/"><span className="navbar-brand" onClick={() => this.handlerSetState('/') }>Dark Space Project</span></Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li><Link to="/campaign">Campaing</Link></li>
-              <li><Link to="/points">Points</Link></li>
-              <li><Link to="/tutorial">Tutorial</Link></li>
+              { (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> }
+              { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
+              { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
             </ul>
           </div>
         </div>
