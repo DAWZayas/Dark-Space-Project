@@ -2,8 +2,6 @@
   {
     id: 1,
     title: 'Battle of Chandrila',
-    status: 'success',
-    percentage: 100,
     playerFleet:[
       {
         id: 3,
@@ -30,8 +28,6 @@
   {
     id: 2,
     title: 'Battle of Yavin 4',
-    status: 'success',
-    percentage: 55,
     playerFleet:[
       {
         id: 3,
@@ -58,8 +54,6 @@
   {
     id: 3,
     title: 'Attack on Coruscant',
-    status: 'fail',
-    percentage: 30,
     playerFleet:[
       {
         id: 3,
@@ -86,8 +80,6 @@
   {
     id: 4,
     title: 'First battle of Korriban',
-    status: 'fail',
-    percentage: 0,
     playerFleet:[
       {
         id: 3,
@@ -114,8 +106,6 @@
   {
     id: 5,
     title: 'Second battle of Korriban',
-    status: 'fail',
-    percentage: 0,
     playerFleet:[
       {
         id: 3,

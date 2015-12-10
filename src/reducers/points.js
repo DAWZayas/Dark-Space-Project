@@ -23,9 +23,12 @@ function onRemoveMissionForPoints(state, idCampaign){
   return newState;
 }
 
-function onBattleResult(state, idCampaign){
-
-  return state;
+function onBattleResult(state, idCampaign, points){
+  const newState = clone(state);
+  if (newState[1].missionpoints[idCampaign - 1] < points){
+    newState[1].missionpoints[idCampaign - 1] = points;
+  }
+  return newState;
 }
 
 export default function pointsReducer(state = [], action) {
@@ -37,7 +40,7 @@ export default function pointsReducer(state = [], action) {
       case ON_REMOVE_MISSION_FOR_POINTS:
         return onRemoveMissionForPoints(state, action.idCampaign);
       case ON_BATTLE_RESULT:
-        return onBattleResult(state, action.idCampaign);
+        return onBattleResult(state, action.idCampaign, action.points);
       default:
         return state;
       }

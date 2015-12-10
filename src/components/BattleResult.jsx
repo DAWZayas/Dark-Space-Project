@@ -8,10 +8,10 @@ export default class BattleResult extends Component {
     super(props);
   }
 
-  handleBackButtonClick(){
+  handleBackButtonClick(newPoints){
     const idCampaign = this.props.params.idCampaign;
     const {onBattleResult} = this.props;
-    onBattleResult(idCampaign);
+    onBattleResult(idCampaign, newPoints);
   }
 
   calculatePoints(){
@@ -44,11 +44,12 @@ pointsfor500(){
 
   render() {
     const { playerFleetAfterFight, enemyPlayerFleetAfterFight } = this.props;
+    const point = this.pointsfor500();
     return (
               <div className="col-xs-12">
                 <div className="result">
                   <h1 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h1>
-                  <h3 className="col-xs-12">{this.pointsfor500()} points of 500 points</h3>
+                  <h3 className="col-xs-12">{point} points of 500 points</h3>
                 </div>
                 <div className="col-xs-12">
                   <h3>Player Fleet:</h3>
@@ -63,7 +64,7 @@ pointsfor500(){
                   }
                 </div>
                 <div className="col-xs-4">
-                  <p className="btn btn-primary btn-md" role="button" onClick={() => this.handleBackButtonClick()}><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
+                  <p className="btn btn-primary btn-md" role="button" onClick={() => this.handleBackButtonClick(point)}><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
                 </div>
               </div>
     );

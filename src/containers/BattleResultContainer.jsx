@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
 function mapActionsToProps(dispatch) {
   return {
-    onBattleResult : (idCampaign) => dispatch(onBattleResult(idCampaign))
+    onBattleResult : (idCampaign, points) => dispatch(onBattleResult(idCampaign, points))
   };
 }
 

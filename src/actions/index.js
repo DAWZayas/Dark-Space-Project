@@ -64,8 +64,8 @@ export function onRemoveMissionForPoints(idCampaign){
   return {type: ON_REMOVE_MISSION_FOR_POINTS, idCampaign};
 }
 
-export function onBattleResult(idCampaign){
-  return { type: ON_BATTLE_RESULT, idCampaign};
+export function onBattleResult(idCampaign, points){
+  return { type: ON_BATTLE_RESULT, idCampaign, points};
 }
 
 /*
