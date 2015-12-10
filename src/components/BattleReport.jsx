@@ -42,7 +42,7 @@ export default class Points extends Component {
           </div>
             <div className="col-xs-12">
               <div className="col-xs-4">
-                <p className="btn btn-primary btn-md" role="button" onClick={e => this.handleSimulateButtonClick(e)}><Link to={`/battleResult/${this.props.params.idCampaign}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Simulate</Link></p>
+                <Link to={`/battleResult/${this.props.params.idCampaign}`} onClick={e => this.handleSimulateButtonClick(e)} style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button" >Simulate</p></Link>
               </div>
             </div>
         </div>
