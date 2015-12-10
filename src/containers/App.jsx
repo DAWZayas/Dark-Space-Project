@@ -7,13 +7,29 @@ export default class App extends Component {
     super(props);
     this.state = {
       current: true,
+      collapsed: false
     };
   }
 
 handlerSetState(nav){
   this.setState({
-    current: nav
+    current: nav,
+    collapsed: false
   });
+}
+
+handlerCollapsed(stateCollapsed){
+     if (stateCollapsed !== true){
+        this.setState({
+          collapsed: true,
+        });
+        console.log('Lo pongo true');
+    }else {
+      this.setState({
+          collapsed: false,
+        });
+      console.log('Lo pongo false');
+    }
 }
 
 
@@ -23,7 +39,7 @@ handlerSetState(nav){
        <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" className="navbar-toggle collapsed" onClick={() => this.handlerCollapsed(this.state.collapsed)} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
@@ -31,7 +47,7 @@ handlerSetState(nav){
             </button>
             <Link className="active" to="/"><span className="navbar-brand" onClick={() => this.handlerSetState('/') }>Dark Space Project</span></Link>
             </div>
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div className= { (this.state.collapsed === true) ? "collapse navbar-collapse in" : "collapse navbar-collapse" } id="bs-example-navbar-collapse-1" >
             <ul className="nav navbar-nav">
               { (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> }
               { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
