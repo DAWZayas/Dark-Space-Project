@@ -50,6 +50,7 @@ pointsfor500(){
                 <div className="result">
                   <h1 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h1>
                   <h3 className="col-xs-12">{point} points of 500 points</h3>
+                  {this.handleBackButtonClick(point)}
                 </div>
                 <div className="col-xs-12">
                   <h3>Player Fleet:</h3>
@@ -64,7 +65,7 @@ pointsfor500(){
                   }
                 </div>
                 <div className="col-xs-4">
-                  <Link to="/campaign"  onClick={() => this.handleBackButtonClick(point)} style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button">Back</p></Link>
+                  <Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button">Back</p></Link>
                 </div>
               </div>
     );
