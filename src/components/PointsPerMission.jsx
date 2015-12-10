@@ -14,7 +14,7 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
   }
 
   calculatePercentage(points){
-      return points * 100 / 500;
+      return (points * 100 / 500).toFixed(0);
   }
 
   render() {

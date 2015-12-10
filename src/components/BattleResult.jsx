@@ -44,7 +44,7 @@ pointsfor500(){
 
   render() {
     const { playerFleetAfterFight, enemyPlayerFleetAfterFight } = this.props;
-    const point = this.pointsfor500();
+    const point = this.pointsfor500().toFixed(0);
     return (
               <div className="col-xs-12">
                 <div className="result">
@@ -64,7 +64,7 @@ pointsfor500(){
                   }
                 </div>
                 <div className="col-xs-4">
-                  <p className="btn btn-primary btn-md" role="button" onClick={() => this.handleBackButtonClick(point)}><Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}>Back</Link></p>
+                  <Link to="/campaign"  onClick={() => this.handleBackButtonClick(point)} style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button">Back</p></Link>
                 </div>
               </div>
     );
