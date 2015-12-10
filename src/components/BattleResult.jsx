@@ -44,7 +44,7 @@ pointsfor500(){
 
   render() {
     const { playerFleetAfterFight, enemyPlayerFleetAfterFight } = this.props;
-    const point = this.pointsfor500().toFixed(0);
+    const point = Math.floor(this.pointsfor500());
     return (
               <div className="col-xs-12">
                 <div className="result">

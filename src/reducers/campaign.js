@@ -19,7 +19,8 @@ function addCampaign(state, title) {
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 18
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -28,7 +29,8 @@ function addCampaign(state, title) {
         agility : 3,
         hull : 3,
         shields : 0,
-        points : 12
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
     ]
   });

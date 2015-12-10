@@ -4,16 +4,6 @@
     title: 'Battle of Chandrila',
     playerFleet:[
       {
-        id: 3,
-        name:'Tie Interceptor',
-        damage : 3,
-        agility : 3,
-        hull : 3,
-        shields : 0,
-        points : 18,
-        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
-      },
-      {
         id: 4,
         name:'Tie Fighter',
         damage : 2,
@@ -38,7 +28,13 @@
         shields : 0,
         points : 18,
         img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
-      },
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Attack on Coruscant',
+    playerFleet:[
       {
         id: 4,
         name:'Tie Fighter',
@@ -48,22 +44,6 @@
         shields : 0,
         points : 12,
         img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: 'Attack on Coruscant',
-    playerFleet:[
-      {
-        id: 3,
-        name:'Tie Interceptor',
-        damage : 3,
-        agility : 3,
-        hull : 3,
-        shields : 0,
-        points : 18,
-        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
         id: 4,
@@ -92,22 +72,6 @@
         img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       },
       {
-        id: 4,
-        name:'Tie Fighter',
-        damage : 2,
-        agility : 3,
-        hull : 3,
-        shields : 0,
-        points : 12,
-        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: 'Second battle of Korriban',
-    playerFleet:[
-      {
         id: 3,
         name:'Tie Interceptor',
         damage : 3,
@@ -116,6 +80,42 @@
         shields : 0,
         points : 18,
         img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
+      },
+            {
+        id: 3,
+        name:'Tie Interceptor',
+        damage : 3,
+        agility : 3,
+        hull : 3,
+        shields : 0,
+        points : 18,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: 'Second battle of Korriban',
+    playerFleet:[
+      {
+        id: 4,
+        name:'Tie Fighter',
+        damage : 2,
+        agility : 3,
+        hull : 3,
+        shields : 0,
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
+      },
+      {
+        id: 6,
+        name:'Tie advanced',
+        damage : 3,
+        agility : 1,
+        hull : 3,
+        shields : 5,
+        points : 22,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Advanced-icon.png"
       },
       {
         id: 4,

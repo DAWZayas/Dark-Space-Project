@@ -24,7 +24,7 @@ export default class CampaignItem extends Component {
     const { campaign, points} = this.props;
 
     return (
-        <div className="col-xs-12">
+        <div className="col-xs-12 showlist">
           <li className="list-group-item action-element  col-xs-12">
             <Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-4">Mission {campaign.id}:  {campaign.title}</span></Link>
                          <span className="text-danger col-xs-2"><Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
@@ -37,6 +37,12 @@ export default class CampaignItem extends Component {
                 : <div className="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style={{width:this.calculatePercentage(points) + "%"}}><span className="spanProgress">{this.calculatePercentage(points) + "%"}</span></div>}
               </div>
             </div>
+            <div className="pointsPerMission col-xs-12">
+            <p className="col-xs-12 col-md-1">Enemy Fleet:</p>
+            {
+                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-6 col-md-1"><img src={ship.img}/></div> )
+              }
+             </div>
           </li>
         </div>
     );
