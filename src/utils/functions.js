@@ -102,4 +102,3 @@ export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleet
   onChangePlayerSpaceFleetAfterFight(arrayPlayer);
   onChangeEnemySpaceFleetAfterFight(arrayEnemy);
 }
-

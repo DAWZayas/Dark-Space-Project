@@ -27,7 +27,7 @@ export default class CampaignItem extends Component {
         <div className="col-xs-12 showlist">
           <li className="list-group-item action-element  col-xs-12">
             <Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-4">Mission {campaign.id}:  {campaign.title}</span></Link>
-                         <span className="text-danger col-xs-2"><Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
+            <span className="text-danger col-xs-3"><Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
             <span className="col-xs-3">Status:  {( this.calculatePercentage(points) >= 50) ? <span className='glyphicon glyphicon-ok text-success'></span> : <span className='glyphicon glyphicon-remove text-danger'></span>}</span>
             <div className="col-xs-1"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div>
             <div className="col-xs-1"><span  onClick={(e) => this.handleRemoveButtonClick(e)} className={'glyphicon glyphicon-trash action-icon'}/></div>
@@ -40,7 +40,7 @@ export default class CampaignItem extends Component {
             <div className="pointsPerMission col-xs-12">
             <p className="col-xs-12 col-md-1">Enemy Fleet:</p>
             {
-                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-6 col-md-1"><img src={ship.img}/></div> )
+                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-7 col-md-1"><img src={ship.img}/></div> )
               }
              </div>
           </li>

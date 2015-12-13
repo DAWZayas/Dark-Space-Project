@@ -16,7 +16,7 @@ export default class TutorialNavesItem extends Component {
       <div className="col-xs-12">
         <div className="noMargin well well-lg">
             <div className="row">
-              <div className="col-xs-6">
+              <div className="col-xs-7">
                 <div><strong>Name:</strong> {navesProp.name}</div>
                 <div><strong>Damage:</strong> {navesProp.damage}</div>
                 <div><strong>Agility:</strong> {navesProp.agility}</div>

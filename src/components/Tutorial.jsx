@@ -41,13 +41,17 @@ export default class Tutorial extends Component {
             <h2>Tutorial</h2>
           </div>
           <ul>
-            <li><strong>About Dark space project:</strong></li>
+            <li><strong>Dark space project:</strong></li>
           </ul>
-          <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis laoreet lectus. Morbi sed sollicitudin odio. Sed quis elit sed nunc fringilla tempus non eget libero. Nullam tristique dignissim neque, nec efficitur neque feugiat in. Suspendisse blandit malesuada lacus, ultrices rhoncus est tristique euismod. Donec elementum ex id interdum porttitor. Maecenas fermentum dignissim turpis, ac blandit enim aliquam ac. Cras scelerisque ante vitae ullamcorper congue. Donec egestas mattis augue ut ornare. Sed iaculis, nisi quis euismod malesuada, sapien orci mollis leo, vel semper nisi ex fermentum nunc. Morbi enim dolor, imperdiet eget tincidunt id, consectetur vel elit. Cras purus nisi, interdum a pulvinar ut, varius a tortor. </p>
+          <p className="text">It is a strategy browser game, based on a universe of science fiction.. </p>
           <ul>
           <li><strong>Battle Simulation:</strong></li>
           </ul>
-          <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis laoreet lectus. Morbi sed sollicitudin odio. Sed quis elit sed nunc fringilla tempus non eget libero. Nullam tristique dignissim neque, nec efficitur neque feugiat in. Suspendisse blandit malesuada lacus, ultrices rhoncus est tristique euismod. Donec elementum ex id interdum porttitor. Maecenas fermentum dignissim turpis, ac blandit enim aliquam ac. Cras scelerisque ante vitae ullamcorper congue. Donec egestas mattis augue ut ornare. Sed iaculis, nisi quis euismod malesuada, sapien orci mollis leo, vel semper nisi ex fermentum nunc. Morbi enim dolor, imperdiet eget tincidunt id, consectetur vel elit. Cras purus nisi, interdum a pulvinar ut, varius a tortor. </p>
+          <p className="text">
+            For each point in the "Damaged" attribute of the attacking ship has a 50% chance to cause damage to the enemy ship.<br/>
+            For each point in the "Agility" attribute of the defending ship it has a 50% chance of avoiding damage.<br/>
+            Each damage done to a ship would eliminate first the shields and then the hull of the ship, a ship with 0 in the attribute "hull" is considered dead.
+          </p>
           <ul>
             <li><strong>Ships available:</strong></li>
           </ul>

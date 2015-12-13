@@ -12,7 +12,7 @@ export default class SelectShipItem extends Component {
       <div className="col-xs-12 col-sm-6">
         <div className="well well-lg">
           <div className="row">
-            <div className="col-xs-6">
+            <div className="col-xs-7">
               <div><strong>Name:</strong> {resultShipProp.name}</div>
               <div><strong>Damage:</strong> {resultShipProp.damage}</div>
               <div><strong>Agility:</strong> {resultShipProp.agility}</div>

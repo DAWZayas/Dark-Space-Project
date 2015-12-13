@@ -126,10 +126,10 @@ export default class SelectEnemyFleet extends Component {
           </div>
           <div className="col-xs-12">
             <div className="col-xs-2"></div>
-            <div className="col-xs-4">
+            <div className="col-xs-3">
               <Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button">Back</p></Link>
             </div>
-            <div className="col-xs-4">
+            <div className="col-xs-3">
             {this.state.addDisabled ? <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button" >Change Enemy Fleet</p>
             :
             <Link to="/campaign" onClick={e => this.handleAddButtonClick(e)} style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button" >Change Enemy Fleet</p></Link>
