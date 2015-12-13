@@ -1,4 +1,4 @@
-function alive(array){
+function aliveArray(array){
   let result = false;
   for (let j = 0;j < array.length;j++){
     if (array[j].hull > 0){
@@ -8,106 +8,98 @@ function alive(array){
   return result;
 }
 
-function calculateDamage(Damage){
-  let quantityDamage = 0;
-  for (let x = 0; x < Damage; x++){
-    switch (Math.floor(Math.random() * 6 + 1)){
-      case 4:
-        quantityDamage = quantityDamage + 1;
-        break;
-      case 5:
-        quantityDamage = quantityDamage + 1;
-        break;
-      case 6:
-        quantityDamage = quantityDamage + 2;
-        break;
-      default:
-        quantityDamage = quantityDamage;
-        break;
-    }
+function alive(ship){
+  if (ship.hull > 0){
+    return true;
+  } else {
+    return false;
   }
-  return quantityDamage;
 }
 
-function calculateDefense(Agility){
-  let quantityDefense = 0;
-  for (let d = 0; d < Agility; d++){
+function selectTarget(ship){
+  let target = Math.floor(Math.random() * ship.length);
+  while (!alive(ship[target])){
+    target = Math.floor(Math.random() * ship.length);
+  }
+  return target;
+}
+
+function calculateDamage(shipDamage){
+  let totalDamage = 0;
+  for (let x = 0; x < shipDamage; x++){
     switch (Math.floor(Math.random() * 6 + 1)){
+      case 4:
+        totalDamage = totalDamage + 1;
+        break;
       case 5:
-        quantityDefense = quantityDefense + 1;
+        totalDamage = totalDamage + 1;
         break;
       case 6:
-        quantityDefense = quantityDefense + 1;
+        totalDamage = totalDamage + 2;
         break;
       default:
-        quantityDefense = quantityDefense;
+        totalDamage = totalDamage;
         break;
     }
   }
-  return quantityDefense;
+  return totalDamage;
+}
+
+function calculateDefense(shipAgility){
+  let totalDefense = 0;
+  for (let d = 0; d < shipAgility; d++){
+    switch (Math.floor(Math.random() * 6 + 1)){
+      case 5:
+        totalDefense = totalDefense + 1;
+        break;
+      case 6:
+        totalDefense = totalDefense + 1;
+        break;
+      default:
+        totalDefense = totalDefense;
+        break;
+    }
+  }
+  return totalDefense;
+}
+
+function newArray(arrayDefender, defender, trueDamage){
+  for (let i = 0;i < trueDamage;i++){
+    if (arrayDefender[defender].shields > 0){
+      arrayDefender[defender].shields = arrayDefender[defender].shields - 1;
+    }else {
+      arrayDefender[defender].hull = arrayDefender[defender].hull - 1;
+    }
+  }
+  return arrayDefender;
+}
+
+function attack(arrayAttacker, arrayDefender, attacker, defender){
+  let Damage = calculateDamage(arrayAttacker[attacker].damage);
+  let Defense = calculateDefense(arrayDefender[defender].agility);
+  let trueDamage = Damage - Defense;
+  if (trueDamage > 0){
+    return newArray(arrayDefender, defender, trueDamage);
+  }else {
+    return arrayDefender;
+  }
 }
 
 export default function battle(arrayPlayer, arrayEnemy, onChangePlayerSpaceFleetAfterFight, onChangeEnemySpaceFleetAfterFight){
-  let i = 0;
-  let objective;
-  let objectiveAlive;
-  let totalDamage;
-  let totalDefense;
-  let trueDamage;
-  let playerLength = arrayPlayer.length;
-  let enemyLength = arrayEnemy.length;
-  while (i < 10){
-    if (i < playerLength){
-      if (alive(arrayPlayer) === true && alive(arrayEnemy) === true){
-        if (arrayPlayer[i].hull > 0){
-          objectiveAlive = false;
-          while (objectiveAlive !== true){
-          objective = Math.floor(Math.random() * enemyLength);
-            if (arrayEnemy[objective].hull > 0){
-              objectiveAlive = true;
-            }
-          }
-          totalDamage = calculateDamage(arrayPlayer[i].damage);
-          totalDefense = calculateDefense(arrayEnemy[objective].agility);
-          trueDamage = totalDamage - totalDefense;
-          if (trueDamage > 0){
-            while (arrayEnemy[objective].shield > 0){
-              arrayEnemy[objective].shield = arrayEnemy[objective].shield - 1;
-              trueDamage = trueDamage - 1;
-            }
-          arrayEnemy[objective].hull = arrayEnemy[objective].hull - trueDamage;
-          }
-        }
-      }
+  let attacker, defender;
+  for (let i = 0; i < 10; i++){
+    if (aliveArray(arrayPlayer) && aliveArray(arrayEnemy) ){
+      attacker = selectTarget(arrayPlayer);
+      defender = selectTarget(arrayEnemy);
+      arrayEnemy = attack(arrayPlayer, arrayEnemy, attacker, defender);
     }
-    if (i < enemyLength){
-      if (alive(arrayPlayer) && alive(arrayEnemy)){
-        if (arrayEnemy[i].hull > 0){
-          objectiveAlive = false;
-          while (objectiveAlive !== true){
-          objective = Math.floor(Math.random() * playerLength);
-            if (arrayPlayer[objective].hull > 0){
-              objectiveAlive = true;
-            }
-          }
-          totalDamage = calculateDamage(arrayEnemy[i].damage);
-          totalDefense = calculateDefense(arrayPlayer[objective].agility);
-          trueDamage = totalDamage - totalDefense;
-          if (trueDamage > 0){
-            while (arrayPlayer[objective].shield > 0){
-              arrayPlayer[objective].shield = arrayPlayer[objective].shield - 1;
-              trueDamage = trueDamage - 1;
-            }
-            arrayPlayer[objective].hull = arrayPlayer[objective].hull - trueDamage;
-          }
-        }
-      }
+    if (aliveArray(arrayPlayer) && aliveArray(arrayEnemy) ){
+      attacker = selectTarget(arrayEnemy);
+      defender = selectTarget(arrayPlayer);
+      arrayPlayer = attack(arrayEnemy, arrayPlayer, attacker, defender);
     }
-    i++;
   }
-
-onChangePlayerSpaceFleetAfterFight(arrayPlayer);
-onChangeEnemySpaceFleetAfterFight(arrayEnemy);
-
+  onChangePlayerSpaceFleetAfterFight(arrayPlayer);
+  onChangeEnemySpaceFleetAfterFight(arrayEnemy);
 }
 
