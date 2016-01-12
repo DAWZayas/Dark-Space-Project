@@ -4,10 +4,9 @@ import createHistory from 'history/lib/createBrowserHistory';
 import reducer from '../reducers';
 import routes from '../routes';
 import thunk from 'redux-thunk';
-import confirm from '../middlewares/confirm';
 
 const createStoreWithMiddleware = compose(
-  applyMiddleware(thunk, confirm),
+  applyMiddleware(thunk),
   reduxReactRouter({ routes, createHistory })
 )(createStore);
 
