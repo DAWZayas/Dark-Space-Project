@@ -1,21 +1,10 @@
 import { connect } from 'react-redux';
 
 import Tutorial from '../components/Tutorial';
-
-
-function mapStateToProps(state) {
-  return {
-    naves: state.naves
-  };
-}
-
-function mapActionsToProps(dispatch) {
-  return {
-  };
-}
+import * as tutorialActions from '../actions/tutorial';
 
 export default connect(
-  mapStateToProps,
-  mapActionsToProps
+  state => ({naves: state.naves}),
+  tutorialActions
 )(Tutorial);
 

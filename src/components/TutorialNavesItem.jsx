@@ -8,6 +8,7 @@ export default class TutorialNavesItem extends Component {
 
   }
 
+
   render() {
 
     const { navesProp } = this.props;
@@ -33,6 +34,7 @@ export default class TutorialNavesItem extends Component {
     );
   }
 }
+
 
 TutorialNavesItem.propTypes = {
   navesProp: PropTypes.object.isRequired

@@ -20,18 +20,6 @@ export const ON_REMOVE_MISSION_FOR_POINTS = 'ON_REMOVE_MISSION_FOR_POINTS';
  * Campaign action creators
  */
 
-export function addCampaign(title) {
-  return { type: ADD_CAMPAIGN, title };
-}
-
-export function removeCampaign(idCampaign) {
-  return { type: REMOVE_CAMPAIGN, idCampaign };
-}
-
-export function onChangeFleet(enemySpaceFleetArray, idCampaign){
-  return { type: CHANGE_FLEET, enemySpaceFleetArray, idCampaign};
-}
-
 /*
  * Player fleet action creators
  */

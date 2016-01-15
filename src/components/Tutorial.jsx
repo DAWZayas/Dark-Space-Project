@@ -13,6 +13,10 @@ export default class Tutorial extends Component {
     };
   }
 
+  componentWillMount() {
+    this.props.registerListeners(this.props.params);
+  }
+
   handleBackButtonClick() {
     this.setState({
       firstDisabled : this.state.it <= 1 ? true : false,
@@ -33,7 +37,6 @@ export default class Tutorial extends Component {
   render() {
 
     const { naves } = this.props;
-
     return (
       <div className="row">
         <div className="col-xs-12">
@@ -76,6 +79,8 @@ export default class Tutorial extends Component {
   }
 }
 
+/*
 Tutorial.propTypes = {
   naves:PropTypes.array.isRequired
 };
+*/
