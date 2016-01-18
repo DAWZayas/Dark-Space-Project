@@ -72,7 +72,7 @@ export default class Campaign extends Component {
   }
 }
 
-/*
+
 Campaign.propTypes = {
   campaigns:PropTypes.array,
   points: PropTypes.object.isRequired,
@@ -85,4 +85,4 @@ Campaign.propTypes = {
 Campaign.defaultProps = {
   campaigns: []
 };
-*/
+

@@ -6,8 +6,29 @@ export function setCampaign(campaign) {
   return { type: SET_CAMPAIGN, campaign };
 }
 
-export function addCampaign(title) {
-  return { type: ADD_CAMPAIGN, title };
+
+export function onAddCampaign(title) {
+  return (dispatch, getState) => {
+    const { firebase } = getState();
+    let campaignObject = {
+      "id": 7,
+      "title": title,
+      "playerFleet" : {
+        "0" : {
+            "id": 4,
+            "name":"Tie Fighter",
+            "damage" : 2,
+            "agility" : 3,
+            "hull" : 3,
+            "shields" : 0,
+            "points" : 12,
+            "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
+        }
+      }
+  };
+    firebase.child('campaign')
+      .push(campaignObject);
+  };
 }
 
 export function removeCampaign(idCampaign) {
