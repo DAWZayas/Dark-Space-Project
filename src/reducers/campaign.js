@@ -1,23 +1,23 @@
 import { ADD_CAMPAIGN, REMOVE_CAMPAIGN, CHANGE_FLEET, SET_CAMPAIGN } from '../actions/campaign';
 
-export const initialState = {
-   "0" : {
-      "id": 1,
-      "title": "Battle of Chandrila",
-      "playerFleet" : {
-        "0" : {
-            "id": 4,
-            "name":"Tie Fighter",
-            "damage" : 2,
-            "agility" : 3,
-            "hull" : 3,
-            "shields" : 0,
-            "points" : 12,
-            "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-          }
+export const initialState = [
+  {
+    id: 1,
+    title: 'Battle of Chandrila',
+    playerFleet:[
+      {
+        id: 4,
+        name:'Tie Fighter',
+        damage : 2,
+        agility : 3,
+        hull : 3,
+        shields : 0,
+        points : 12,
+        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
       }
-    }
-};
+    ]
+  }
+];
 
 function setCampaign(state, campaign){
   return campaign.slice();

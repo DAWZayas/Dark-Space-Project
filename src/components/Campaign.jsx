@@ -10,6 +10,10 @@ export default class Campaign extends Component {
     };
   }
 
+  componentWillMount() {
+    this.props.registerListeners(this.props.params);
+  }
+
   handleAddButtonClick() {
     const { onAddCampaign, onAddPoint} = this.props;
     const node = this.refs.title;
@@ -68,6 +72,7 @@ export default class Campaign extends Component {
   }
 }
 
+/*
 Campaign.propTypes = {
   campaigns:PropTypes.array,
   points: PropTypes.object.isRequired,
@@ -80,3 +85,4 @@ Campaign.propTypes = {
 Campaign.defaultProps = {
   campaigns: []
 };
+*/

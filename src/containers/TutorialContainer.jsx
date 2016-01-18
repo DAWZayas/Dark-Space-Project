@@ -4,7 +4,7 @@ import Tutorial from '../components/Tutorial';
 import * as tutorialActions from '../actions/tutorial';
 
 export default connect(
-  state => ({naves: state.naves}),
+  state => ({ships: state.ships}),
   tutorialActions
 )(Tutorial);
 

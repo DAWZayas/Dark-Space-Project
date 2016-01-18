@@ -49,9 +49,11 @@ export default class CampaignItem extends Component {
   }
 }
 
+/*
 CampaignItem.propTypes = {
   campaign: PropTypes.object.isRequired,
   points: PropTypes.number.isRequired,
   onRemoveCampaign: PropTypes.func.isRequired,
   onRemoveMissionForPoints: PropTypes.func.isRequired
 };
+*/

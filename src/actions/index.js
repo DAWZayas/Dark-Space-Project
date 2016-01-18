@@ -40,21 +40,6 @@ export function onChangeEnemyFleet(playerFleet){
 *Points action creator
 */
 
-export function onRemoveMissionPoints(iduser, missionnumber) {
-    return { type: ON_REMOVE_MISSION_POINTS, iduser, missionnumber};
-}
-
-export function onAddPoint() {
-  return { type: ON_ADD_POINT};
-}
-
-export function onRemoveMissionForPoints(idCampaign){
-  return {type: ON_REMOVE_MISSION_FOR_POINTS, idCampaign};
-}
-
-export function onBattleResult(idCampaign, points){
-  return { type: ON_BATTLE_RESULT, idCampaign, points};
-}
 
 /*
 *Player Space Fleet After FIght action creator

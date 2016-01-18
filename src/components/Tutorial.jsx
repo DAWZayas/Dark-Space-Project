@@ -26,17 +26,17 @@ export default class Tutorial extends Component {
   }
 
   handleNextButtonClick() {
-    const {naves} = this.props;
+    const {ships} = this.props;
     this.setState({
-      lastDisabled : this.state.it >= (naves.length - 2) ? true : false,
+      lastDisabled : this.state.it >= (ships.length - 2) ? true : false,
       firstDisabled:false,
-      it : this.state.it >= (naves.length - 1) ? this.state.it : this.state.it + 1
+      it : this.state.it >= (ships.length - 1) ? this.state.it : this.state.it + 1
     });
   }
 
   render() {
 
-    const { naves } = this.props;
+    const { ships } = this.props;
     return (
       <div className="row">
         <div className="col-xs-12">
@@ -60,7 +60,7 @@ export default class Tutorial extends Component {
           </ul>
           <div className="col-xs-12">
             {
-               <TutorialNavesItem navesProp={naves[this.state.it]} />
+               <TutorialNavesItem navesProp={ships[this.state.it]} />
             }
           </div>
           <div className="col-xs-12">
@@ -81,6 +81,6 @@ export default class Tutorial extends Component {
 
 /*
 Tutorial.propTypes = {
-  naves:PropTypes.array.isRequired
+  ships:PropTypes.array.isRequired
 };
 */
