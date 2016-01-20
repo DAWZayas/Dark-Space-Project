@@ -7,11 +7,11 @@ export function setCampaign(campaign) {
 }
 
 
-export function onAddCampaign(title) {
+export function onAddCampaign(id, title) {
   return (dispatch, getState) => {
     const { firebase } = getState();
     let campaignObject = {
-      "id": 7,
+      "id": id + 1,
       "title": title,
       "playerFleet" : {
         "0" : {
@@ -26,8 +26,7 @@ export function onAddCampaign(title) {
         }
       }
   };
-    firebase.child('campaign')
-      .push(campaignObject);
+  firebase.child(`campaign/${id + 1}`).set(campaignObject);
   };
 }
 

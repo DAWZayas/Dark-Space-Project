@@ -18,7 +18,7 @@ export default class Campaign extends Component {
     const { onAddCampaign, onAddPoint} = this.props;
     const node = this.refs.title;
     const title =  node.value.trim();
-    onAddCampaign(title);
+    onAddCampaign(this.props.campaigns.length, title);
     onAddPoint();
     node.value = '';
     this.setState({
