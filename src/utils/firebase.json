@@ -62,7 +62,7 @@
     }
   },
   "campaign" : {
-    "0" : {
+    "asdasdasd" : {
       "id": 1,
       "title": "Battle of Chandrila",
       "playerFleet" : {
@@ -78,7 +78,7 @@
           }
       }
     },
-    "1" : {
+    "asdasdasd" : {
       "id": 2,
       "title": "Battle of Yavin 4",
       "playerFleet" : {
@@ -94,7 +94,7 @@
         }
       }
     },
-  "2" : {
+  "asdasdas" : {
     "id": 3,
     "title": "Attack on Coruscant",
     "playerFleet": {
@@ -120,7 +120,7 @@
       }
     }
   },
-  "3" : {
+  "asdas" : {
     "id": 4,
     "title": "First battle of Korriban",
     "playerFleet": {
@@ -156,7 +156,7 @@
       }
     }
   },
-  "4" : {
+  "asdasd" : {
     "id": 5,
     "title": "Second battle of Korriban",
     "playerFleet": {

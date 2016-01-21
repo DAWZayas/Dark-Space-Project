@@ -12,7 +12,7 @@ export default class CampaignItem extends Component {
     e.stopPropagation();
     const { onRemoveCampaign, campaign, onRemoveMissionForPoints} = this.props;
     onRemoveCampaign(campaign.id);
-    onRemoveMissionForPoints(campaign.id);
+    //onRemoveMissionForPoints(campaign.id);
   }
 
   calculatePercentage(points){

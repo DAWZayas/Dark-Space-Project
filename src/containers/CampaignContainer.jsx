@@ -7,7 +7,8 @@ import { onAddPoint } from '../actions/points';
 function mapStateToProps(state) {
   return {
     campaigns: state.campaign,
-    points: state.points[0]
+    points: state.points[0],
+    users: state.points
   };
 }
 

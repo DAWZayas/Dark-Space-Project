@@ -26,12 +26,15 @@ export function onAddCampaign(id, title) {
         }
       }
   };
-  firebase.child(`campaign/${id + 1}`).set(campaignObject);
+  firebase.child(`campaign/${id}`).set(campaignObject);
   };
 }
 
-export function removeCampaign(idCampaign) {
-  return { type: REMOVE_CAMPAIGN, idCampaign };
+export function onRemoveCampaign(id) {
+    return (dispatch, getState) => {
+    const { firebase } = getState();
+  firebase.child(`campaign/${id - 1}`).remove();
+  };
 }
 
 export function onChangeFleet(enemySpaceFleetArray, idCampaign){

@@ -19,7 +19,7 @@ export default class Campaign extends Component {
     const node = this.refs.title;
     const title =  node.value.trim();
     onAddCampaign(this.props.campaigns.length, title);
-    onAddPoint();
+    onAddPoint(this.props.campaigns.length, this.props.users.length);
     node.value = '';
     this.setState({
       addDisabled: true
@@ -76,6 +76,7 @@ export default class Campaign extends Component {
 Campaign.propTypes = {
   campaigns:PropTypes.array,
   points: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired,
   onRemoveCampaign:PropTypes.func.isRequired,
   onAddCampaign: PropTypes.func.isRequired,
   onAddPoint: PropTypes.func.isRequired,

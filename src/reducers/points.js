@@ -20,6 +20,7 @@ function onRemoveMissionPoints (state, iduser, missionnumber) {
    return newState;
 }
 
+/*
 function onAddPoint(state){
   const newState = clone(state);
   for (let i = 0; i < newState.length; i++){
@@ -27,7 +28,7 @@ function onAddPoint(state){
   }
   return newState;
 }
-
+*/
 function onRemoveMissionForPoints(state, idCampaign){
    const newState = clone(state);
   for (let i = 0; i < newState.length; i++){
@@ -50,8 +51,8 @@ export default function pointsReducer(state = initialState, action) {
         return setPoints(state, action.points);
       case ON_REMOVE_MISSION_POINTS:
         return onRemoveMissionPoints(state, action.iduser, action.missionnumber);
-      case ON_ADD_POINT:
-        return onAddPoint(state);
+      /*case ON_ADD_POINT:
+        return onAddPoint(state);*/
       case ON_REMOVE_MISSION_FOR_POINTS:
         return onRemoveMissionForPoints(state, action.idCampaign);
       case ON_BATTLE_RESULT:
