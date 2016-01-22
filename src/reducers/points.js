@@ -3,10 +3,8 @@ import { ON_REMOVE_MISSION_POINTS, ON_ADD_POINT, ON_REMOVE_MISSION_FOR_POINTS, O
 
 export const initialState = [
   {
-    id: 0,
     name: 'David',
-    userpoints: '750',
-   missionpoints:[485, 326, 261, 149, 0 ]
+    missionpoints:[485, 326, 261, 149, 0 ]
   }
 ];
 

@@ -62,8 +62,7 @@
     }
   },
   "campaign" : {
-    "asdasdasd" : {
-      "id": 1,
+    "-K4mBTT91Rl_uEpItTSK" : {
       "title": "Battle of Chandrila",
       "playerFleet" : {
         "0" : {
@@ -78,8 +77,7 @@
           }
       }
     },
-    "asdasdasd" : {
-      "id": 2,
+    "-K4mBXwo8btk5bjavvpu" : {
       "title": "Battle of Yavin 4",
       "playerFleet" : {
         "0" : {
@@ -94,8 +92,7 @@
         }
       }
     },
-  "asdasdas" : {
-    "id": 3,
+  "-K4mBaHLtvDVrehWp80u" : {
     "title": "Attack on Coruscant",
     "playerFleet": {
       "0" : {
@@ -120,8 +117,7 @@
       }
     }
   },
-  "asdas" : {
-    "id": 4,
+  "-K4mBbTBpn1Td9Myz9-Q" : {
     "title": "First battle of Korriban",
     "playerFleet": {
       "0" : {
@@ -155,67 +151,27 @@
         "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
       }
     }
-  },
-  "asdasd" : {
-    "id": 5,
-    "title": "Second battle of Korriban",
-    "playerFleet": {
-      "0" : {
-        "id": 4,
-        "name":"Tie Fighter",
-        "damage" : 2,
-        "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 12,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-    },
-      "1" : {
-        "id": 6,
-        "name":"Tie advanced",
-        "damage" : 3,
-        "agility" : 1,
-        "hull" : 3,
-        "shields" : 5,
-        "points" : 22,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Advanced-icon.png"
-      },
-      "2" : {
-        "id": 4,
-        "name":"Tie Fighter",
-        "damage" : 2,
-        "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 12,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      }
-    }
   }
 },
 "points" : {
-  "0" : {
-    "id": 0,
+  "-K8cikpcONj8810NdUCs" : {
     "name": "David",
-    "userpoints": "750",
     "missionpoints": {
-      "0" : 485,
-      "1" : 326,
-      "2" : 261,
-      "3" : 149,
-      "4" : 0
+      "-K8cmDTtLjCL8qnWcH1r" : 485,
+      "-K8cmkjVEbS17snvICRG" : 326,
+      "-K8cmtT7bEus-84DOGZY" : 261,
+      "-K8cmuFPK-_YVU1qOT86" : 149,
+      "-K8cmvIXM9JwiKz6EaAo" : 0
     }
   },
-  "1" : {
-    "id": 1,
-    "name": "ALEX",
-    "userpoints": "450",
+  "-K8cilvmrs4kFkTrwETo" : {
+    "name": "Alejandro",
     "missionpoints": {
-      "0" : 0,
-      "1" : 0,
-      "2" : 0,
-      "3" : 0,
-      "4" : 0
+      "-K8cmwGEdGKGEHWMZuxC" : 0,
+      "-K8cn5aFS47ttNmdo1xM" : 0,
+      "-K8cn5zmQ3nMP4gi4_zA" : 0,
+      "-K8cn6Q_nCV5NdxEeLc1" : 0,
+      "-K8cn6rdpSjWOick9zcT" : 0
     }
   }
 }

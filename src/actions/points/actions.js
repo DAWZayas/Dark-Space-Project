@@ -13,15 +13,12 @@ export function onRemoveMissionPoints(iduser, missionnumber) {
 export function onAddPoint(id, users) {
     return (dispatch, getState) => {
     const { firebase } = getState();
-    let campaignObject = {
-      "id": id + 1,
+
+    let x;
+    firebase.child('points').on('value', snapshot =>
+      x = snapshot.val());
+      console.log(x);
     };
-  let i = 0;
-  while (i < users){
-    firebase.child(`points/${i}/missionpoints/${id}`).set(0);
-    i++;
-  }
-  };
 }
 
 export function onRemoveMissionForPoints(idCampaign){

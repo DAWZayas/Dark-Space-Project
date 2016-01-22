@@ -1,24 +1,5 @@
 import { ADD_CAMPAIGN, REMOVE_CAMPAIGN, CHANGE_FLEET, SET_CAMPAIGN } from '../actions/campaign';
 
-export const initialState = [
-  {
-    id: 1,
-    title: 'Battle of Chandrila',
-    playerFleet:[
-      {
-        id: 4,
-        name:'Tie Fighter',
-        damage : 2,
-        agility : 3,
-        hull : 3,
-        shields : 0,
-        points : 12,
-        img : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      }
-    ]
-  }
-];
-
 function setCampaign(state, campaign){
   return campaign.slice();
 }
@@ -68,16 +49,10 @@ function removeCampaign(state, idCampaign) {
 }
 
 
-export default function campaignReducer(state = initialState, action) {
+export default function campaignReducer(state = [], action) {
     switch (action.type) {
       case SET_CAMPAIGN:
         return setCampaign(state, action.campaign);
-      case ADD_CAMPAIGN:
-        return addCampaign(state, action.title);
-      case REMOVE_CAMPAIGN:
-        return removeCampaign(state, action.idCampaign);
-      case CHANGE_FLEET:
-        return changeFleet(state, action.enemySpaceFleetArray, action.idCampaign);
       default:
         return state;
       }
