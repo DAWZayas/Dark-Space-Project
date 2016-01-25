@@ -16,8 +16,15 @@ export function onAddPoint(id, users) {
 
     let x;
     firebase.child('points').on('value', snapshot =>
-      x = snapshot.val());
-      console.log(x);
+      x = Object.keys(snapshot.val() || []).map(id => ({id, name: snapshot.val()[id].name, missionpoints: snapshot.val()[id].missionpoints }))
+    );
+    let i = 0;
+    let id;
+    while (i < x.length){
+      id = x[i].id;
+      firebase.child(`points/${id}/missionpoints`).push(0);
+      i++;
+    }
     };
 }
 
