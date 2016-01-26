@@ -7,8 +7,7 @@ export function registerListeners() {
 
     ref.on('value', snapshot => dispatch({
       type: SET_POINTS,
-      points: snapshot.val()
-//      ships: Object.keys(snapshot.val() || []).map( id => ({id, name:snapshot.val()[id].name}) )
+      points: Object.keys(snapshot.val() || []).map( id => ({id, name:snapshot.val()[id].name, missionpoints: Object.keys(snapshot.val()[id].missionpoints).map( key => snapshot.val()[id].missionpoints[key] ) }) )
     }));
   };
 }

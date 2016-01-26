@@ -12,12 +12,12 @@ function setPoints(state, points){
   return points.slice();
 }
 
-function onRemoveMissionPoints (state, iduser, missionnumber) {
+/*function onRemoveMissionPoints (state, iduser, missionnumber) {
   const newState = clone(state);
    newState[iduser].missionpoints[missionnumber] = 0;
    return newState;
 }
-
+*/
 /*
 function onAddPoint(state){
   const newState = clone(state);
@@ -47,8 +47,8 @@ export default function pointsReducer(state = initialState, action) {
   switch (action.type) {
       case SET_POINTS:
         return setPoints(state, action.points);
-      case ON_REMOVE_MISSION_POINTS:
-        return onRemoveMissionPoints(state, action.iduser, action.missionnumber);
+      /*case ON_REMOVE_MISSION_POINTS:
+        return onRemoveMissionPoints(state, action.iduser, action.missionnumber);*/
       /*case ON_ADD_POINT:
         return onAddPoint(state);*/
       case ON_REMOVE_MISSION_FOR_POINTS:

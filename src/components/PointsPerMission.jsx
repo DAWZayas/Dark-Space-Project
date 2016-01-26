@@ -24,7 +24,7 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
     return (
 
             <li className="setPadding col-xs-12 stylenone roundpointspermission">
-                  <span className="col-xs-8">  Mission {missionnumber + 1}:  {pointinmission} points</span>
+                  <span className="col-xs-8">  Mission {missionnumber + 1}:{pointinmission} points</span>
                   <span className="col-xs-4 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
                   <div className="setPadding col-xs-12">
                    <div className="progress">
@@ -40,6 +40,6 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
 PointsPerMission.propTypes = {
   pointinmission: PropTypes.number.isRequired,
   onRemoveMissionPoints: PropTypes.func.isRequired,
-  iduser: PropTypes.number.isRequired,
+  iduser: PropTypes.string,
   missionnumber: PropTypes.number.isRequired,
 };

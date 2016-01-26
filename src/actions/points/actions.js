@@ -7,7 +7,15 @@ export function setPoints(points) {
 }
 
 export function onRemoveMissionPoints(iduser, missionnumber) {
-    return { type: ON_REMOVE_MISSION_POINTS, iduser, missionnumber};
+  return (dispatch, getState) => {
+    const { firebase } = getState();
+    let x;
+    firebase.child(`points/${iduser}/missionpoints`).once('value', snapshot =>
+      x = Object.keys(snapshot.val())[missionnumber]
+    );
+    console.log(x);
+    firebase.child(`points/${iduser}/missionpoints/${x}`).set(0);
+  };
 }
 
 export function onAddPoint(id, users) {
