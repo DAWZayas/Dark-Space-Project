@@ -9,7 +9,7 @@ function mapStateToProps(state) {
 		campaignState : state.campaign,
 		playerFleetState : state.playerFleet,
 		enemyPlayerFleetState : state.enemyPlayerFleet,
-		navesState : state.naves,
+		navesState : state.ships,
 		pointsState : state.points
   };
 }
