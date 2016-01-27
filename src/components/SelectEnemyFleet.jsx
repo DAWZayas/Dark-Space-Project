@@ -47,8 +47,6 @@ export default class SelectEnemyFleet extends Component {
       pointsAlert : totalPoints > 100 ? true : false,
       addDisabled: enemySpaceFleetArray.length === 0 || totalPoints > 100 ? true : false
     });
-
-    console.log(enemySpaceFleetArray);
   }
 
   handleAddButtonClick(e) {

@@ -37,5 +37,8 @@ export function onRemoveCampaign(id) {
 }
 
 export function onChangeFleet(enemySpaceFleetArray, idCampaign){
-  return { type: CHANGE_FLEET, enemySpaceFleetArray, idCampaign};
+  return (dispatch, getState) => {
+    const { firebase } = getState();
+  firebase.child(`campaign/${idCampaign}/playerFleet`).set(enemySpaceFleetArray);
+  };
 }
