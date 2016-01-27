@@ -32,7 +32,7 @@ export function onAddCampaign(id, title) {
 export function onRemoveCampaign(id) {
     return (dispatch, getState) => {
     const { firebase } = getState();
-  firebase.child(`campaign/${id - 1}`).remove();
+  firebase.child(`campaign/${id}`).remove();
   };
 }
 

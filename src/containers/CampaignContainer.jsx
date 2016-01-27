@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Campaign from '../components/Campaign';
 import * as campaignActions from '../actions/campaign';
-import { onAddPoint } from '../actions/points';
+import { onAddPoint, onRemoveMissionForPoints } from '../actions/points';
 
 function mapStateToProps(state) {
   return {
@@ -14,5 +14,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  Object.assign( {}, campaignActions, { onAddPoint } )
+  Object.assign( {}, campaignActions, { onAddPoint }, {onRemoveMissionForPoints} )
 )(Campaign);
