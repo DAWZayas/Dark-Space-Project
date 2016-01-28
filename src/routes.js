@@ -10,8 +10,8 @@ import SelectEnemyFleetContainer from './containers/SelectEnemyFleetContainer';
 import BattleReportContainer from './containers/BattleReportContainer';
 import BattleResultContainer from './containers/BattleResultContainer';
 
-export default (
-  <Route path="" component={App} >
+export default () =>  (
+  <Route path="" component={App}>
 		<Route path="/" component={Home} />
 		<Route path="campaign" component={CampaignContainer} />
 		<Route path="points" component={PointsContainer} />

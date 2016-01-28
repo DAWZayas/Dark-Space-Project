@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BattleResult from '../components/BattleResult';
-import { onBattleResult } from '../actions';
+import * as pointsActions from '../actions/points';
 
 function mapStateToProps(state) {
   return {
@@ -9,13 +9,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionsToProps(dispatch) {
-  return {
-    onBattleResult : (idCampaign, points) => dispatch(onBattleResult(idCampaign, points))
-  };
-}
-
 export default connect(
   mapStateToProps,
-  mapActionsToProps
+  pointsActions
 )(BattleResult);

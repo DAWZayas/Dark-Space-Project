@@ -1,0 +1,4 @@
+export const SET_CAMPAIGN = 'SET_CAMPAIGN';
+export const ADD_CAMPAIGN = 'ADD_CAMPAIGN';
+export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
+export const CHANGE_FLEET = 'CHANGE_FLEET';

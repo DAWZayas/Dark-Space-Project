@@ -2,23 +2,25 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { reduxReactRouter } from 'redux-router';
 import createHistory from 'history/lib/createBrowserHistory';
 import reducer from '../reducers';
-import routes from '../routes';
 import thunk from 'redux-thunk';
 import DevTools from '../containers/DevTools';
 import createLogger from 'redux-logger';
-
+import { FIREBASE_URL } from '../config';
+import Firebase from 'firebase';
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(thunk),
-  reduxReactRouter({ routes, createHistory }),
+  reduxReactRouter({ createHistory }),
   applyMiddleware(createLogger({
   })),
   DevTools.instrument()
 )(createStore);
 
-export default function configureStore(initialState = {}) {
+export default function configureStore(initialState) {
 
-  const store = createStoreWithMiddleware(reducer, initialState);
+  const store = createStoreWithMiddleware(reducer,
+   initialState || { firebase: new Firebase(FIREBASE_URL)}
+   );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

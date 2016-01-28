@@ -78,7 +78,7 @@ this.state = {
     }
 
     onPrepareToFight(playerSpaceFleetArray);
-    onChangeEnemyFleet(campaignState[idCampaign - 1].playerFleet);
+    onChangeEnemyFleet(campaignState[idCampaign].playerFleet);
 
   }
 
@@ -133,7 +133,7 @@ this.state = {
             <div className="col-xs-4">
             { this.state.addDisabled ? <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button"> Fight</p>
             :
-            <Link to={`/battleReport/${this.props.params.idCampaign}`} onClick={e => this.handleAddButtonClick(e)} style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button" >Fight</p></Link>
+            <Link to={`/battleReport/${this.props.params.idCampaign}`}  className="btn btn-primary btn-md" onClick={e => this.handleAddButtonClick(e)} disabled={this.state.addDisabled} role="button" >Fight</Link>
             }
             </div>
           </div>
