@@ -13,7 +13,6 @@ export function onRemoveMissionPoints(iduser, missionnumber) {
     firebase.child(`points/${iduser}/missionpoints`).once('value', snapshot =>
       x = Object.keys(snapshot.val())[missionnumber]
     );
-    console.log(x);
     firebase.child(`points/${iduser}/missionpoints/${x}`).set(0);
   };
 }
@@ -66,9 +65,7 @@ export function onBattleResult(idCampaign, points){
     let id = x[0].id;
     let idMission = x[0].missionpoints[idCampaign].key;
     let missionpoints = x[0].missionpoints[idCampaign].valor;
-    console.log(id);
-    console.log(idMission);
-    console.log(missionpoints);
+
     if ( points > missionpoints ) {
       firebase.child(`points/${id}/missionpoints/${idMission}`).set(points);
     }

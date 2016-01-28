@@ -8,6 +8,11 @@ export default class BattleResult extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    let point = Math.floor(this.calculatePercentage());
+    this.handleBackButtonClick(point);
+  }
+
   handleBackButtonClick(newPoints){
     const idCampaign = this.props.params.idCampaign;
     const {onBattleResult} = this.props;
@@ -34,23 +39,18 @@ export default class BattleResult extends Component {
     return result;
   }
 
-pointsfor500(){
-    return this.calculatePoints() * 500 / this.totalpoints();
-  }
-
   calculatePercentage(){
     return  this.calculatePoints() * 500 / this.totalpoints();
   }
 
   render() {
     const { playerFleetAfterFight, enemyPlayerFleetAfterFight } = this.props;
-    const point = Math.floor(this.pointsfor500());
+    const point = Math.floor(this.calculatePercentage());
     return (
               <div className="col-xs-12">
                 <div className="result">
                   <h1 className="col-xs-12">{(this.calculatePercentage() <= 50) ? "Defeat" : "Victory" }</h1>
                   <h3 className="col-xs-12">{point} points of 500 points</h3>
-                  {this.handleBackButtonClick(point)}
                 </div>
                 <div className="col-xs-12">
                   <h3>Player Fleet:</h3>
