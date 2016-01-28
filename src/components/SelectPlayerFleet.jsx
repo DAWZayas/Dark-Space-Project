@@ -133,7 +133,7 @@ this.state = {
             <div className="col-xs-4">
             { this.state.addDisabled ? <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button"> Fight</p>
             :
-            <p className="btn btn-primary btn-md" onClick={e => this.handleAddButtonClick(e)} disabled={this.state.addDisabled} role="button" ><Link to={`/battleReport/${this.props.params.idCampaign}`}  style={{color: 'inherit', textDecoration: 'inherit'}}>Fight</Link></p>
+            <Link to={`/battleReport/${this.props.params.idCampaign}`}  className="btn btn-primary btn-md" onClick={e => this.handleAddButtonClick(e)} disabled={this.state.addDisabled} role="button" >Fight</Link>
             }
             </div>
           </div>
