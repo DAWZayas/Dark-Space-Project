@@ -9,7 +9,7 @@ export function setCampaign(campaign) {
 
 export function onAddCampaign(id, title) {
   return (dispatch, getState) => {
-    const { firebase } = getState();
+    const { firebase, auth } = getState();
     let campaignObject = {
       "title": title,
       "playerFleet" : {
@@ -31,14 +31,14 @@ export function onAddCampaign(id, title) {
 
 export function onRemoveCampaign(id) {
     return (dispatch, getState) => {
-    const { firebase } = getState();
+    const { firebase, auth } = getState();
   firebase.child(`campaign/${id}`).remove();
   };
 }
 
 export function onChangeFleet(enemySpaceFleetArray, idCampaign){
   return (dispatch, getState) => {
-    const { firebase } = getState();
+    const { firebase, auth } = getState();
   firebase.child(`campaign/${idCampaign}/playerFleet`).set(enemySpaceFleetArray);
   };
 }
