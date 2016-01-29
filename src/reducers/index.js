@@ -9,6 +9,7 @@ import enemyPlayerFleetAfterFight from './enemyPlayerFleetAfterFight';
 import points from './points';
 import ships from './ships';
 import firebase from './firebase';
+import auth from './auth';
 
 const darkSpaceProjectApp = combineReducers({
   campaign,
@@ -19,7 +20,8 @@ const darkSpaceProjectApp = combineReducers({
   points,
   ships,
   firebase,
-  router
+  router,
+  auth
 });
 
 export default darkSpaceProjectApp;

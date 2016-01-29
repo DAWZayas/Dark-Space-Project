@@ -1,5 +1,9 @@
+
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import * as authActions from '../actions/auth/';
+
 
 export default class App extends Component {
 
@@ -18,6 +22,10 @@ handlerSetState(nav){
   });
 }
 
+  handleSignOutClick(){
+     this.props.signOut();
+  }
+
 handlerCollapsed(stateCollapsed){
      if (stateCollapsed !== true){
         this.setState({
@@ -34,6 +42,7 @@ handlerCollapsed(stateCollapsed){
 
 
   render() {
+    const { auth } = this.props;
     return (
       <div className="userStyle">
        <nav className="navbar navbar-default">
@@ -52,6 +61,10 @@ handlerCollapsed(stateCollapsed){
               { (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> }
               { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
               { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
+                { auth.authenticated ?
+                <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li> :
+                <li><Link to="/sign-in" { ...this.props }>Sign In</Link></li>
+              }
             </ul>
           </div>
         </div>
@@ -64,5 +77,19 @@ handlerCollapsed(stateCollapsed){
 
 App.propTypes = {
   // Injected by React RouterConfirmDialog
-  children: PropTypes.node
+  children: PropTypes.node,
+  signOut: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 };
+
+function mapStateToProps(state) {
+  return {
+    auth: state.auth
+  };
+}
+
+
+export default connect(
+  state => ({
+    auth: state.auth,
+}),   Object.assign( {}, authActions))(App);
