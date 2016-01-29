@@ -46,6 +46,12 @@ export default class Campaign extends Component {
 
     const { campaigns, points, onRemoveCampaign, onRemoveMissionForPoints} = this.props;
     const {missionpoints} = points.missionpoints;
+    let i = 0;
+    campaigns.map( function(campaign, index){
+      if ( points.missionpoints[index] * 100 / 500 >= 50 ){
+        i++;
+      }
+    });
 
     return (
       <div className="row">
@@ -55,7 +61,7 @@ export default class Campaign extends Component {
           </div>
           <ul>
             {
-               campaigns.map( (campaign, index) => <CampaignItem key={index} id={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints}/>)
+               campaigns.map( (campaign, index) => <CampaignItem key={index} id={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints} lastMissionCompleted={i - 1}/>)
             }
           </ul>
         </div>

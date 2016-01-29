@@ -5,7 +5,6 @@ export default class CampaignItem extends Component {
 
   constructor(props) {
     super(props);
-
   }
 
   handleRemoveButtonClick(e) {
@@ -21,7 +20,8 @@ export default class CampaignItem extends Component {
 
   render() {
 
-    const { campaign, points} = this.props;
+    const { campaign, points, lastMissionCompleted} = this.props;
+    console.log(lastMissionCompleted);
 
     return (
         <div className="col-xs-12 showlist">
@@ -53,6 +53,7 @@ export default class CampaignItem extends Component {
 CampaignItem.propTypes = {
   campaign: PropTypes.object.isRequired,
   points: PropTypes.number.isRequired,
+  lastMissionCompleted : PropTypes.number.isRequired,
   onRemoveCampaign: PropTypes.func.isRequired,
   onRemoveMissionForPoints: PropTypes.func.isRequired
 };
