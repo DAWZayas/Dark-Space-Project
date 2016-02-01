@@ -85,3 +85,4 @@ export default connect(
   state => ({auth: state.auth}),
   Object.assign( {}, authActions)
 )(App);
+
