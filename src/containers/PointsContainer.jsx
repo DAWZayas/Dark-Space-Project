@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Points from '../components/Points';
-import { onRemoveMissionPoints } from '../actions';
+import * as pointsActions from '../actions/points';
 
 
 function mapStateToProps(state) {
@@ -10,13 +10,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionsToProps(dispatch) {
-  return {
-    onRemoveMissionPoints : (iduser, missionnumber) => dispatch(onRemoveMissionPoints(iduser, missionnumber))
-  };
-}
-
 export default connect(
   mapStateToProps,
-  mapActionsToProps
+  pointsActions
 )(Points);

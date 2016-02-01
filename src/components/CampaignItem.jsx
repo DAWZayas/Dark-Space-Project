@@ -5,14 +5,13 @@ export default class CampaignItem extends Component {
 
   constructor(props) {
     super(props);
-
   }
 
   handleRemoveButtonClick(e) {
     e.stopPropagation();
-    const { onRemoveCampaign, campaign, onRemoveMissionForPoints} = this.props;
+    const { onRemoveCampaign, campaign, id, onRemoveMissionForPoints} = this.props;
     onRemoveCampaign(campaign.id);
-    onRemoveMissionForPoints(campaign.id);
+    onRemoveMissionForPoints(id);
   }
 
   calculatePercentage(points){
@@ -21,13 +20,14 @@ export default class CampaignItem extends Component {
 
   render() {
 
-    const { campaign, points} = this.props;
+    const { campaign, points, lastMissionCompleted} = this.props;
+    console.log(lastMissionCompleted);
 
     return (
         <div className="col-xs-12 showlist">
           <li className="list-group-item action-element  col-xs-12">
-            <Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-4">Mission {campaign.id}:  {campaign.title}</span></Link>
-            <span className="text-danger col-xs-3"><Link to={`/select/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
+            <Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-4">Mission {this.props.id + 1}:  {campaign.title}</span></Link>
+            <span className="text-danger col-xs-3"><Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
             <span className="col-xs-3">Status:  {( this.calculatePercentage(points) >= 50) ? <span className='glyphicon glyphicon-ok text-success'></span> : <span className='glyphicon glyphicon-remove text-danger'></span>}</span>
             <div className="col-xs-1"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div>
             <div className="col-xs-1"><span  onClick={(e) => this.handleRemoveButtonClick(e)} className={'glyphicon glyphicon-trash action-icon'}/></div>
@@ -49,9 +49,12 @@ export default class CampaignItem extends Component {
   }
 }
 
+
 CampaignItem.propTypes = {
   campaign: PropTypes.object.isRequired,
   points: PropTypes.number.isRequired,
+  lastMissionCompleted : PropTypes.number.isRequired,
   onRemoveCampaign: PropTypes.func.isRequired,
   onRemoveMissionForPoints: PropTypes.func.isRequired
 };
+
