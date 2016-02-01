@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import SelectEnemyFleet from '../components/SelectEnemyFleet';
-import { onChangeFleet } from '../actions';
+import * as campaignActions from '../actions/campaign';
 
 
 function mapStateToProps(state) {
@@ -9,18 +9,12 @@ function mapStateToProps(state) {
     campaignState : state.campaign,
     playerFleetState : state.playerFleet,
     enemyPlayerFleetState : state.enemyPlayerFleet,
-    navesState : state.naves,
+    navesState : state.ships,
     pointsState : state.points
-  };
-}
-
-function mapActionsToProps(dispatch) {
-  return {
-    onChangeFleet : (enemySpaceFleetArray, idCampaign) => dispatch(onChangeFleet(enemySpaceFleetArray, idCampaign))
   };
 }
 
 export default connect(
   mapStateToProps,
-  mapActionsToProps
+  campaignActions
 )(SelectEnemyFleet);

@@ -24,8 +24,8 @@ sumarray (array){
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
           <div className="marginBottom">
-            <span className="col-xs-6">{point.name} </span>
-            <span className="col-xs-6">Points: {total} </span>
+            <span className="col-xs-6">{point.name}</span>
+            <span className="col-xs-6">Total Points: {total} </span>
           </div>
             <div className="pointsPerMission">
               <ul className="col-xs-12">

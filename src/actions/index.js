@@ -16,21 +16,6 @@ export const ON_CHANGE_ENEMY_SPACE_FLEET_AFTER_FIGHT = 'ON_CHANGE_ENEMY_SPACE_FL
 export const ON_ADD_POINT = 'ON_ADD_POINT';
 export const ON_REMOVE_MISSION_FOR_POINTS = 'ON_REMOVE_MISSION_FOR_POINTS';
 
-/*
- * Campaign action creators
- */
-
-export function addCampaign(title) {
-  return { type: ADD_CAMPAIGN, title };
-}
-
-export function removeCampaign(idCampaign) {
-  return { type: REMOVE_CAMPAIGN, idCampaign };
-}
-
-export function onChangeFleet(enemySpaceFleetArray, idCampaign){
-  return { type: CHANGE_FLEET, enemySpaceFleetArray, idCampaign};
-}
 
 /*
  * Player fleet action creators
@@ -46,26 +31,6 @@ export function prepareToFight(playerSpaceFleetArray){
 
 export function onChangeEnemyFleet(playerFleet){
   return { type: CHANGE_ENEMY_FLEET, playerFleet};
-}
-
-/*
-*Points action creator
-*/
-
-export function onRemoveMissionPoints(iduser, missionnumber) {
-    return { type: ON_REMOVE_MISSION_POINTS, iduser, missionnumber};
-}
-
-export function onAddPoint() {
-  return { type: ON_ADD_POINT};
-}
-
-export function onRemoveMissionForPoints(idCampaign){
-  return {type: ON_REMOVE_MISSION_FOR_POINTS, idCampaign};
-}
-
-export function onBattleResult(idCampaign, points){
-  return { type: ON_BATTLE_RESULT, idCampaign, points};
 }
 
 /*

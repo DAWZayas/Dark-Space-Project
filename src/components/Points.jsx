@@ -8,6 +8,10 @@ export default class Points extends Component {
 
   }
 
+  componentWillMount() {
+    this.props.registerListeners(this.props.params);
+  }
+
   render() {
 
     const { points, onRemoveMissionPoints } = this.props;
