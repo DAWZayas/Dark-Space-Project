@@ -77,7 +77,7 @@ handlerCollapsed(stateCollapsed){
 App.propTypes = {
   // Injected by React RouterConfirmDialog
   children: PropTypes.node,
-  signOut: PropTypes.object.isRequired,
+  signOut: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
@@ -90,5 +90,5 @@ function mapStateToProps(state) {
 
 export default connect(
   state => ({
-    auth: state.auth,
+    auth: state.auth
 }),   Object.assign( {}, authActions))(App);
