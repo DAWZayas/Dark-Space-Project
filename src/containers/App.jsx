@@ -32,18 +32,10 @@ handlerCollapsed(stateCollapsed){
         this.setState({
           collapsed: true,
         });
-<<<<<<< HEAD
-        //console.log('Lo pongo true');
-=======
->>>>>>> f3891650df1f3f4746af129e5d3dcdc02ecd2d34
     }else {
       this.setState({
           collapsed: false,
         });
-<<<<<<< HEAD
-      //console.log('Lo pongo false');
-=======
->>>>>>> f3891650df1f3f4746af129e5d3dcdc02ecd2d34
     }
 }
 
