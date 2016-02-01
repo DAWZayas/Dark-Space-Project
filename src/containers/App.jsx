@@ -31,12 +31,12 @@ handlerCollapsed(stateCollapsed){
         this.setState({
           collapsed: true,
         });
-        console.log('Lo pongo true');
+        //console.log('Lo pongo true');
     }else {
       this.setState({
           collapsed: false,
         });
-      console.log('Lo pongo false');
+      //console.log('Lo pongo false');
     }
 }
 
