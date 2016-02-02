@@ -58,7 +58,7 @@ handlerCollapsed(stateCollapsed){
             </div>
             <div className= { (this.state.collapsed === true) ? "collapse navbar-collapse in" : "collapse navbar-collapse" } id="bs-example-navbar-collapse-1" >
             <ul className="nav navbar-nav">
-              { (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> }
+              { (auth.authenticated) ? (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : ''}
               { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
               { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
             </ul>
