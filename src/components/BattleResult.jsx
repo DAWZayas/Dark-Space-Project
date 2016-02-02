@@ -9,14 +9,25 @@ export default class BattleResult extends Component {
   }
 
   componentWillMount() {
+    const {points, auth} = this.props;
     let point = Math.floor(this.calculatePercentage());
-    this.handleBackButtonClick(point);
+    let i = 0;
+    let id = 0;
+    while (i < points.length){
+      if (auth.id === points[i].id){
+        id = i;
+      }
+      i++;
+    }
+    this.handleBackButtonClick(point, id);
   }
 
-  handleBackButtonClick(newPoints){
+  handleBackButtonClick(newPoints, iduser){
     const idCampaign = this.props.params.idCampaign;
     const {onBattleResult} = this.props;
-    onBattleResult(idCampaign, newPoints);
+    let i = 0;
+    let id = 0;
+    onBattleResult(idCampaign, newPoints, iduser);
   }
 
   calculatePoints(){
@@ -46,6 +57,7 @@ export default class BattleResult extends Component {
   render() {
     const { playerFleetAfterFight, enemyPlayerFleetAfterFight } = this.props;
     const point = Math.floor(this.calculatePercentage());
+
     return (
               <div className="col-xs-12">
                 <div className="result">
@@ -75,5 +87,6 @@ export default class BattleResult extends Component {
 BattleResult.propTypes = {
   playerFleetAfterFight: PropTypes.array.isRequired,
   enemyPlayerFleetAfterFight: PropTypes.array.isRequired,
-  onBattleResult: PropTypes.func.isRequired
+  onBattleResult: PropTypes.func.isRequired,
+  points: PropTypes.array.isRequired
 };

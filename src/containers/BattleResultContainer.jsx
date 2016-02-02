@@ -5,7 +5,9 @@ import * as pointsActions from '../actions/points';
 function mapStateToProps(state) {
   return {
     playerFleetAfterFight : state.playerFleetAfterFight,
-    enemyPlayerFleetAfterFight : state.enemyPlayerFleetAfterFight
+    enemyPlayerFleetAfterFight : state.enemyPlayerFleetAfterFight,
+    points: state.points,
+    auth: state.auth
   };
 }
 
