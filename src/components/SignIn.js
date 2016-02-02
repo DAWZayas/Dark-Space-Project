@@ -14,14 +14,17 @@ export default class SignIn extends Component {
   }
 
   handlesignInWithGithubClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithGithub();
   }
 
   handlesignInWithTwitterClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithTwitter();
   }
 
   handlesignInWithGoogleClick() {
+     this.setState({ isOpen: false });
     this.props.signInWithGoogle();
   }
 
@@ -34,9 +37,9 @@ export default class SignIn extends Component {
           <h4 className="modal-title">Sign in Dialog</h4>
         </div>
         <div className="modal-body">
-          <button className="btn" type="button" onClick={ () => this.handlesignInWithGithubClick()}>GitHub</button>
-          <button className="btn" type="button" onClick={ () => this.handlesignInWithTwitterClick()}>Twitter</button>
-          <button className="btn" type="button" onClick={ () => this.handlesignInWithGoogleClick()}>Google</button>
+          <button className="text btn" type="button" onClick={ () => this.handlesignInWithGithubClick()}>GitHub</button>
+          <button className="text btn" type="button" onClick={ () => this.handlesignInWithTwitterClick()}>Twitter</button>
+          <button className="text btn" type="button" onClick={ () => this.handlesignInWithGoogleClick()}>Google</button>
         </div>
       </Modal>
     );

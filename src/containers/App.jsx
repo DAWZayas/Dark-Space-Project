@@ -23,7 +23,6 @@ handlerSetState(nav){
 }
 
   handleSignOutClick(){
-    this.handlerSetState('/sign-out');
      this.props.signOut();
   }
 
@@ -32,10 +31,12 @@ handlerCollapsed(stateCollapsed){
         this.setState({
           collapsed: true,
         });
+        console.log('Lo pongo true');
     }else {
       this.setState({
           collapsed: false,
         });
+      console.log('Lo pongo false');
     }
 }
 
@@ -76,20 +77,13 @@ handlerCollapsed(stateCollapsed){
 }
 
 App.propTypes = {
-  // Injected by React RouterConfirmDialog
   children: PropTypes.node,
   signOut: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    auth: state.auth
-  };
-}
-
-
 export default connect(
-  state => ({
-    auth: state.auth
-}),   Object.assign( {}, authActions))(App);
+  state => ({auth: state.auth}),
+  Object.assign( {}, authActions)
+)(App);
+
