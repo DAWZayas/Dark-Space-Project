@@ -24,6 +24,7 @@ handlerSetState(nav){
 
   handleSignOutClick(){
      this.props.signOut();
+     this.props.handlerSetState("/sign-in");
   }
 
 handlerCollapsed(stateCollapsed){
@@ -31,12 +32,10 @@ handlerCollapsed(stateCollapsed){
         this.setState({
           collapsed: true,
         });
-        console.log('Lo pongo true');
     }else {
       this.setState({
           collapsed: false,
         });
-      console.log('Lo pongo false');
     }
 }
 
@@ -61,9 +60,11 @@ handlerCollapsed(stateCollapsed){
               { (this.state.current === '/campaign') ? <li className="active"><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> : <li><Link to="/campaign" onClick={() => this.handlerSetState('/campaign') }>Campaign</Link></li> }
               { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
               { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
-                { auth.authenticated ?
+            </ul>
+            <ul className="nav navbar-nav navbar-right">
+              { auth.authenticated ?
                 <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li> :
-                <li><Link to="/sign-in" { ...this.props }>Sign In</Link></li>
+                <li><Link to="/sign-in" onClick={() => this.handlerSetState("/sign-in") } { ...this.props }>Sign In</Link></li>
               }
             </ul>
           </div>

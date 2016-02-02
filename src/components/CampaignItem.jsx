@@ -21,7 +21,6 @@ export default class CampaignItem extends Component {
   render() {
 
     const { campaign, points, lastMissionCompleted} = this.props;
-    console.log(lastMissionCompleted);
 
     return (
         <div className="col-xs-12 showlist">
