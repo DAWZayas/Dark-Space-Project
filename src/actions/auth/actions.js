@@ -4,22 +4,18 @@ import { INIT_AUTH, SIGN_IN_SUCCESS, SIGN_OUT_SUCCESS } from './action-types.js'
 export function createUserIfNotExists(authData, firebase){
   let a = '';
   let i  = 0;
-  firebase.child('campaign').on('value', snapshot =>
-      a = Object.keys(snapshot.val() || []).map(id => ({id, name: snapshot.val()[id].name, missionpoints: snapshot.val()[id].missionpoints }))
-    );
   let name = '';
+  firebase.child('campaign').on('value', function snapshot (snapshot){
+      a = Object.keys(snapshot.val() || []).map(id => ({id, name: snapshot.val()[id].name, missionpoints: snapshot.val()[id].missionpoints }));
+      name = authData[authData.provider].displayName;
 
-  if (authData.provider === 'github')  name = authData.github.username;
-
-  if (authData.provider === 'twitter') name = authData.twitter.username;
-
-  if (authData.provider === 'google') name = authData[authData.provider].displayName;
-
-  firebase.child(`points/${authData.uid}`).update({name, missionpoints: 'asdasd' });
-  while ( i < a.length){
-   firebase.child(`points/${authData.uid}/missionpoints`).push(0);
-   i++;
+       firebase.child(`points/${authData.uid}`).update({name, missionpoints: '' });
+        while ( i < a.length){
+             firebase.child(`points/${authData.uid}/missionpoints`).push(0);
+             i++;
+        }
   }
+    );
 }
 
 function authenticate(provider) {
