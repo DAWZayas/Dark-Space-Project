@@ -6,7 +6,8 @@ import * as pointsActions from '../actions/points';
 
 function mapStateToProps(state) {
   return {
-    points: state.points
+    points: state.points,
+    auth: state.auth
   };
 }
 

@@ -14,7 +14,7 @@ export default class Points extends Component {
 
   render() {
 
-    const { points, onRemoveMissionPoints } = this.props;
+    const { points, onRemoveMissionPoints, auth} = this.props;
     return (
       <div className="row">
         <div className="col-xs-12">
@@ -23,7 +23,7 @@ export default class Points extends Component {
           </div>
         <ul>
             {
-               points.map( (points, index, percentage) => <PointsItem key={index} point={points} onRemoveMissionPoints={onRemoveMissionPoints}/>)
+               points.map( (points, index, percentage) => <PointsItem key={index} point={points} onRemoveMissionPoints={onRemoveMissionPoints} auth={auth}/>)
             }
           </ul>
         </div>

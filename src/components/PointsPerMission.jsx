@@ -19,13 +19,13 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
 
   render() {
 
-    const {pointinmission, iduser, missionnumber} = this.props;
+    const {pointinmission, iduser, missionnumber, auth} = this.props;
 
     return (
 
             <li className="setPadding col-xs-12 stylenone roundpointspermission">
                   <span className="col-xs-8">  Mission {missionnumber + 1}:{pointinmission} points</span>
-                  <span className="col-xs-4 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span>
+                  { (iduser === auth.id) ? <span className="col-xs-4 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span> : ''}
                   <div className="setPadding col-xs-12">
                    <div className="progress">
                       {(this.calculatePercentage(pointinmission) >= 50) ? <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style={{width: this.calculatePercentage(pointinmission) + "%"}}><span className="spanProgress">{this.calculatePercentage(pointinmission) + "%"}</span></div>
