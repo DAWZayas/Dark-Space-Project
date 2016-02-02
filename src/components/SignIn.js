@@ -18,6 +18,7 @@ export default class SignIn extends Component {
   }
 
   handlesignInWithTwitterClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithTwitter();
   }
 

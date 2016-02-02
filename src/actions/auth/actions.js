@@ -5,9 +5,7 @@ function authenticate(provider) {
   return (dispatch, getState) => {
     const { firebase } = getState();
 
-    dispatch(pushState(null, '/'));
-
-    firebase.authWithOAuthPopup(provider, (error, authData) => {
+      firebase.authWithOAuthPopup(provider, (error, authData) => {
       if (error) {
         console.error('ERROR @ authWithOAuthPopup :', error); // eslint-disable-line no-console
       }
@@ -20,6 +18,7 @@ function authenticate(provider) {
           }
         });
       }
+      setTimeout( () => dispatch(pushState(null, '/')), 0);
     });
   };
 }
@@ -63,6 +62,6 @@ export function signOut() {
 
 export function cancelSignIn() {
   return dispatch => {
-    return dispatch(pushState(null, '/'));
+    return setTimeout( () => dispatch(pushState(null, '/')), 0);
   };
 }
