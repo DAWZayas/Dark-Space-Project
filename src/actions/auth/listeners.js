@@ -1,4 +1,3 @@
-
 import { pushState } from 'redux-router';
 
 export function registerListeners() {

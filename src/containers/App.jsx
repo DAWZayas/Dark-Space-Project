@@ -42,6 +42,7 @@ handlerCollapsed(stateCollapsed){
 
   render() {
     const { auth } = this.props;
+    const { children } = this.props;
     return (
       <div className="userStyle">
        <nav className="navbar navbar-default">
@@ -62,13 +63,13 @@ handlerCollapsed(stateCollapsed){
               { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
                 { auth.authenticated ?
                 <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li> :
-                <li><Link to="/sign-in" onClick={ ()=> this.handlerSetState('/sign-out') } { ...this.props }>Sign In</Link></li>
+                <li><Link to="/sign-in" onClick={ ()=> this.handlerSetState('/sign-in') } { ...this.props }>Sign In</Link></li>
               }
             </ul>
           </div>
         </div>
         </nav>
-      {this.props.children}
+      {children}
       </div>
     );
   }
