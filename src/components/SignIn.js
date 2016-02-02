@@ -14,6 +14,7 @@ export default class SignIn extends Component {
   }
 
   handlesignInWithGithubClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithGithub();
   }
 
@@ -23,6 +24,7 @@ export default class SignIn extends Component {
   }
 
   handlesignInWithGoogleClick() {
+     this.setState({ isOpen: false });
     this.props.signInWithGoogle();
   }
 
