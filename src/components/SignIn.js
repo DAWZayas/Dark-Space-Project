@@ -14,14 +14,17 @@ export default class SignIn extends Component {
   }
 
   handlesignInWithGithubClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithGithub();
   }
 
   handlesignInWithTwitterClick() {
+    this.setState({ isOpen: false });
     this.props.signInWithTwitter();
   }
 
   handlesignInWithGoogleClick() {
+     this.setState({ isOpen: false });
     this.props.signInWithGoogle();
   }
 

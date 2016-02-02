@@ -42,6 +42,7 @@ handlerCollapsed(stateCollapsed){
 
   render() {
     const { auth } = this.props;
+    const { children } = this.props;
     return (
       <div className="userStyle">
        <nav className="navbar navbar-default">
@@ -70,7 +71,7 @@ handlerCollapsed(stateCollapsed){
           </div>
         </div>
         </nav>
-      {this.props.children}
+      {children}
       </div>
     );
   }
