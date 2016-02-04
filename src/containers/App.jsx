@@ -39,9 +39,8 @@ handlerCollapsed(stateCollapsed){
     }
 }
 
-
   render() {
-    const { auth } = this.props;
+    const { auth, points} = this.props;
     const { children } = this.props;
     return (
       <div className="userStyle">
@@ -80,11 +79,12 @@ handlerCollapsed(stateCollapsed){
 App.propTypes = {
   children: PropTypes.node,
   signOut: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  points: PropTypes.array.isRequired
 };
 
 export default connect(
-  state => ({auth: state.auth}),
+  state => ({auth: state.auth, points: state.points}),
   Object.assign( {}, authActions)
 )(App);
 
