@@ -1,18 +1,5 @@
 {
   "campaign" : {
-    "-K4mBTT91Rl_uEpItTSK" : {
-      "playerFleet" : [ {
-        "agility" : 3,
-        "damage" : 2,
-        "hull" : 3,
-        "id" : 4,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
-        "name" : "Tie Fighter",
-        "points" : 12,
-        "shields" : 0
-      } ],
-      "title" : "Battle of Chandrila"
-    },
     "-K4mBXwo8btk5bjavvpu" : {
       "playerFleet" : [ {
         "agility" : 3,
@@ -25,28 +12,6 @@
         "shields" : 0
       } ],
       "title" : "Battle of Yavin 4"
-    },
-    "-K4mBaHLtvDVrehWp80u" : {
-      "playerFleet" : [ {
-        "agility" : 3,
-        "damage" : 2,
-        "hull" : 3,
-        "id" : 4,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
-        "name" : "Tie Fighter",
-        "points" : 12,
-        "shields" : 0
-      }, {
-        "agility" : 3,
-        "damage" : 2,
-        "hull" : 3,
-        "id" : 4,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
-        "name" : "Tie Fighter",
-        "points" : 12,
-        "shields" : 0
-      } ],
-      "title" : "Attack on Coruscant"
     },
     "-K4mBbTBpn1Td9Myz9-Q" : {
       "playerFleet" : [ {
@@ -78,26 +43,39 @@
         "shields" : 0
       } ],
       "title" : "First battle of Korriban"
+    },
+    "-K9heOGY0jTyiwEkMNoO" : {
+      "playerFleet" : [ {
+        "agility" : 3,
+        "damage" : 2,
+        "hull" : 3,
+        "id" : 4,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
+        "name" : "Tie Fighter",
+        "points" : 12,
+        "shields" : 0
+      } ],
+      "title" : "ladlasd"
     }
   },
   "points" : {
     "github:12715270" : {
-      "admin" : true,
+      "admin" : false,
+      "avatar" : "https://avatars.githubusercontent.com/u/12715270?v=3",
       "missionpoints" : {
-        "-K9h0rlkR5jaq76f7v7f" : 0,
-        "-K9h0roeGagZTDKy28yK" : 0,
-        "-K9h0rr11HxImT4VqHh-" : 0,
-        "-K9h0rtPVxkp9o2MJAX9" : 0
+        "-K9i0ptMvlqDqCaCoFRL" : 0,
+        "-K9i0puaKRwgfeSFvLhR" : 0,
+        "-K9i0pvci3FKwqXP4sN7" : 0
       },
       "name" : "Davimor"
     },
     "twitter:160951253" : {
       "admin" : true,
+      "avatar" : "",
       "missionpoints" : {
-        "-K8cmwGEdGKGEHWMZuxC" : 480,
         "-K8cn5aFS47ttNmdo1xM" : 300,
-        "-K8cn5zmQ3nMP4gi4_zA" : 125,
-        "-K8cn6Q_nCV5NdxEeLc1" : 0
+        "-K8cn6Q_nCV5NdxEeLc1" : 0,
+        "-K9heOGk-g6mihk2LO56" : 0
       },
       "name" : "Alejandro Martín"
     }
