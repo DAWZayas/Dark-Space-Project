@@ -154,17 +154,9 @@
   }
 },
 "points" : {
-  "-K8cikpcONj8810NdUCs" : {
-    "name": "David",
-    "missionpoints": {
-      "-K8cmDTtLjCL8qnWcH1r" : 485,
-      "-K8cmkjVEbS17snvICRG" : 125,
-      "-K8cmtT7bEus-84DOGZY" : 0,
-      "-K8cmuFPK-_YVU1qOT86" : 0
-    }
-  },
-  "-K8cilvmrs4kFkTrwETo" : {
-    "name": "Alejandro",
+  "twitter:160951253" : {
+    "name": "Alejandro Martín",
+    "admin" : true,
     "missionpoints": {
       "-K8cmwGEdGKGEHWMZuxC" : 480,
       "-K8cn5aFS47ttNmdo1xM" : 300,
