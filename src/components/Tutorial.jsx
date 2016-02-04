@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TutorialNavesItem from './TutorialNavesItem';
 import { Link } from 'react-router';
+import Spinner from './Spinner';
 
 export default class Tutorial extends Component {
 
@@ -9,8 +10,13 @@ export default class Tutorial extends Component {
     this.state = {
       it : 0,
       firstDisabled: true,
-      lastDisabled: false
+      lastDisabled: false,
+      loading: true
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+       this.setState({ loading: false});
   }
 
   componentWillMount() {
@@ -55,14 +61,18 @@ export default class Tutorial extends Component {
             For each point in the "Agility" attribute of the defending ship it has a 50% chance of avoiding damage.<br/>
             Each damage done to a ship would eliminate first the shields and then the hull of the ship, a ship with 0 in the attribute "hull" is considered dead.
           </p>
-          <ul>
-            <li><strong>Ships available:</strong></li>
-          </ul>
-          <div className="col-xs-12">
-            {
-               <TutorialNavesItem navesProp={ships[this.state.it]} />
-            }
+          { (this.state.loading) ? <Spinner /> :
+          <div>
+            <ul>
+              <li><strong>Ships available:</strong></li>
+            </ul>
+            <div className="col-xs-12">
+              {
+                <TutorialNavesItem navesProp={ships[this.state.it]} />
+              }
+            </div>
           </div>
+          }
           <div className="col-xs-12">
           <nav>
             <ul className="pager">
