@@ -78,7 +78,7 @@
   padding: 6px;
 }
 .roundpointspermission{
-  border: 3px solid #e7e7e7;
+  border: 3px solid #C4C4C4; /*#e7e7e7*/
   background: #eee;
   border-radius: 25px;
   float: right;
@@ -95,6 +95,9 @@
 .left{
   float: left;
 }
-.paddingLeft{
-  
+
+.avatar{
+  width: 5%;
+  height: 5%;
+  margin: 1%;
 }

@@ -25,10 +25,8 @@ sumarray (array){
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
           <div className="marginBottom">
-            <img className="col-xs-1 col-md-1" src={point.avatar} />
-            <span className="col-xs-6">{point.name}</span>
+            <span className="col-xs-6"><img className="avatar" src={point.avatar}/> {point.name}</span>
             <span className="col-xs-6">Total Points: {total} </span>
-            <br />
           </div>
             <div className="pointsPerMission">
               <ul className="col-xs-12">
