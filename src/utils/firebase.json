@@ -1,169 +1,160 @@
 {
-  "ships" : {
-    "0":{
-      "id": 1,
-      "name":"X - Wing",
-      "damage" : 2,
-      "agility" : 2,
-      "hull" : 3,
-      "shields" : 2,
-      "points" : 21,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/X-Wing-02-icon.png"
-    },
-    "1" : {
-      "id": 2,
-      "name":"Y - Wing",
-      "damage" : 3,
-      "agility" : 1,
-      "hull" : 3,
-      "shields" : 5,
-      "points" : 22,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Y-Wing-icon.png"
-    },
-    "2" : {
-      "id": 3,
-      "name":"B - Wing",
-      "damage" : 2,
-      "agility" : 2,
-      "hull" : 3,
-      "shields" : 2,
-      "points" : 21,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/B-Wing-icon.png"
-    },
-    "3" : {
-      "id": 4,
-      "name":"Tie Interceptor",
-      "damage" : 3,
-      "agility" : 3,
-      "hull" : 3,
-      "shields" : 0,
-      "points" : 18,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
-    },
-    "4" : {
-      "id": 5,
-      "name":"Tie Fighter",
-      "damage" : 2,
-      "agility" : 3,
-      "hull" : 3,
-      "shields" : 0,
-      "points" : 12,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-    },
-    "5" : {
-      "id": 6,
-      "name":"Tie advanced",
-      "damage" : 3,
-      "agility" : 1,
-      "hull" : 3,
-      "shields" : 5,
-      "points" : 22,
-      "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Advanced-icon.png"
-    }
-  },
   "campaign" : {
     "-K4mBTT91Rl_uEpItTSK" : {
-      "title": "Battle of Chandrila",
-      "playerFleet" : {
-        "0" : {
-            "id": 4,
-            "name":"Tie Fighter",
-            "damage" : 2,
-            "agility" : 3,
-            "hull" : 3,
-            "shields" : 0,
-            "points" : 12,
-            "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-          }
-      }
+      "playerFleet" : [ {
+        "agility" : 3,
+        "damage" : 2,
+        "hull" : 3,
+        "id" : 4,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
+        "name" : "Tie Fighter",
+        "points" : 12,
+        "shields" : 0
+      } ],
+      "title" : "Battle of Chandrila"
     },
     "-K4mBXwo8btk5bjavvpu" : {
-      "title": "Battle of Yavin 4",
-      "playerFleet" : {
-        "0" : {
-          "id": 3,
-          "name":"Tie Interceptor",
-          "damage" : 3,
-          "agility" : 3,
-          "hull" : 3,
-          "shields" : 0,
-          "points" : 18,
-          "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
-        }
-      }
+      "playerFleet" : [ {
+        "agility" : 3,
+        "damage" : 3,
+        "hull" : 3,
+        "id" : 3,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png",
+        "name" : "Tie Interceptor",
+        "points" : 18,
+        "shields" : 0
+      } ],
+      "title" : "Battle of Yavin 4"
     },
-  "-K4mBaHLtvDVrehWp80u" : {
-    "title": "Attack on Coruscant",
-    "playerFleet": {
-      "0" : {
-        "id": 4,
-        "name":"Tie Fighter",
-        "damage" : 2,
+    "-K4mBaHLtvDVrehWp80u" : {
+      "playerFleet" : [ {
         "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 12,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      },
-      "1" : {
-        "id": 4,
-        "name":"Tie Fighter",
         "damage" : 2,
-        "agility" : 3,
         "hull" : 3,
-        "shields" : 0,
+        "id" : 4,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
+        "name" : "Tie Fighter",
         "points" : 12,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png"
-      }
+        "shields" : 0
+      }, {
+        "agility" : 3,
+        "damage" : 2,
+        "hull" : 3,
+        "id" : 4,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
+        "name" : "Tie Fighter",
+        "points" : 12,
+        "shields" : 0
+      } ],
+      "title" : "Attack on Coruscant"
+    },
+    "-K4mBbTBpn1Td9Myz9-Q" : {
+      "playerFleet" : [ {
+        "agility" : 3,
+        "damage" : 3,
+        "hull" : 3,
+        "id" : 3,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png",
+        "name" : "Tie Interceptor",
+        "points" : 18,
+        "shields" : 0
+      }, {
+        "agility" : 3,
+        "damage" : 3,
+        "hull" : 3,
+        "id" : 3,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png",
+        "name" : "Tie Interceptor",
+        "points" : 18,
+        "shields" : 0
+      }, {
+        "agility" : 3,
+        "damage" : 3,
+        "hull" : 3,
+        "id" : 3,
+        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png",
+        "name" : "Tie Interceptor",
+        "points" : 18,
+        "shields" : 0
+      } ],
+      "title" : "First battle of Korriban"
     }
   },
-  "-K4mBbTBpn1Td9Myz9-Q" : {
-    "title": "First battle of Korriban",
-    "playerFleet": {
-      "0" : {
-        "id": 3,
-        "name":"Tie Interceptor",
-        "damage" : 3,
-        "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 18,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
+  "points" : {
+    "github:12715270" : {
+      "admin" : true,
+      "missionpoints" : {
+        "-K9h0rlkR5jaq76f7v7f" : 0,
+        "-K9h0roeGagZTDKy28yK" : 0,
+        "-K9h0rr11HxImT4VqHh-" : 0,
+        "-K9h0rtPVxkp9o2MJAX9" : 0
       },
-      "1" : {
-        "id": 3,
-        "name":"Tie Interceptor",
-        "damage" : 3,
-        "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 18,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
+      "name" : "Davimor"
+    },
+    "twitter:160951253" : {
+      "admin" : true,
+      "missionpoints" : {
+        "-K8cmwGEdGKGEHWMZuxC" : 480,
+        "-K8cn5aFS47ttNmdo1xM" : 300,
+        "-K8cn5zmQ3nMP4gi4_zA" : 125,
+        "-K8cn6Q_nCV5NdxEeLc1" : 0
       },
-      "2" : {
-        "id": 3,
-        "name":"Tie Interceptor",
-        "damage" : 3,
-        "agility" : 3,
-        "hull" : 3,
-        "shields" : 0,
-        "points" : 18,
-        "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png"
-      }
+      "name" : "Alejandro Martín"
     }
-  }
-},
-"points" : {
-  "twitter:160951253" : {
-    "name": "Alejandro Martín",
-    "admin" : true,
-    "missionpoints": {
-      "-K8cmwGEdGKGEHWMZuxC" : 480,
-      "-K8cn5aFS47ttNmdo1xM" : 300,
-      "-K8cn5zmQ3nMP4gi4_zA" : 125,
-      "-K8cn6Q_nCV5NdxEeLc1" : 0
-    }
-  }
-}
-
+  },
+  "ships" : [ {
+    "agility" : 2,
+    "damage" : 2,
+    "hull" : 3,
+    "id" : 1,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/X-Wing-02-icon.png",
+    "name" : "X - Wing",
+    "points" : 21,
+    "shields" : 2
+  }, {
+    "agility" : 1,
+    "damage" : 3,
+    "hull" : 3,
+    "id" : 2,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Y-Wing-icon.png",
+    "name" : "Y - Wing",
+    "points" : 22,
+    "shields" : 5
+  }, {
+    "agility" : 2,
+    "damage" : 2,
+    "hull" : 3,
+    "id" : 3,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/B-Wing-icon.png",
+    "name" : "B - Wing",
+    "points" : 21,
+    "shields" : 2
+  }, {
+    "agility" : 3,
+    "damage" : 3,
+    "hull" : 3,
+    "id" : 4,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Interceptor-icon.png",
+    "name" : "Tie Interceptor",
+    "points" : 18,
+    "shields" : 0
+  }, {
+    "agility" : 3,
+    "damage" : 2,
+    "hull" : 3,
+    "id" : 5,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Fighter-01-icon.png",
+    "name" : "Tie Fighter",
+    "points" : 12,
+    "shields" : 0
+  }, {
+    "agility" : 1,
+    "damage" : 3,
+    "hull" : 3,
+    "id" : 6,
+    "img" : "http://icons.iconarchive.com/icons/jonathan-rey/star-wars-vehicles/128/Tie-Advanced-icon.png",
+    "name" : "Tie advanced",
+    "points" : 22,
+    "shields" : 5
+  } ]
 }
