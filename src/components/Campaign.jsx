@@ -1,13 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import CampaignItem from './CampaignItem';
+import Spinner from './Spinner';
 
 export default class Campaign extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      addDisabled: true
+      addDisabled: true,
+      loading: true
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+       this.setState({ loading: false});
   }
 
   componentWillMount() {
@@ -61,11 +67,13 @@ export default class Campaign extends Component {
             <div className="titlePadding">
               <h2>Campaign</h2>
             </div>
+            { (this.state.loading) ? <Spinner /> :
             <ul>
               {
                  campaigns.map( (campaign, index) => <CampaignItem key={index} id={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints} lastMissionCompleted={i - 1}/>)
               }
             </ul>
+          }
           </div>
           <div className="col-xs-12">
              <div className="input-group">
