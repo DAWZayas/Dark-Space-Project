@@ -24,7 +24,7 @@ handlerSetState(nav){
 
   handleSignOutClick(){
      this.props.signOut();
-     this.props.handlerSetState("/sign-in");
+     this.handlerSetState('/signOut');
   }
 
 handlerCollapsed(stateCollapsed){

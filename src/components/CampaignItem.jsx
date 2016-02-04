@@ -20,7 +20,7 @@ export default class CampaignItem extends Component {
 
   render() {
 
-    const { campaign, points, lastMissionCompleted} = this.props;
+    const { campaign, points, lastMissionCompleted, admin} = this.props;
 
     return (
         <div className="col-xs-12 showlist">
@@ -34,8 +34,8 @@ export default class CampaignItem extends Component {
               <span className="text-danger col-xs-3"><Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
           }
             <span className="col-xs-3">Status:  {( this.calculatePercentage(points) >= 50) ? <span className='glyphicon glyphicon-ok text-success'></span> : <span className='glyphicon glyphicon-remove text-danger'></span>}</span>
-            <div className="col-xs-1"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div>
-            <div className="col-xs-1"><span  onClick={(e) => this.handleRemoveButtonClick(e)} className={'glyphicon glyphicon-trash action-icon'}/></div>
+            { (admin) ? <div className="col-xs-1"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div> : '' }
+            { (admin) ? <div className="col-xs-1"><span  onClick={(e) => this.handleRemoveButtonClick(e)} className={'glyphicon glyphicon-trash action-icon'}/></div> : '' }
             <div className="setPadding col-xs-12">
               <div className="progress">
                 {(this.calculatePercentage(points) >= 50) ? <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style={{width: this.calculatePercentage(points) + "%"}}><span className="spanProgress">{this.calculatePercentage(points) + "%"}</span></div>

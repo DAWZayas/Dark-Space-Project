@@ -47,11 +47,20 @@ export default class Campaign extends Component {
     }
   }
 
+  admin(firebase, iduser){
+    let admin = 'falsed';
+    firebase.child(`points/${iduser}/admin`).once('value', snapshot =>
+     admin = snapshot.val()
+    );
+    return admin;
+  }
+
 
   render() {
 
-    const { campaigns, points, onRemoveCampaign, onRemoveMissionForPoints, auth} = this.props;
+    const { campaigns, points, onRemoveCampaign, onRemoveMissionForPoints, auth, firebase} = this.props;
     const {missionpoints} = points.missionpoints;
+    this.admin(firebase, auth.id);
     let i = 0;
     campaigns.map( function(campaign, index){
       if ( points.missionpoints[index] * 100 / 500 >= 50 ){
@@ -70,19 +79,21 @@ export default class Campaign extends Component {
             { (this.state.loading) ? <Spinner /> :
             <ul>
               {
-                 campaigns.map( (campaign, index) => <CampaignItem key={index} id={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints} lastMissionCompleted={i - 1}/>)
+                 campaigns.map( (campaign, index) => <CampaignItem key={index} id={index} campaign={campaign} points={points.missionpoints[index]} onRemoveCampaign={onRemoveCampaign} onRemoveMissionForPoints={onRemoveMissionForPoints} lastMissionCompleted={i - 1} admin={ (this.admin(firebase, auth.id)) }/>)
               }
             </ul>
           }
           </div>
+          { (this.admin(firebase, auth.id)) ?
           <div className="col-xs-12">
              <div className="input-group">
                 <input type="text" className="form-control" placeholder="Add Misison" ref="title" onKeyDown={e => this.handleOnTitleKeyDown(e)} onChange={e => this.handleOnChangeTitle(e)}/>
-                <span className="input-group-btn">
+                 <span className="input-group-btn">
                   <button  disabled={this.state.addDisabled} className="btn btn-info" type="button" onClick={e => this.handleAddButtonClick(e)}><span className="glyphicon glyphicon-ok-sign" /></button>
                 </span>
             </div>
           </div>
+          : '' }
           </div>
         :
             <div className="col-xs-12">
@@ -102,6 +113,7 @@ Campaign.propTypes = {
   points: PropTypes.object.isRequired,
   users: PropTypes.array.isRequired,
   auth: PropTypes.object.isRequired,
+  firebase: PropTypes.object.isRequired,
   onRemoveCampaign:PropTypes.func.isRequired,
   onAddCampaign: PropTypes.func.isRequired,
   onAddPoint: PropTypes.func.isRequired,

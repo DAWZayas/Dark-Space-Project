@@ -17,7 +17,8 @@ function mapStateToProps(state) {
     campaigns: state.campaign,
     points: state.points[id],
     auth: state.auth,
-    users: state.points
+    users: state.points,
+    firebase: state.firebase
   };
 }
 
