@@ -45,7 +45,7 @@ export default class CampaignItem extends Component {
             <div className="pointsPerMission col-xs-12">
             <p className="col-xs-12 col-md-1">Enemy Fleet:</p>
             {
-                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-7 col-md-1"><img src={ship.img}/></div> )
+                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-6 col-md-1"><img src={ship.img}/></div> )
               }
              </div>
           </li>
