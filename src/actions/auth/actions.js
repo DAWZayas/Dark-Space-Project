@@ -5,11 +5,13 @@ export function createUserIfNotExists(authData, firebase){
   let a = '';
   let i  = 0;
   let name = '';
+  let avatar = '';
   firebase.child('campaign').on('value', function snapshot (snapshot){
       a = Object.keys(snapshot.val() || []).map(id => ({id, name: snapshot.val()[id].name, missionpoints: snapshot.val()[id].missionpoints }));
       name = authData[authData.provider].displayName;
+      (authData[authData.provider].profileImageURL) ? avatar = authData[authData.provider].profileImageURL : '';
 
-       firebase.child(`points/${authData.uid}`).update({name, admin: false, missionpoints: '' });
+       firebase.child(`points/${authData.uid}`).update({name, admin: false, missionpoints: '', avatar: avatar });
         while ( i < a.length){
              firebase.child(`points/${authData.uid}/missionpoints`).push(0);
              i++;

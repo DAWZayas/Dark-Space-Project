@@ -4,7 +4,8 @@ import { ON_REMOVE_MISSION_POINTS, ON_ADD_POINT, ON_REMOVE_MISSION_FOR_POINTS, O
 export const initialState = [
   {
     name: 'Default',
-    missionpoints:[0, 0, 0, 0, 0 ]
+    missionpoints:[0, 0, 0, 0, 0 ],
+    avatar: ''
   }
 ];
 

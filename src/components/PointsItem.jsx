@@ -19,13 +19,16 @@ sumarray (array){
     const { point, onRemoveMissionPoints, auth } = this.props;
 
     let total = this.sumarray(point.missionpoints);
+    if (point.avatar === '') point.avatar = 'http://vignette4.wikia.nocookie.net/disney/images/5/53/Death_Star_Render.png/revision/latest?cb=20131229205846';
     return (
       <div className="showlist">
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
           <div className="marginBottom">
+            <img className="avatar col-xs-1 col-md-1" src={point.avatar} />
             <span className="col-xs-6">{point.name}</span>
             <span className="col-xs-6">Total Points: {total} </span>
+            <br />
           </div>
             <div className="pointsPerMission">
               <ul className="col-xs-12">
