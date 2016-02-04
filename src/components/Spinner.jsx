@@ -9,7 +9,7 @@ export default class Spinner extends React.Component {
     render() {
         return (
             <div style={{display: 'flex', justifyContent: 'center'}} >
-                <img src="http://elections.sabc.co.za/elections2014/imgs/loader_gif.gif" width="120" height="80" />
+                <img src="http://www.gifmania.com/Peliculas-Cine/Cine-De-Ciencia-Ficcion/Star-Wars/TIE-Fighter/tie-fighter1-36282.gif" width="120" height="80" />
             </div>
         );
     }
