@@ -10,6 +10,7 @@ import SelectEnemyFleetContainer from './containers/SelectEnemyFleetContainer';
 import BattleReportContainer from './containers/BattleReportContainer';
 import BattleResultContainer from './containers/BattleResultContainer';
 import SignInContainer from './containers/SignInContainer';
+import Settings from './containers/Settings';
 
 export default () =>  (
   <Route path="" component={App}>
@@ -22,6 +23,7 @@ export default () =>  (
     <Route path="battleReport/:idCampaign" component={BattleReportContainer} />
     <Route path="battleResult/:idCampaign" component={BattleResultContainer} />
     <Route path="sign-in" component={SignInContainer} />
+    <Route path="settings" component={Settings} />
     <Redirect path="*" to="/" />
   </Route>
 );

@@ -62,12 +62,12 @@ handlerCollapsed(stateCollapsed){
               { (this.state.current === '/points') ? <li className="active"><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> : <li><Link to="/points" onClick={() => this.handlerSetState('/points') }>Points</Link></li> }
               { (this.state.current === '/tutorial') ? <li className="active"><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> : <li><Link to="/tutorial" onClick={() => this.handlerSetState('/tutorial') }>Tutorial</Link></li> }
             </ul>
-            <ul className="nav navbar-nav navbar-right">
               { auth.authenticated ?
-                <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li> :
-                <li><Link to="/sign-in" onClick={() => this.handlerSetState("/sign-in") } { ...this.props }>Sign In</Link></li>
+                <ul className="nav navbar-nav navbar-right">
+                <li><Link to="/settings" onClick={() => this.handlerSetState("/settings") }>Settings <span className="glyphicon glyphicon-cog action-icon"></span></Link></li>
+                <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li></ul> :
+                <ul className="nav navbar-nav navbar-right"><li><Link to="/sign-in" onClick={() => this.handlerSetState("/sign-in") } { ...this.props }>Sign In</Link></li></ul>
               }
-            </ul>
           </div>
         </div>
         </nav>

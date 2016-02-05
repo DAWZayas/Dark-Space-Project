@@ -87,7 +87,7 @@ export default class Campaign extends Component {
           { (this.admin(firebase, auth.id)) ?
           <div className="col-xs-12">
              <div className="input-group">
-                <input type="text" className="form-control" placeholder="Add Misison" ref="title" onKeyDown={e => this.handleOnTitleKeyDown(e)} onChange={e => this.handleOnChangeTitle(e)}/>
+                <input type="text" className="form-control" placeholder="Add Misssion" ref="title" onKeyDown={e => this.handleOnTitleKeyDown(e)} onChange={e => this.handleOnChangeTitle(e)}/>
                  <span className="input-group-btn">
                   <button  disabled={this.state.addDisabled} className="btn btn-info" type="button" onClick={e => this.handleAddButtonClick(e)}><span className="glyphicon glyphicon-ok-sign" /></button>
                 </span>
