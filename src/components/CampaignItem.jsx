@@ -62,4 +62,3 @@ CampaignItem.propTypes = {
   onRemoveCampaign: PropTypes.func.isRequired,
   onRemoveMissionForPoints: PropTypes.func.isRequired
 };
-

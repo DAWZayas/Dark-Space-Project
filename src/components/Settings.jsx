@@ -6,7 +6,9 @@ export default class Settings extends Component {
     super(props);
     this.state = {
       addDisabledName: true,
-      addDisabledImage: true
+      addDisabledImage: true,
+      imageChanged: false,
+      nameChanged: false
     };
   }
 
@@ -46,6 +48,9 @@ handleOnChangeName() {
     const username =  node.value.trim();
     changeUserName(auth.id, username);
     node.value = '';
+    this.setState({
+         nameChanged: true,
+    });
   }
 
   handleOnAddImageButtonClick(){
@@ -54,6 +59,9 @@ handleOnChangeName() {
     const userimage =  node.value.trim();
     changeUserImage(auth.id, userimage);
     node.value = '';
+    this.setState({
+         imageChanged: true,
+    });
   }
 
   render() {
@@ -65,6 +73,8 @@ handleOnChangeName() {
               <h2>Settings</h2>
         </div>
         <div  className="col-md-12">
+        {(this.state.nameChanged) ? <div className="col-md-12 center"><h4>Name was sucesfully changed</h4><hr /></div> : ''}
+        {(this.state.imageChanged) ? <div className="col-md-12 center"><h4>Image was sucesfully changed</h4><hr /></div> : ''}
         <div className="col-md-6">
         <label>Change username :</label>
           <div className="input-group">
