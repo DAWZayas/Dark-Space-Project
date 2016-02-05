@@ -6,14 +6,17 @@ import routes from '../routes';
 import thunk from 'redux-thunk';
 import { FIREBASE_URL } from '../config';
 import Firebase from 'firebase';
+import { initAuth } from '../actions/auth';
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(thunk),
   reduxReactRouter({ createHistory })
 )(createStore);
 
-export default function configureStore(initialState) {
-  return createStoreWithMiddleware(reducer,
-    initialState || { firebase: new Firebase(FIREBASE_URL)}
+export default function configureStore() {
+ const store = createStoreWithMiddleware(reducer,
+   { firebase: new Firebase(FIREBASE_URL)}
   );
+ store.dispatch (initAuth());
+ return store;
 }

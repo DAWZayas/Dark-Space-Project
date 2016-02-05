@@ -42,6 +42,7 @@ handlerCollapsed(stateCollapsed){
   render() {
     const { auth, points} = this.props;
     const { children } = this.props;
+
     return (
       <div className="userStyle">
        <nav className="navbar navbar-default">
