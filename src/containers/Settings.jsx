@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+import * as settingActions from '../actions/settings';
 import Settings from '../components/Settings';
 
 function mapStateToProps(state) {
@@ -10,6 +10,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  Object.assign( {}, settingActions)
 )(Settings);
 
