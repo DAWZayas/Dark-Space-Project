@@ -11,6 +11,7 @@ import BattleReportContainer from './containers/BattleReportContainer';
 import BattleResultContainer from './containers/BattleResultContainer';
 import SignInContainer from './containers/SignInContainer';
 import Settings from './containers/Settings';
+import Notifications from './containers/Notifications';
 
 export default () =>  (
   <Route path="" component={App}>
@@ -24,6 +25,7 @@ export default () =>  (
     <Route path="battleResult/:idCampaign" component={BattleResultContainer} />
     <Route path="sign-in" component={SignInContainer} />
     <Route path="settings" component={Settings} />
+    <Route path="notifications" component={Notifications} />
     <Redirect path="*" to="/" />
   </Route>
 );

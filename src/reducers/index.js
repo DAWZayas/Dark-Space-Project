@@ -10,6 +10,7 @@ import points from './points';
 import ships from './ships';
 import firebase from './firebase';
 import auth from './auth';
+import notifications from './notifications';
 
 const darkSpaceProjectApp = combineReducers({
   campaign,
@@ -21,7 +22,8 @@ const darkSpaceProjectApp = combineReducers({
   ships,
   firebase,
   router,
-  auth
+  auth,
+  notifications
 });
 
 export default darkSpaceProjectApp;
