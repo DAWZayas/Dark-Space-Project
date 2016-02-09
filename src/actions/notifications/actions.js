@@ -2,6 +2,6 @@ import {
   SET_NOTIFICATIONS
 } from './action-types';
 
-export function setCampaign(notifications) {
+export function setNotifications(notifications) {
   return { type: SET_NOTIFICATIONS, notifications };
 }

@@ -12,7 +12,8 @@ export function createUserIfNotExists(authData, firebase){
       name = authData[authData.provider].displayName;
       (authData[authData.provider].profileImageURL) ? avatar = authData[authData.provider].profileImageURL : '';
       notify = {message: `Create user ${authData.uid}`, status: false};
-      firebase.child(`points/${authData.uid}`).update({name, admin: false, missionpoints: '', avatar: avatar, notifications: notify});
+      firebase.child(`points/${authData.uid}`).update({name, admin: false, missionpoints: '', avatar: avatar, notifications: ''});
+      firebase.child(`points/${authData.uid}/notifications`).push(notify);
         while ( i < a.length){
              firebase.child(`points/${authData.uid}/missionpoints`).push(0);
              i++;

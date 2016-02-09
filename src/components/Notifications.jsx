@@ -7,7 +7,7 @@ export default class Notifications extends Component {
   }
 
   componentWillMount() {
-    this.props.registerListeners(this.props.params);
+    this.props.registerListeners(this.props.params, this.props.auth.id);
   }
 
 
@@ -34,5 +34,6 @@ export default class Notifications extends Component {
 
 Notifications.propTypes = {
   auth: PropTypes.object.isRequired,
-  notifications: PropTypes.array.isRequired
+  notifications: PropTypes.array.isRequired,
+  registerListeners: PropTypes.func.isRequired
 };
