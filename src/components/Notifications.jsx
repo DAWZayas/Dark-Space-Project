@@ -12,7 +12,7 @@ export default class Notifications extends Component {
 
 
   render() {
-    const {auth} = this.props;
+    const {auth, notifications} = this.props;
     return (
       (auth.authenticated) ?
       <div className="row">
@@ -20,7 +20,11 @@ export default class Notifications extends Component {
               <h2>Notifications</h2>
         </div>
         <div  className="col-md-12">
-        <p>Notify</p>
+          <div className="col-md-12">
+            {
+                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message}</div> : <div className="alert alert-success">{notify.message}</div>)
+            }
+        </div>
         </div>
       </div> :
       <div className="col-xs-12">
