@@ -64,6 +64,7 @@ handlerCollapsed(stateCollapsed){
             </ul>
               { auth.authenticated ?
                 <ul className="nav navbar-nav navbar-right">
+                <li><Link to="/notifications" onClick={() => this.handlerSetState("/settings") }>Notifications</Link></li>
                 <li><Link to="/settings" onClick={() => this.handlerSetState("/settings") }>Settings <span className="glyphicon glyphicon-cog action-icon"></span></Link></li>
                 <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li></ul> :
                 <ul className="nav navbar-nav navbar-right"><li><Link to="/sign-in" onClick={() => this.handlerSetState("/sign-in") } { ...this.props }>Sign In</Link></li></ul>
@@ -88,4 +89,3 @@ export default connect(
   state => ({auth: state.auth, points: state.points}),
   Object.assign( {}, authActions)
 )(App);
-
