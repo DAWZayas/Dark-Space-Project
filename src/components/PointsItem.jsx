@@ -27,7 +27,7 @@ sumarray (array){
           <li className="list-group-item action-element  col-xs-12">
           <div className="marginBottom">
             <span className="col-md-1 col-xs-3"><img className="avatar" src={point.avatar}/></span>
-            <span className="col-md-3 col-xs-9"> {point.name}{ (coincident === true) ? <span className="connect">   Usuario Actual </span> : null}</span>
+            <span className="col-md-3 col-xs-9"> {point.name}{ (coincident === true) ? <span className="connect">  Current User </span> : null}</span>
             <span className="col-xs-3"/>
             <span className="col-md-5 col-xs-9">Total Points: {total} </span>
           </div>
