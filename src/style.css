@@ -1,3 +1,7 @@
+.connect{
+  color: blue;
+   font: 115% sans-serif; 
+}
 .list-group-item .action-icon {
   display: none;
 }

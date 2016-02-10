@@ -17,16 +17,17 @@ sumarray (array){
   render() {
 
     const { point, onRemoveMissionPoints, auth } = this.props;
-
+    let coincident = false;
     let total = this.sumarray(point.missionpoints);
     if (point.avatar === '') point.avatar = 'http://vignette4.wikia.nocookie.net/disney/images/5/53/Death_Star_Render.png/revision/latest?cb=20131229205846';
+    if (point.id === auth.id )  coincident = true;
     return (
-      <div className="showlist">
+       <div className="showlist conect">
         <div className="col-xs-12">
           <li className="list-group-item action-element  col-xs-12">
           <div className="marginBottom">
             <span className="col-md-1 col-xs-3"><img className="avatar" src={point.avatar}/></span>
-            <span className="col-md-3 col-xs-9"> {point.name}</span>
+            <span className="col-md-3 col-xs-9"> {point.name}{ (coincident === true) ? <span className="connect">   Usuario Actual </span> : null}</span>
             <span className="col-xs-3"/>
             <span className="col-md-5 col-xs-9">Total Points: {total} </span>
           </div>

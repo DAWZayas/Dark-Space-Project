@@ -62,19 +62,28 @@ export default class Campaign extends Component {
     const {missionpoints} = points.missionpoints;
     this.admin(firebase, auth.id);
     let i = 0;
+    let user = '';
     campaigns.map( function(campaign, index){
       if ( points.missionpoints[index] * 100 / 500 >= 50 ){
         i++;
       }
-    });
-
+      if (points.id === auth.id ) { user = (points.name);}
+          });
+let id = '';
+let ii = 0;
+    while (ii < points.length){debugger;
+      if (auth.id === points[ii].id){
+        id = points[ii].name;
+      }
+      i++;
+    }
     return (
         <div className="row">
         { auth.authenticated ?
           <div>
           <div className="col-xs-12">
             <div className="titlePadding">
-              <h2>Campaign</h2>
+              <h2 >{user}'s Campaign </h2>
             </div>
             { (this.state.loading) ? <Spinner /> :
             <ul>
