@@ -83,7 +83,7 @@ let ii = 0;
           <div>
           <div className="col-xs-12">
             <div className="titlePadding">
-              <h2 >{user}'s Campaign </h2>
+              <h2 >Campaign user: <span className="connect">{user}</span></h2>
             </div>
             { (this.state.loading) ? <Spinner /> :
             <ul>
