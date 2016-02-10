@@ -67,15 +67,13 @@ export default class Campaign extends Component {
       if ( points.missionpoints[index] * 100 / 500 >= 50 ){
         i++;
       }
-      if (points.id === auth.id ) { user = (points.name);}
-          });
+        (points.id === auth.id) ? user = (points.name) : null;
+    });
 let id = '';
-let ii = 0;
-    while (ii < points.length){debugger;
-      if (auth.id === points[ii].id){
-        id = points[ii].name;
-      }
-      i++;
+let x = 0;
+    while (x < points.length){
+      (auth.id === points[x].id) ? id = points[x].name : null;
+      x++;
     }
     return (
         <div className="row">
@@ -83,7 +81,7 @@ let ii = 0;
           <div>
           <div className="col-xs-12">
             <div className="titlePadding">
-              <h2>Campaign</h2><h4>user:<span className="connect">{user}</span></h4>
+              <h2>Campaign</h2><h4>user: <span className="connect">{user}</span></h4>
             </div>
             { (this.state.loading) ? <Spinner /> :
             <ul>

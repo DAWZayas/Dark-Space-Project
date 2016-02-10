@@ -14,9 +14,7 @@ export default class BattleResult extends Component {
     let i = 0;
     let id = 0;
     while (i < points.length){
-      if (auth.id === points[i].id){
-        id = i;
-      }
+     (auth.id === points[i].id) ? id = i : null;
       i++;
     }
     this.handleBackButtonClick(point, id);
