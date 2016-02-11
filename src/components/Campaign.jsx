@@ -81,7 +81,7 @@ let x = 0;
           <div>
           <div className="col-xs-12">
             <div className="titlePadding">
-              <h2>Campaign</h2><h4>user: <span className="connect">{user}</span></h4>
+              <h2>Campaign</h2><h4>User: <span className="connect">{user}</span></h4>
             </div>
             { (this.state.loading) ? <Spinner /> :
             <ul>
@@ -130,4 +130,3 @@ Campaign.propTypes = {
 Campaign.defaultProps = {
   campaigns: []
 };
-

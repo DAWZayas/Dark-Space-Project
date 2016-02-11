@@ -17,17 +17,14 @@ sumarray (array){
   render() {
 
     const { point, onRemoveMissionPoints, auth } = this.props;
-    let coincident = false;
     let total = this.sumarray(point.missionpoints);
-     (point.avatar === '') ? point.avatar = 'http://vignette4.wikia.nocookie.net/disney/images/5/53/Death_Star_Render.png/revision/latest?cb=20131229205846' : false;
-     (point.id === auth.id ) ? coincident = true : false;
     return (
        <div className="showlist">
         <div className="col-xs-12">
-           <li  className={ coincident === true ? "userconnect list-group-item action-element  col-xs-12" : "list-group-item action-element  col-xs-12" }>
+           <li  className={ (point.id === auth.id) ? "userconnect list-group-item action-element  col-xs-12" : "list-group-item action-element  col-xs-12" }>
           <div className="marginBottom">
             <span className="col-md-1 col-xs-3"><img className="avatar" src={point.avatar}/></span>
-            <span className="col-md-3 col-xs-9">{ (coincident === true) ? <span className="connect">{point.name}</span> : <span>{point.name} </span>}</span>
+            <span className="col-md-3 col-xs-9">{ (point.id === auth.id) ? <span className="connect">{point.name}</span> : <span>{point.name} </span>}</span>
             <span className="col-xs-3"/>
             <span className="col-md-5 col-xs-9">Total Points: {total} </span>
           </div>
@@ -49,4 +46,3 @@ PointsItem.propTypes = {
   point: PropTypes.object.isRequired,
   onRemoveMissionPoints: PropTypes.func.isRequired
 };
-
