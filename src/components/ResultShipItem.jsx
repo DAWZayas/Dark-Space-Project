@@ -14,7 +14,7 @@ export default class ResultShipItem extends Component {
         <div className="well well-lg">
           <div className="row">
             <div className="col-xs-6">
-              <div><strong>State:{(resultShipProp.hull <= 0 ) ? " Dead" : " Alive" }</strong></div>
+              <div><strong>State:{(resultShipProp.hull <= 0 ) ? " Dead" : " Alive" }</strong></div><br></br>
               <div><strong>Name:</strong> {resultShipProp.name}</div>
               <div><strong>Damage:</strong> {resultShipProp.damage}</div>
               <div><strong>Agility:</strong> {resultShipProp.agility}</div>
