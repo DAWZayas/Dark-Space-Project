@@ -5,6 +5,11 @@
 .list-group-item .action-icon {
   display: none;
 }
+.userconnect{
+  color: #333 !important;
+  background-color: #eee!important;
+  border-color: #e7e7e7!important;
+}
 .list-group-item:hover {
   z-index: 5;
   color: #333;
