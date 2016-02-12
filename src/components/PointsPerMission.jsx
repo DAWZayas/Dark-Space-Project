@@ -24,7 +24,7 @@ handleRemoveMissionPoints (e, iduser, missionnumber) {
     return (
 
             <li className="setPadding col-xs-12 stylenone roundpointspermission">
-                  <span className="col-xs-4">  Mission {missionnumber + 1}:{pointinmission} points</span>
+                  <span className="col-xs-10">  Mission {missionnumber + 1}:{pointinmission} points</span>
                   { (iduser === auth.id) ? <span className="col-xs-1 glyphicon glyphicon-remove-circle text-danger" onClick= {(e) => this.handleRemoveMissionPoints(e, iduser,  missionnumber)}></span> : ''}
                   <div className="setPadding col-xs-12">
                    <div className="progress">
