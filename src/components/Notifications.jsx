@@ -14,6 +14,10 @@ export default class Notifications extends Component {
     this.props.reed(this.props.auth.id);
   }
 
+  removethis(key){
+    this.props.remove(this.props.auth.id, key);
+  }
+
 
   render() {
     const {auth, notifications} = this.props;
@@ -26,7 +30,7 @@ export default class Notifications extends Component {
         <div  className="col-md-12">
           <div className="col-md-12">
             {
-                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message}</div> : <div className="alert alert-success">{notify.message}</div>)
+                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removethis(notify.key)} className="glyphicon glyphicon-remove"></span></div> : <div className="alert alert-success">{notify.message} <span onClick={ () => this.removethis(notify.key)} className="glyphicon glyphicon-remove"></span></div>)
             }
         </div>
         </div>
@@ -44,5 +48,6 @@ Notifications.propTypes = {
   auth: PropTypes.object.isRequired,
   notifications: PropTypes.array.isRequired,
   registerListeners: PropTypes.func.isRequired,
-  reed: PropTypes.func.isRequired
+  reed: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired
 };

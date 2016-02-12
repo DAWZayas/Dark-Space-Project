@@ -16,3 +16,10 @@ export function reed(iduser){
       x = Object.keys(snapshot.val() || []).map( key => firebase.child(`points/${iduser}/notifications/${key}`).update({ message: snapshot.val()[key].message, status: snapshot.val()[key].status = true }) ) );
     };
 }
+
+export function remove(iduser, key){
+	return (dispatch, getState) => {
+    const { firebase } = getState();
+    firebase.child(`points/${iduser}/notifications/${key}`).remove();
+};
+}
