@@ -76,10 +76,10 @@ let x = 0;
       x++;
     }
     return (
-        <div className="row">
+        <div className="row paddingRight">
         { auth.authenticated ?
           <div>
-          <div className="col-xs-12">
+          <div className="col-xs-12 paddingLeft">
             <div className="titlePadding">
               <h2>Campaign</h2><h4>User: <span className="connect">{user}</span></h4>
             </div>
@@ -92,8 +92,8 @@ let x = 0;
           }
           </div>
           { (this.admin(firebase, auth.id)) ?
-          <div className="col-xs-12">
-             <div className="input-group">
+          <div className="col-xs-12 paddingLeft">
+             <div className="input-group paddingInput">
                 <input type="text" className="form-control" placeholder="Add Misssion" ref="title" onKeyDown={e => this.handleOnTitleKeyDown(e)} onChange={e => this.handleOnChangeTitle(e)}/>
                  <span className="input-group-btn">
                   <button  disabled={this.state.addDisabled} className="btn btn-info" type="button" onClick={e => this.handleAddButtonClick(e)}><span className="glyphicon glyphicon-ok-sign" /></button>

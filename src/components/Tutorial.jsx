@@ -45,45 +45,45 @@ export default class Tutorial extends Component {
     const { ships } = this.props;
     return (
       <div className="row">
-        <div className="col-xs-12">
-          <div className="titlePadding">
-            <h2>Tutorial</h2>
-          </div>
-          <ul>
-            <li><strong>Dark space project:</strong></li>
-          </ul>
-          <p className="text">It is a strategy browser game, based on a universe of science fiction.. </p>
-          <ul>
-          <li><strong>Battle Simulation:</strong></li>
-          </ul>
-          <p className="text">
-            For each point in the "Damaged" attribute of the attacking ship has a 50% chance to cause damage to the enemy ship.<br/>
-            For each point in the "Agility" attribute of the defending ship it has a 50% chance of avoiding damage.<br/>
-            Each damage done to a ship would eliminate first the shields and then the hull of the ship, a ship with 0 in the attribute "hull" is considered dead.
-          </p>
-          { (this.state.loading) ? <Spinner /> :
-          <div>
+          <div className="col-xs-12">
+            <div className="titlePadding">
+              <h2>Tutorial</h2>
+            </div>
             <ul>
-              <li><strong>Ships available:</strong></li>
+              <li><strong>Dark space project:</strong></li>
             </ul>
+            <p className="text">It is a strategy browser game, based on a universe of science fiction.. </p>
+            <ul>
+            <li><strong>Battle Simulation:</strong></li>
+            </ul>
+            <p className="text">
+              For each point in the "Damaged" attribute of the attacking ship has a 50% chance to cause damage to the enemy ship.<br/>
+              For each point in the "Agility" attribute of the defending ship it has a 50% chance of avoiding damage.<br/>
+              Each damage done to a ship would eliminate first the shields and then the hull of the ship, a ship with 0 in the attribute "hull" is considered dead.
+            </p>
+            { (this.state.loading) ? <Spinner /> :
+            <div>
+              <ul>
+                <li><strong>Ships available:</strong></li>
+              </ul>
+              <div className="col-xs-12">
+                {
+                  <TutorialNavesItem navesProp={ships[this.state.it]} />
+                }
+              </div>
+            </div>
+            }
             <div className="col-xs-12">
-              {
-                <TutorialNavesItem navesProp={ships[this.state.it]} />
-              }
+            <nav>
+              <ul className="pager">
+                {(this.state.firstDisabled) ? <li className="previous disabled" onClick={e => this.handleBackButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}><span aria-hidden="true">&larr;</span>Back</Link></li>
+                : <li className="previous" onClick={e => this.handleBackButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}><span aria-hidden="true">&larr;</span>Back</Link></li>}
+                {(this.state.lastDisabled) ? <li className="next disabled" onClick={e => this.handleNextButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}>Next <span aria-hidden="true">&rarr;</span></Link></li>
+                : <li className="next" onClick={e => this.handleNextButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}>Next <span aria-hidden="true">&rarr;</span></Link></li>}
+              </ul>
+            </nav>
             </div>
           </div>
-          }
-          <div className="col-xs-12">
-          <nav>
-            <ul className="pager">
-              {(this.state.firstDisabled) ? <li className="previous disabled" onClick={e => this.handleBackButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}><span aria-hidden="true">&larr;</span>Back</Link></li>
-              : <li className="previous" onClick={e => this.handleBackButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}><span aria-hidden="true">&larr;</span>Back</Link></li>}
-              {(this.state.lastDisabled) ? <li className="next disabled" onClick={e => this.handleNextButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}>Next <span aria-hidden="true">&rarr;</span></Link></li>
-              : <li className="next" onClick={e => this.handleNextButtonClick(e)}><Link to={"/tutorial"} style={{color: 'inherit', textDecoration: 'inherit'}}>Next <span aria-hidden="true">&rarr;</span></Link></li>}
-            </ul>
-          </nav>
-          </div>
-        </div>
       </div>
     );
   }

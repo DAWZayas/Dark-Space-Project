@@ -119,3 +119,20 @@
 .notify{
   margin: 1%;
 }
+
+.paddingLeft {
+  padding-left: 0px !important;
+}
+
+.paddingRight{
+  padding-right: 10px !important;
+}
+
+.paddingInput {
+  padding-left: 40px !important;
+}
+
+.paddingInput2 {
+  padding-left: 28px !important;
+}
+

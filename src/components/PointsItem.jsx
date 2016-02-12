@@ -20,7 +20,7 @@ sumarray (array){
     let total = this.sumarray(point.missionpoints);
     return (
        <div className="showlist">
-        <div className="col-xs-12">
+        <div className="col-xs-12 paddingLeft">
            <li  className={ (point.id === auth.id) ? "userconnect list-group-item action-element  col-xs-12" : "list-group-item action-element  col-xs-12" }>
           <div className="marginBottom">
             <span className="col-md-1 col-xs-3"><img className="avatar" src={point.avatar}/></span>

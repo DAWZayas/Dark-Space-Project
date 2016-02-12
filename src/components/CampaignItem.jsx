@@ -23,7 +23,7 @@ export default class CampaignItem extends Component {
     const { campaign, points, lastMissionCompleted, admin} = this.props;
 
     return (
-        <div className="col-xs-12 showlist">
+        <div className="col-xs-12 showlist paddingLeft">
           <li className="list-group-item action-element  col-xs-12">
             { this.props.id > (lastMissionCompleted + 1 ) ?
               <span className="col-xs-4">Mission {this.props.id + 1}:  {campaign.title}</span> :

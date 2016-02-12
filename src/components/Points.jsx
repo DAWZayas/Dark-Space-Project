@@ -24,8 +24,8 @@ export default class Points extends Component {
     const { points, onRemoveMissionPoints, auth} = this.props;
 
     return (
-      <div className="row">
-        <div className="col-xs-12">
+      <div className="row paddingRight">
+        <div className="col-xs-12 paddingLeft">
           <div className="titlePadding">
             <h2>Points</h2>
           </div>

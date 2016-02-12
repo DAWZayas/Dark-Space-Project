@@ -75,18 +75,18 @@ handleOnChangeName() {
         <div  className="col-md-12">
         {(this.state.nameChanged) ? <div className="col-md-12 center"><h4>Name was sucesfully changed</h4><hr /></div> : ''}
         {(this.state.imageChanged) ? <div className="col-md-12 center"><h4>Image was sucesfully changed</h4><hr /></div> : ''}
-        <div className="col-md-6">
+        <div className="col-md-6 paddingInput2">
         <label>Change username :</label>
-          <div className="input-group">
+          <div className="input-group paddingLeft">
                 <input type="text" onChange={e => this.handleOnChangeName(e)} onKeyDown={e => this.handleOnNameKeyDown(e)} className="form-control" placeholder="New User Name" ref="username" />
                  <span className="input-group-btn">
                   <button disabled={this.state.addDisabledName} onClick={ () => this.handleOnAddNameButtonClick() } className="btn btn-info" type="button"><span className="glyphicon glyphicon-ok-sign" /></button>
                 </span>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 paddingInput2">
           <label>Change user image (URL) :</label>
-          <div className="input-group">
+          <div className="input-group paddingLeft">
                 <input type="text" onChange={e => this.handleOnChangeImage(e)} onKeyDown={e => this.handleOnImageKeyDown(e)} className="form-control" placeholder="New User Image" ref="userimage" />
                  <span className="input-group-btn">
                   <button disabled={this.state.addDisabledImage} onClick={ () => this.handleOnAddImageButtonClick() } className="btn btn-info" type="button"><span className="glyphicon glyphicon-ok-sign" /></button>
