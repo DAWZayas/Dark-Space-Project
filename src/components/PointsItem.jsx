@@ -28,7 +28,7 @@ sumarray (array){
             <span className="col-xs-3"/>
             <span className="col-md-5 col-xs-9">Total Points: {total} </span>
           </div>
-            <div className="pointsPerMission">
+            <div className="pointsPerMission  marginTop">
               <ul className="col-xs-12">
                 {
                       point.missionpoints.map( (pointinmission, index) => <PointsPerMission key={index} pointinmission={pointinmission} missionnumber={index} iduser={point.id} onRemoveMissionPoints={onRemoveMissionPoints} auth={auth}/>)
