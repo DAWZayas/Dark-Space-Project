@@ -10,6 +10,10 @@ export default class Notifications extends Component {
     this.props.registerListeners(this.props.params, this.props.auth.id);
   }
 
+  componentWillUnmount(){
+    this.props.reed(this.props.auth.id);
+  }
+
 
   render() {
     const {auth, notifications} = this.props;
@@ -39,5 +43,6 @@ export default class Notifications extends Component {
 Notifications.propTypes = {
   auth: PropTypes.object.isRequired,
   notifications: PropTypes.array.isRequired,
-  registerListeners: PropTypes.func.isRequired
+  registerListeners: PropTypes.func.isRequired,
+  reed: PropTypes.func.isRequired
 };
