@@ -26,13 +26,19 @@ export function onAddCampaign(id, title) {
       }
   };
   firebase.child(`campaign`).push(campaignObject);
+  let notify = {message: `Mission ${title} added`, status: false};
+  firebase.child(`points`).once('value', snapshot =>
+    Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) ));
   };
 }
 
-export function onRemoveCampaign(id) {
+export function onRemoveCampaign(id, title) {
     return (dispatch, getState) => {
     const { firebase, auth } = getState();
   firebase.child(`campaign/${id}`).remove();
+  let notify = {message: `Mission ${title} removed`, status: false};
+  firebase.child(`points`).once('value', snapshot =>
+    Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) ));
   };
 }
 

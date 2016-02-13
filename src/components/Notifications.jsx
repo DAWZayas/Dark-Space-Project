@@ -1,9 +1,17 @@
 import React, { Component, PropTypes } from 'react';
+import Spinner from './Spinner';
 
 export default class Notifications extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+       this.setState({ loading: false});
   }
 
   componentWillMount() {
@@ -26,6 +34,7 @@ export default class Notifications extends Component {
   render() {
     const {auth, notifications} = this.props;
     return (
+    (this.state.loading) ? <Spinner /> :
       (auth.authenticated) ?
       <div className="row">
         <div className="titlePadding">
@@ -35,9 +44,11 @@ export default class Notifications extends Component {
         {(notifications[0]) ?
           <div className="col-md-12">
             {
-                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div>)
+                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div>)
             }
+            <div className="col-md-12">
             <button onClick={ () => this.clearAll()} className="btn btn-danger">Clear all</button>
+            </div>
         </div>
         : <div className="col-md-12"><h4 className="col-md-12">No Notifications</h4></div>}
         </div>
@@ -46,7 +57,7 @@ export default class Notifications extends Component {
               <div className="titlePadding">
                   <h2>Error, please identify yourself</h2>
               </div>
-            </div>
+      </div>
     );
   }
 }

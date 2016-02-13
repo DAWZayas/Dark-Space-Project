@@ -10,7 +10,7 @@ export default class CampaignItem extends Component {
   handleRemoveButtonClick(e) {
     e.stopPropagation();
     const { onRemoveCampaign, campaign, id, onRemoveMissionForPoints} = this.props;
-    onRemoveCampaign(campaign.id);
+    onRemoveCampaign(campaign.id, campaign.title);
     onRemoveMissionForPoints(id);
   }
 
