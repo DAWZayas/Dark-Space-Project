@@ -23,3 +23,10 @@ export function remove(iduser, key){
     firebase.child(`points/${iduser}/notifications/${key}`).remove();
 };
 }
+
+export function clear(iduser, key){
+	return (dispatch, getState) => {
+    const { firebase } = getState();
+    firebase.child(`points/${iduser}/notifications`).remove();
+};
+}

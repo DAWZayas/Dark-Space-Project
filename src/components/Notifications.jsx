@@ -14,8 +14,12 @@ export default class Notifications extends Component {
     this.props.reed(this.props.auth.id);
   }
 
-  removethis(key){
+  removenotify(key){
     this.props.remove(this.props.auth.id, key);
+  }
+
+  clearAll(){
+    this.props.clear(this.props.auth.id);
   }
 
 
@@ -28,11 +32,14 @@ export default class Notifications extends Component {
               <h2>Notifications</h2>
         </div>
         <div  className="col-md-12">
+        {(notifications[0]) ?
           <div className="col-md-12">
             {
-                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removethis(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success">{notify.message} <span onClick={ () => this.removethis(notify.key)} className="glyphicon glyphicon-remove right"></span></div>)
+                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div>)
             }
+            <button onClick={ () => this.clearAll()} className="btn btn-danger">Clear all</button>
         </div>
+        : <div className="col-md-12"><h4 className="col-md-12">No Notifications</h4></div>}
         </div>
       </div> :
       <div className="col-xs-12">
@@ -49,5 +56,6 @@ Notifications.propTypes = {
   notifications: PropTypes.array.isRequired,
   registerListeners: PropTypes.func.isRequired,
   reed: PropTypes.func.isRequired,
-  remove: PropTypes.func.isRequired
+  remove: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired
 };

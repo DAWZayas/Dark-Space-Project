@@ -46,7 +46,7 @@ handleOnChangeName() {
     const {auth, changeUserName} = this.props;
     const node = this.refs.username;
     const username =  node.value.trim();
-    changeUserName(auth.id, username);
+    changeUserName(auth.id, username, `Name change successfully to ${username}`);
     node.value = '';
     this.setState({
          nameChanged: true,
@@ -57,7 +57,7 @@ handleOnChangeName() {
     const {auth, changeUserImage} = this.props;
     const node = this.refs.userimage;
     const userimage =  node.value.trim();
-    changeUserImage(auth.id, userimage);
+    changeUserImage(auth.id, userimage, `Image change successfully`);
     node.value = '';
     this.setState({
          imageChanged: true,
@@ -108,5 +108,6 @@ Settings.propTypes = {
   auth: PropTypes.object.isRequired,
   firebase: PropTypes.object.isRequired,
   changeUserName: PropTypes.func.isRequired,
-  changeUserImage: PropTypes.func.isRequired
+  changeUserImage: PropTypes.func.isRequired,
+  createNotify: PropTypes.func.isRequired
 };
