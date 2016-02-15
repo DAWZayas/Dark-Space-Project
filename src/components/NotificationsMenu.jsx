@@ -7,6 +7,10 @@ export default class Notifications extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.registerListeners(this.props.params, this.props.auth);
+  }
+
   render() {
     const { total, pending } = this.props;
     return (
@@ -19,7 +23,9 @@ export default class Notifications extends Component {
 
 Notifications.propTypes = {
   total: PropTypes.number.isRequired,
-  pending: PropTypes.number.isRequired
+  pending: PropTypes.number.isRequired,
+  auth: PropTypes.string.isRequired,
+  registerListeners: PropTypes.func.isRequired
 };
 
 Notifications.defaultProps = {
