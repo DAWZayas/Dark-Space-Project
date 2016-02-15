@@ -1,10 +1,7 @@
 import { SET_NOTIFICATIONS } from '../actions/notifications';
 
 
-export const initialState = [{
-    message: 'Default',
-    status: ''
-  }];
+export const initialState = [];
 
 function setNotifications(state, notifications){
   return notifications.slice();
@@ -18,5 +15,3 @@ export default function notificationsReducer(state = initialState, action ) {
         return state;
     }
   }
-
-
