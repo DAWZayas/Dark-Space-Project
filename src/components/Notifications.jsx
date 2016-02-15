@@ -44,7 +44,7 @@ export default class Notifications extends Component {
         {(notifications[0]) ?
           <div className="col-md-12">
             {
-                notifications.map( (notify) => (!notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div>)
+                notifications.map( (notify) => (notify.status) ? <div className="alert alert-info col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div> : <div className="alert alert-success col-md-3 notify">{notify.message} <span onClick={ () => this.removenotify(notify.key)} className="glyphicon glyphicon-remove right"></span></div>).reverse()
             }
             <div className="col-md-12">
             <button onClick={ () => this.clearAll()} className="btn btn-danger">Clear all</button>
