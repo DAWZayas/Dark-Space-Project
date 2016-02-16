@@ -1,6 +1,7 @@
 import {
   SET_POINTS, ON_REMOVE_MISSION_POINTS, ON_REMOVE_MISSION_FOR_POINTS, ON_BATTLE_RESULT, ON_ADD_POINT
 } from './action-types';
+import alertify from 'alertifyjs';
 
 export function setPoints(points) {
   return { type: SET_POINTS, points };
@@ -25,6 +26,7 @@ export function onRemoveMissionPoints(iduser, missionnumber) {
     );
     let notify = {message: `Points for mission "${title}" set to 0`, status: false};
     firebase.child(`points/${iduser}/notifications`).push(notify);
+    alertify.success(`Points set to 0`);
   };
 }
 

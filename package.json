@@ -46,7 +46,8 @@
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   },
-    "dependencies": {
+  "dependencies": {
+    "alertifyjs": "^1.6.1",
     "babel-runtime": "^5.8.29",
     "bootstrap": "^3.3.5",
     "clone": "^1.0.2",
