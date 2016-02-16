@@ -21,7 +21,7 @@ sumarray (array){
     return (
        <div className="showlist">
         <div className="col-xs-12 paddingLeft">
-           <li  className={ (point.id === auth.id) ? "userconnect list-group-item action-element  col-xs-12" : "list-group-item action-element  col-xs-12" }>
+           <li  className={ (point.id === auth.id) ? "list-group-item action-element  col-xs-12" : "list-group-item action-element  col-xs-12" }>
           <div className="marginBottom">
             <span className="col-md-1 col-xs-3"><img className="avatar" src={point.avatar}/></span>
             <span className="col-md-3 col-xs-9">{ (point.id === auth.id) ? <span className="connect">{point.name}</span> : <span>{point.name} </span>}</span>
