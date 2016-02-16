@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as authActions from '../actions/auth/';
-
+import NotificationsMenuContainer from './NotificationsMenuContainer';
 
 export default class App extends Component {
 
@@ -64,7 +64,7 @@ handlerCollapsed(stateCollapsed){
             </ul>
               { auth.authenticated ?
                 <ul className="nav navbar-nav navbar-right">
-                <li><Link to="/notifications" onClick={() => this.handlerSetState("/settings") }>Notifications</Link></li>
+                <li><Link to="/notifications" onClick={() => this.handlerSetState("/notifications") }><NotificationsMenuContainer /></Link></li>
                 <li><Link to="/settings" onClick={() => this.handlerSetState("/settings") }>Settings <span className="glyphicon glyphicon-cog action-icon"></span></Link></li>
                 <li className="navbar-btn"><button className="btn" type="button" onClick={ () => this.handleSignOutClick() }>Sign Out</button></li></ul> :
                 <ul className="nav navbar-nav navbar-right"><li><Link to="/sign-in" onClick={() => this.handlerSetState("/sign-in") } { ...this.props }>Sign In</Link></li></ul>
@@ -82,10 +82,11 @@ App.propTypes = {
   children: PropTypes.node,
   signOut: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  points: PropTypes.array.isRequired
+  points: PropTypes.array.isRequired,
+  notifications: PropTypes.array.isRequired
 };
 
 export default connect(
-  state => ({auth: state.auth, points: state.points}),
+  state => ({auth: state.auth, points: state.points, notifications: state.notifications}),
   Object.assign( {}, authActions)
 )(App);

@@ -13,4 +13,3 @@ export default connect(
   mapStateToProps,
   Object.assign( {}, settingActions)
 )(Settings);
-

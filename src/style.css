@@ -143,3 +143,11 @@
 .setPaddingBottom{
   padding-bottom: 10px !important;
 }
+
+.pending{
+  background-color: #3c763d !important;
+}
+
+.notpending{
+  background-color: #31708f !important;
+}

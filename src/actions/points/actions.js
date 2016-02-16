@@ -14,6 +14,19 @@ export function onRemoveMissionPoints(iduser, missionnumber) {
       x = Object.keys(snapshot.val())[missionnumber]
     );
     firebase.child(`points/${iduser}/missionpoints/${x}`).set(0);
+
+    let key;
+    firebase.child(`campaign`).once( 'value', snapshot =>
+      key = Object.keys( snapshot.val())[missionnumber]
+    );
+    let title;
+    firebase.child(`campaign/${key}`).once('value', snapshot =>
+      title = snapshot.val().title
+    );
+    let notify = {message: `Points for mission "${title}" set to 0`, status: false};
+    firebase.child(`points`).once('value', snapshot =>
+      Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) )
+    );
   };
 }
 
@@ -68,6 +81,19 @@ export function onBattleResult(idCampaign, points, iduser){
 
     if ( points > missionpoints ) {
       firebase.child(`points/${id}/missionpoints/${idMission}`).set(points);
+      let key;
+      firebase.child(`campaign`).once( 'value', snapshot =>
+        key = Object.keys( snapshot.val())[idCampaign]
+      );
+      let title;
+      firebase.child(`campaign/${key}`).once('value', snapshot =>
+        title = snapshot.val().title
+      );
+      let notify = {message: `Points for mission "${title}" updated`, status: false};
+      firebase.child(`points`).once('value', snapshot =>
+        Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) )
+      );
     }
+
     };
 }
