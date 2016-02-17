@@ -11,7 +11,7 @@ export function reed(iduser){
 	return (dispatch, getState) => {
     const { firebase } = getState();
     firebase.child(`points/${iduser}/notifications`).once('value', snapshot =>
-      Object.keys(snapshot.val() || []).map( key => firebase.child(`points/${iduser}/notifications/${key}`).update({ message: snapshot.val()[key].message, status: snapshot.val()[key].status = true }) ) );
+      Object.keys(snapshot.val() || []).map( key => firebase.child(`points/${iduser}/notifications/${key}`).update({ message: snapshot.val()[key].message, status: true }) ) );
     };
 }
 

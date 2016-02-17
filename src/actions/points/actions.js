@@ -1,7 +1,7 @@
 import {
   SET_POINTS, ON_REMOVE_MISSION_POINTS, ON_REMOVE_MISSION_FOR_POINTS, ON_BATTLE_RESULT, ON_ADD_POINT
 } from './action-types';
-import alertify from 'alertifyjs';
+import alertify from 'alertifyjs/build/alertify.min.js';
 
 export function setPoints(points) {
   return { type: SET_POINTS, points };
@@ -10,23 +10,24 @@ export function setPoints(points) {
 export function onRemoveMissionPoints(iduser, missionnumber) {
   return (dispatch, getState) => {
     const { firebase } = getState();
-    let x;
+    let missionId;
     firebase.child(`points/${iduser}/missionpoints`).once('value', snapshot =>
-      x = Object.keys(snapshot.val())[missionnumber]
-    );
-    firebase.child(`points/${iduser}/missionpoints/${x}`).set(0);
-
+    {  missionId = Object.keys(snapshot.val())[missionnumber],
+      firebase.child(`points/${iduser}/missionpoints/${missionId}`).set(0);
     let key;
-    firebase.child(`campaign`).once( 'value', snapshot =>
-      key = Object.keys( snapshot.val())[missionnumber]
-    );
     let title;
-    firebase.child(`campaign/${key}`).once('value', snapshot =>
+    firebase.child(`campaign`).once( 'value', snapshot =>
+     { key = Object.keys( snapshot.val())[missionnumber],
+      firebase.child(`campaign/${key}`).once('value', snapshot =>
       title = snapshot.val().title
     );
-    let notify = {message: `Points for mission "${title}" set to 0`, status: false};
+    });
+
+    let notify = {message: `Points for mission ${missionnumber + 1} : "${title}" set to 0`, status: false};
     firebase.child(`points/${iduser}/notifications`).push(notify);
     alertify.success(`Points set to 0`);
+  }
+    );
   };
 }
 
@@ -34,17 +35,9 @@ export function onAddPoint(id, users) {
     return (dispatch, getState) => {
     const { firebase } = getState();
 
-    let x;
-    firebase.child('points').on('value', snapshot =>
-      x = Object.keys(snapshot.val() || []).map(id => ({id, name: snapshot.val()[id].name, missionpoints: snapshot.val()[id].missionpoints }))
+    firebase.child('points').once('value', snapshot =>
+      Object.keys(snapshot.val() || []).map(id => ( firebase.child(`points/${id}/missionpoints`).push(0)))
     );
-    let i = 0;
-    let id;
-    while (i < x.length){
-      id = x[i].id;
-      firebase.child(`points/${id}/missionpoints`).push(0);
-      i++;
-    }
     };
 }
 
@@ -89,7 +82,7 @@ export function onBattleResult(idCampaign, points, iduser){
       firebase.child(`campaign/${key}`).once('value', snapshot =>
         title = snapshot.val().title
       );
-      let notify = {message: `Points for mission "${title}" updated`, status: false};
+      let notify = {message: `Points for mission ${parseInt(idCampaign) + 1 }: "${title}" updated with ${points} points`, status: false};
      firebase.child(`points/${auth.id}/notifications`).push(notify);
     }
 
