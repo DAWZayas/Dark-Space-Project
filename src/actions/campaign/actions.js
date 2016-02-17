@@ -1,6 +1,7 @@
 import {
   SET_CAMPAIGN, ADD_CAMPAIGN, REMOVE_CAMPAIGN, CHANGE_FLEET
 } from './action-types';
+import alertify from 'alertifyjs/build/alertify.min.js';
 
 export function setCampaign(campaign) {
   return { type: SET_CAMPAIGN, campaign };
@@ -29,6 +30,7 @@ export function onAddCampaign(id, title) {
   let notify = {message: `Mission ${title} added`, status: false};
   firebase.child(`points`).once('value', snapshot =>
     Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) ));
+    alertify.success(`Campaign "${title}" has been added`);
   };
 }
 
@@ -39,6 +41,7 @@ export function onRemoveCampaign(id, title) {
   let notify = {message: `Mission ${title} removed`, status: false};
   firebase.child(`points`).once('value', snapshot =>
     Object.keys(snapshot.val()).map( (user) => firebase.child(`points/${user}/notifications`).push(notify) ));
+    alertify.success(`Campaign "${title}" has been removed`);
   };
 }
 
@@ -46,5 +49,6 @@ export function onChangeFleet(enemySpaceFleetArray, idCampaign){
   return (dispatch, getState) => {
     const { firebase, auth } = getState();
   firebase.child(`campaign/${idCampaign}/playerFleet`).set(enemySpaceFleetArray);
+  alertify.success(`The fleet of "${idCampaign}" has been changed`);
   };
 }
