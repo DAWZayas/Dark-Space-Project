@@ -1,19 +1,13 @@
 function aliveArray(array){
   let result = false;
-  for (let j = 0;j < array.length;j++){
-    if (array[j].hull > 0){
-      result = true;
-    }
-  }
+  array.map( (ships, index) => (array[index].hull > 0) ? result = true : null );
   return result;
 }
 
 function alive(ship){
-  if (ship.hull > 0){
-    return true;
-  } else {
-    return false;
-  }
+  let result;
+  (ship.hull > 0) ? result = true : result = false;
+  return result;
 }
 
 function selectTarget(ship){

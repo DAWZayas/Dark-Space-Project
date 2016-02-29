@@ -6,7 +6,7 @@ export default class SelectPlayerFleet extends Component {
 
   constructor(props) {
     super(props);
-this.state = {
+    this.state = {
      points: 0,
      playerSpaceFleet : [],
      pointsAlert : false,
@@ -17,7 +17,6 @@ this.state = {
   handleOnSelectChangePoints() {
 
     const { navesState } = this.props;
-
     const xWingNumber = this.refs.Xwing.options.selectedIndex;
     const yWingNumber = this.refs.Ywing.options.selectedIndex;
     const bWingNumber = this.refs.Bwing.options.selectedIndex;
@@ -105,7 +104,7 @@ this.state = {
               </select>
           </div>
           <div className="input-group input-group-xs">
-            <span className="input-group-addon">Y - Wings (20 poitns)</span>
+            <span className="input-group-addon">Y - Wings (20 points)</span>
               <select className="form-control" ref="Ywing" onChange={e => this.handleOnSelectChangePoints(e)}>
                 <option>0</option>
                 <option>1</option>
@@ -131,10 +130,10 @@ this.state = {
               <Link to="/campaign" style={{color: 'inherit', textDecoration: 'inherit'}}><p className="btn btn-primary btn-md" role="button">Back</p></Link>
             </div>
             <div className="col-xs-4">
-            { this.state.addDisabled ? <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button"> Fight</p>
-            :
-            <Link to={`/battleReport/${this.props.params.idCampaign}`}  className="btn btn-primary btn-md" onClick={e => this.handleAddButtonClick(e)} disabled={this.state.addDisabled} role="button" >Fight</Link>
-            }
+              { this.state.addDisabled ? <p className="btn btn-primary btn-md" disabled={this.state.addDisabled} role="button"> Fight</p>
+              :
+              <Link to={`/battleReport/${this.props.params.idCampaign}`}  className="btn btn-primary btn-md" onClick={e => this.handleAddButtonClick(e)} disabled={this.state.addDisabled} role="button" >Fight</Link>
+              }
             </div>
           </div>
         </div>

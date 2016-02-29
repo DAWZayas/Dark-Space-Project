@@ -15,7 +15,7 @@ export default class CampaignItem extends Component {
   }
 
   calculatePercentage(points){
-      return points * 100 / 500;
+    return points * 100 / 500;
   }
 
   render() {
@@ -23,15 +23,15 @@ export default class CampaignItem extends Component {
     const { campaign, points, lastMissionCompleted, admin} = this.props;
 
     return (
-        <div className="col-xs-12 showlist paddingLeft">
-          <li className="list-group-item action-element  col-xs-12">
-            { this.props.id > (lastMissionCompleted + 1 ) ?
-              <span className="col-xs-12 setPaddingBottom">Mission {this.props.id + 1}:  {campaign.title}</span> :
-              <Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-12 setPaddingBottom">Mission {this.props.id + 1}:  {campaign.title}</span></Link>
-            }
-            { this.props.id > (lastMissionCompleted + 1 ) ?
-              <span className="text-danger col-xs-4"></span> :
-              <span className="text-danger col-xs-4"><Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
+      <div className="col-xs-12 showlist paddingLeft">
+        <li className="list-group-item action-element  col-xs-12">
+          { this.props.id > (lastMissionCompleted + 1 ) ?
+            <span className="col-xs-12 setPaddingBottom">Mission {this.props.id + 1}:  {campaign.title}</span> :
+            <Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className="col-xs-12 setPaddingBottom">Mission {this.props.id + 1}:  {campaign.title}</span></Link>
+          }
+          { this.props.id > (lastMissionCompleted + 1 ) ?
+            <span className="text-danger col-xs-4"></span> :
+            <span className="text-danger col-xs-4"><Link to={`/select/${this.props.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>Attack <span className="glyphicon glyphicon-screenshot"></span></Link></span>
           }
             <span className="col-xs-4">Status:  {( this.calculatePercentage(points) >= 50) ? <span className='glyphicon glyphicon-ok text-success'></span> : <span className='glyphicon glyphicon-remove text-danger'></span>}</span>
             { (admin) ? <div className="col-xs-2"><Link to={`/selectEnemy/${campaign.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}><span className={'glyphicon glyphicon-cog action-icon'}/></Link></div> : '' }
@@ -43,11 +43,11 @@ export default class CampaignItem extends Component {
               </div>
             </div>
             <div className="pointsPerMission col-xs-12">
-            <p className="col-xs-12 col-md-1">Enemy Fleet:</p>
-            {
-                campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-6 col-md-1"><img src={ship.img}/></div> )
+              <p className="col-xs-12 col-md-1">Enemy Fleet:</p>
+              {
+                  campaign.playerFleet.map( (ship, index) => <div key={index} className="col-xs-6 col-md-1"><img src={ship.img}/></div> )
               }
-             </div>
+            </div>
           </li>
         </div>
     );

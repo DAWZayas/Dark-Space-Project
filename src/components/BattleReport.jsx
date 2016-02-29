@@ -27,17 +27,17 @@ export default class Points extends Component {
             <h2>Battle Report</h2>
           </div>
           <div className="col-xs-12">
-              {
-                playerSpaceFleet.map( (ship, index) => <SelectShipItem key={index} resultShipProp={ship}/>)
-              }
+            {
+              playerSpaceFleet.map( (ship, index) => <SelectShipItem key={index} resultShipProp={ship}/>)
+            }
           </div>
           <div className="titlePadding">
             <h2>Versus</h2>
           </div>
           <div className="col-xs-12">
-              {
-                enemySpaceFleet.map( (ship, index) => <SelectShipItem key={index} resultShipProp={ship}/>)
-              }
+            {
+              enemySpaceFleet.map( (ship, index) => <SelectShipItem key={index} resultShipProp={ship}/>)
+            }
           </div>
             <div className="col-xs-12">
               <div className="col-xs-4">
